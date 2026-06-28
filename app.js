@@ -561,20 +561,31 @@ function formatDateTimeDE(iso) {
   return `${date}, ${time}`;
 }
 
-function renderTaskItem(id, label, isMilestone = false) {
+function renderTaskItem(id, label, isMilestone = false, { compact = false } = {}) {
   const done = isTaskDone(id);
   const completedAt = getTaskCompletedAt(id);
-  const timeMeta = done
-    ? `<span class="task-time">${escapeHtml(formatDateTimeDE(completedAt))}</span>`
-    : "";
+  const timeMeta =
+    done && !compact
+      ? `<span class="task-time">${escapeHtml(formatDateTimeDE(completedAt))}</span>`
+      : "";
   return `
-    <li class="task-item ${done ? "done" : ""} ${isMilestone ? "milestone" : ""}" data-id="${id}">
+    <li class="task-item ${done ? "done" : ""} ${isMilestone ? "milestone" : ""} ${compact ? "task-item-compact" : ""}" data-id="${id}">
       <input type="checkbox" ${done ? "checked" : ""} aria-label="${escapeHtml(label)}" />
       <span class="task-body">
         <span class="task-label">${escapeHtml(label)}</span>
         ${timeMeta}
       </span>
     </li>`;
+}
+
+function renderBlockTutorial(t) {
+  const typeLabel = TUTORIAL_TYPES[t.type] || t.type;
+  return `
+    <a class="block-tutorial-link" href="${t.url}" target="_blank" rel="noopener">
+      <span class="block-tutorial-type">${escapeHtml(typeLabel)}</span>
+      <span class="block-tutorial-title">${escapeHtml(t.title)}</span>
+      <span class="block-tutorial-meta">${escapeHtml(t.duration)}</span>
+    </a>`;
 }
 
 function renderTutorialCard(t, { optional = false } = {}) {
@@ -607,14 +618,14 @@ function renderSupplementSection(weekNum) {
     <div class="tutorial-grid">${items.map((t) => renderTutorialCard(t, { optional: true })).join("")}</div>`;
 }
 
-function renderTutorialByIds(ids) {
+function renderTutorialByIds(ids, { compact = false } = {}) {
   if (!ids || !ids.length) return "";
-  const cards = ids
-    .map((id) => tutorialById[id])
-    .filter(Boolean)
-    .map(renderTutorialCard)
-    .join("");
-  return cards ? `<div class="tutorial-grid">${cards}</div>` : "";
+  const tutorials = ids.map((id) => tutorialById[id]).filter(Boolean);
+  if (!tutorials.length) return "";
+  if (compact) {
+    return `<div class="block-tutorial-list">${tutorials.map(renderBlockTutorial).join("")}</div>`;
+  }
+  return `<div class="tutorial-grid">${tutorials.map(renderTutorialCard).join("")}</div>`;
 }
 
 function parseView() {
@@ -884,27 +895,34 @@ function renderDay(weekNum, dayKey) {
     .map((block, blockIdx) => {
       const items = block.items.map((i) => `<li>${escapeHtml(i)}</li>`).join("");
       const tut = block.tutorialIds?.length
-        ? `<div class="block-tutorials"><p class="sub"><strong>Lernmaterial:</strong></p>${renderTutorialByIds(block.tutorialIds)}</div>`
+        ? `<div class="block-panel block-tutorials">
+            <span class="block-panel-label">Lernmaterial</span>
+            ${renderTutorialByIds(block.tutorialIds, { compact: true })}
+          </div>`
         : "";
       const blockTasks = taskBuckets[blockIdx]
-        .map((taskIdx) => renderTaskItem(`w${weekNum}-${dayKey}-t${taskIdx}`, dayPlan.tasks[taskIdx]))
+        .map((taskIdx) =>
+          renderTaskItem(`w${weekNum}-${dayKey}-t${taskIdx}`, dayPlan.tasks[taskIdx], false, { compact: true })
+        )
         .join("");
       const tasksHtml = blockTasks
-        ? `<div class="block-tasks"><p class="sub"><strong>Abhaken:</strong></p><ul class="task-list">${blockTasks}</ul></div>`
+        ? `<div class="block-panel block-tasks">
+            <span class="block-panel-label">Abhaken</span>
+            <ul class="task-list">${blockTasks}</ul>
+          </div>`
         : "";
-      const aside = tut || tasksHtml
-        ? `<div class="block-aside">${tut}${tasksHtml}</div>`
-        : "";
+      const actions =
+        tut || tasksHtml
+          ? `<div class="block-actions${tut && tasksHtml ? " block-actions-split" : ""}">${tut}${tasksHtml}</div>`
+          : "";
       return `
         <article class="block-card">
           <div class="block-header">
             <span class="block-time">${escapeHtml(block.time)}</span>
             <h4>${escapeHtml(block.title)}</h4>
           </div>
-          <div class="block-body${aside ? "" : " block-body-single"}">
-            <ul class="block-items">${items}</ul>
-            ${aside}
-          </div>
+          ${items ? `<ul class="block-items">${items}</ul>` : ""}
+          ${actions}
         </article>`;
     })
     .join("");

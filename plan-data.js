@@ -2,7 +2,7 @@ import { getAllDayTaskIds } from "./daily-plans.js";
 
 export const PLAN = {
   title: "12-Wochen Vollzeit-Plan: LLM/RAG → KI-Entwickler",
-  subtitle: "35–40 Stunden/Woche · Fokus LLM/RAG · Aufbau auf Data Science (2022)",
+  subtitle: "12 Lernwochen · flexibles Tempo · LLM/RAG → KI-Entwickler",
   phases: [
     {
       id: "a",

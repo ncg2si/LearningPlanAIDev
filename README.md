@@ -21,9 +21,11 @@ Dann im Browser: http://localhost:8080
 ## Features
 
 - **72 Tagespläne** (Mo–Sa pro Woche) mit Zeitblöcken und Checklisten
+- **Flexibles Tempo** — pausieren jederzeit, an jedem Tag weitermachen
+- **Fortschritt mit Zeitstempel** — jeder Task speichert Datum & Uhrzeit
+- **Fortschrittsübersicht** — Statistik, 14-Tage-Aktivität, Wochen- & Tageshistorie
+- **Weitermachen** — springt zum nächsten offenen Tag
 - **Detaillierte Tutorials** — Links, Kosten, Dauer, konkrete Lernschritte
-- Fortschritt per Checkbox (gespeichert in `localStorage`)
-- Startdatum → Button „Heute“ springt zum aktuellen Tag
 - Bewerbungs-Checkliste & Interview-Fragen
 
 ## Dateien

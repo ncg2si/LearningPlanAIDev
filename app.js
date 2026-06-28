@@ -9,7 +9,15 @@ import {
   getPrevDay,
   getDayIndex,
 } from "./daily-plans.js";
-import { WEEK_TUTORIALS, GLOBAL_RESOURCES, TUTORIAL_TYPES } from "./tutorials.js";
+import {
+  WEEK_TUTORIALS,
+  WEEK_SUPPLEMENTS,
+  GLOBAL_RESOURCES,
+  GLOBAL_SUPPLEMENTS,
+  TUTORIAL_TYPES,
+  getWeekSupplements,
+  getGlobalSupplements,
+} from "./tutorials.js";
 
 const STORAGE_KEY = "llm-lernplan-progress-v3";
 const STORAGE_KEY_LEGACY = "llm-lernplan-progress-v2";
@@ -31,6 +39,9 @@ const phaseColors = {
 const tutorialById = {};
 for (const w of Object.values(WEEK_TUTORIALS).flat()) {
   tutorialById[w.id] = w;
+}
+for (const s of [...GLOBAL_SUPPLEMENTS, ...Object.values(WEEK_SUPPLEMENTS).flat()]) {
+  tutorialById[s.id] = s;
 }
 
 function loadProgress() {
@@ -423,16 +434,18 @@ function renderTaskItem(id, label, isMilestone = false) {
     </li>`;
 }
 
-function renderTutorialCard(t) {
+function renderTutorialCard(t, { optional = false } = {}) {
   const typeLabel = TUTORIAL_TYPES[t.type] || t.type;
   const steps =
     t.steps && t.steps.length
       ? `<ol class="tutorial-steps">${t.steps.map((s) => `<li>${escapeHtml(s)}</li>`).join("")}</ol>`
       : "";
+  const optionalBadge = optional ? `<span class="tutorial-optional">Optional</span>` : "";
   return `
-    <article class="tutorial-card">
+    <article class="tutorial-card ${optional ? "tutorial-card-optional" : ""}">
       <div class="tutorial-header">
         <span class="tutorial-type">${escapeHtml(typeLabel)}</span>
+        ${optionalBadge}
         <span class="tutorial-meta">${escapeHtml(t.cost)} · ${escapeHtml(t.duration)}</span>
       </div>
       <h4><a href="${t.url}" target="_blank" rel="noopener">${escapeHtml(t.title)}</a></h4>
@@ -440,6 +453,15 @@ function renderTutorialCard(t) {
       <p class="tutorial-desc">${escapeHtml(t.description)}</p>
       ${steps ? `<p class="tutorial-steps-label"><strong>So lernen:</strong></p>${steps}` : ""}
     </article>`;
+}
+
+function renderSupplementSection(weekNum) {
+  const items = getWeekSupplements(weekNum);
+  if (!items.length) return "";
+  return `
+    <h3 class="section-title supplement-title">Optional vertiefen</h3>
+    <p class="sub supplement-note">Ergänzungen bei Bedarf — nicht Pflicht. Erst Haupt-Tutorials + Projekt, dann hier nachlegen.</p>
+    <div class="tutorial-grid">${items.map((t) => renderTutorialCard(t, { optional: true })).join("")}</div>`;
 }
 
 function renderTutorialByIds(ids) {
@@ -695,9 +717,10 @@ function renderWeek(weekNum) {
     </div>
     ${
       tutorials.length
-        ? `<h3 class="section-title">Tutorials — wie & wo lernen (Woche ${weekNum})</h3><div class="tutorial-grid">${tutorials.map(renderTutorialCard).join("")}</div>`
+        ? `<h3 class="section-title">Tutorials — wie & wo lernen (Woche ${weekNum})</h3><div class="tutorial-grid">${tutorials.map((t) => renderTutorialCard(t)).join("")}</div>`
         : ""
-    }`;
+    }
+    ${renderSupplementSection(weekNum)}`;
 }
 
 function renderDay(weekNum, dayKey) {
@@ -777,8 +800,16 @@ function renderDay(weekNum, dayKey) {
       <ul class="task-list">${tasks}</ul>
     </div>
     ${
-      weekTutorials.length
-        ? `<details class="card tutorials-collapse"><summary><h3>Woche ${weekNum} — alle Tutorials (${weekTutorials.length})</summary><div class="tutorial-grid">${weekTutorials.map(renderTutorialCard).join("")}</div></details>`
+      weekTutorials.length || getWeekSupplements(weekNum).length
+        ? `<details class="card tutorials-collapse" open>
+            <summary><h3>Woche ${weekNum} — Tutorials & Optional</summary>
+            ${
+              weekTutorials.length
+                ? `<p class="sub"><strong>Pflicht-Pfad</strong></p><div class="tutorial-grid">${weekTutorials.map((t) => renderTutorialCard(t)).join("")}</div>`
+                : ""
+            }
+            ${renderSupplementSection(weekNum)}
+          </details>`
         : ""
     }`;
 }
@@ -910,15 +941,24 @@ function renderAllTutorials() {
     .sort((a, b) => +a - +b)
     .map((w) => {
       const list = WEEK_TUTORIALS[w];
+      const supplements = getWeekSupplements(+w);
       return `
         <section class="tutorial-week-section">
           <h3>Woche ${w}</h3>
-          <div class="tutorial-grid">${list.map(renderTutorialCard).join("")}</div>
+          <div class="tutorial-grid">${list.map((t) => renderTutorialCard(t)).join("")}</div>
+          ${
+            supplements.length
+              ? `<h4 class="supplement-inline-title">Optional vertiefen</h4><div class="tutorial-grid">${supplements.map((t) => renderTutorialCard(t, { optional: true })).join("")}</div>`
+              : ""
+          }
         </section>`;
     })
     .join("");
 
-  const global = GLOBAL_RESOURCES.map(renderTutorialCard).join("");
+  const global = GLOBAL_RESOURCES.map((t) => renderTutorialCard(t)).join("");
+  const globalSupplements = getGlobalSupplements()
+    .map((t) => renderTutorialCard(t, { optional: true }))
+    .join("");
 
   return `
     <div class="view-header">
@@ -928,6 +968,11 @@ function renderAllTutorials() {
     <div class="card">
       <h3>Globale Ressourcen</h3>
       <div class="tutorial-grid">${global}</div>
+    </div>
+    <div class="card supplement-section-card">
+      <h3>Optional vertiefen (übergreifend)</h3>
+      <p class="sub">Ergänzend zum Plan — nicht statt Projektarbeit.</p>
+      <div class="tutorial-grid">${globalSupplements}</div>
     </div>
     ${weeks}`;
 }

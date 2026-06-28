@@ -7,16 +7,17 @@ Persönlicher Fortschrittstracker für den 12-Wochen Vollzeit-Plan (LLM/RAG → 
 Kein Build nötig — einfach im Browser öffnen:
 
 ```bash
-open index.html
+cd /Users/cami/Projects/llm-lernplan-tracker
+./start.sh
 ```
 
-Oder lokal mit einem kleinen Server (empfohlen für ES-Module):
+Oder manuell:
 
 ```bash
-python3 -m http.server 8080
+python3 -m http.server 8765 --bind 127.0.0.1
 ```
 
-Dann im Browser: http://localhost:8080
+Dann im Browser: **http://127.0.0.1:8765/** (nicht `index.html` per Doppelklick öffnen!)
 
 ## Features
 
@@ -26,6 +27,7 @@ Dann im Browser: http://localhost:8080
 - **Fortschrittsübersicht** — Statistik, 14-Tage-Aktivität, Wochen- & Tageshistorie
 - **Weitermachen** — springt zum nächsten offenen Tag
 - **Detaillierte Tutorials** — Links, Kosten, Dauer, konkrete Lernschritte
+- **Optional vertiefen** — DLAI, Anthropic, Pinecone, Simon Willison (Ergänzung, nicht Pflicht)
 - Bewerbungs-Checkliste & Interview-Fragen
 
 ## Dateien

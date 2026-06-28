@@ -589,8 +589,138 @@ export const WEEK_TUTORIALS = {
   ],
 };
 
+/** Optionale Ergänzungen — nur bei Bedarf, nicht Pflicht zum Plan */
+export const GLOBAL_SUPPLEMENTS = [
+  {
+    id: "simon-willison-llms",
+    title: "Simon Willison — LLM Blog",
+    url: "https://simonwillison.net/tags/llms/",
+    type: "article",
+    cost: "Kostenlos",
+    duration: "Nach Bedarf",
+    description: "Praxisnahe Tipps zu RAG, Debugging, Tools und Kosten — ergänzt offizielle Docs ideal.",
+    steps: [
+      "2–3 Artikel pro Woche lesen (nicht alles)",
+      "Besonders: RAG, Prompting, Tool-Use Tags",
+      "Interessante Patterns in deine Projekte übernehmen",
+    ],
+  },
+  {
+    id: "anthropic-overview",
+    title: "Anthropic — Build with Claude (Übersicht)",
+    url: "https://docs.anthropic.com/en/docs/intro",
+    type: "docs",
+    cost: "Kostenlos",
+    duration: "~30 min",
+    description: "Zweite LLM-Perspektive neben OpenAI — hilfreich für Interviews und Tool-Design.",
+    steps: ["Docs-Überblick", "Später: Prompting + Tool Use vertiefen"],
+  },
+];
+
+export const WEEK_SUPPLEMENTS = {
+  3: [
+    {
+      id: "anthropic-prompting",
+      title: "Anthropic — Prompt Engineering",
+      url: "https://docs.anthropic.com/en/docs/build-with-claude/prompt-engineering/overview",
+      type: "docs",
+      cost: "Kostenlos",
+      duration: "~1 h",
+      when: "Nach OpenAI Prompting Guide",
+      description: "Alternative Best Practices — Chain-of-Thought, Beispiele, klare Rollen.",
+      steps: ["Overview lesen", "Mit deinem Prompt-Lab vergleichen", "1 Prompt mit beiden Ansätzen testen"],
+    },
+  ],
+  4: [
+    {
+      id: "pinecone-rag-101",
+      title: "Pinecone — RAG 101 (komplette Serie)",
+      url: "https://www.pinecone.io/learn/series/rag/",
+      type: "article",
+      cost: "Kostenlos",
+      duration: "~2 h",
+      when: "Wenn Embeddings/Chunking unklar",
+      description: "Ganzheitliche RAG-Einführung in Artikeln — sehr gut vor Woche 5.",
+      steps: ["RAG 101", "Chunking Strategies", "Retrieval Artikel"],
+    },
+  ],
+  5: [
+    {
+      id: "dlai-chat-with-data",
+      title: "DeepLearning.AI — LangChain: Chat with Your Data",
+      url: "https://www.deeplearning.ai/short-courses/langchain-chat-with-your-data/",
+      type: "course",
+      cost: "Kostenlos",
+      duration: "~1,5 h",
+      when: "Parallel zu Woche 5",
+      description: "Video-Kurs: RAG End-to-End — gut als roter Faden neben LlamaIndex-Docs.",
+      steps: ["Alle Lektionen", "Konzepte mit deinem Doc-Bot vergleichen"],
+    },
+  ],
+  6: [
+    {
+      id: "pinecone-chunking",
+      title: "Pinecone — Chunking Strategies for LLM Applications",
+      url: "https://www.pinecone.io/learn/chunking-strategies/",
+      type: "article",
+      cost: "Kostenlos",
+      duration: "~30 min",
+      when: "Vor Hybrid-Search Experimenten",
+      description: "Vertiefung zu Fixed/Semantic/Parent-Child — direkt für dein A/B im README.",
+      steps: ["Artikel lesen", "Eine Strategie mehr in deinem Bot testen"],
+    },
+  ],
+  7: [
+    {
+      id: "dlai-advanced-rag",
+      title: "DeepLearning.AI — Building and Evaluating Advanced RAG",
+      url: "https://www.deeplearning.ai/short-courses/building-evaluating-advanced-rag/",
+      type: "course",
+      cost: "Kostenlos",
+      duration: "~2 h",
+      when: "Parallel zu RAGAS",
+      description: "Evaluation & Advanced Retrieval im Video — ergänzt RAGAS-Docs perfekt.",
+      steps: ["Kurs durcharbeiten", "Eval-Ideen in dein Test-Set übernehmen"],
+    },
+  ],
+  8: [
+    {
+      id: "anthropic-tool-use",
+      title: "Anthropic — Tool Use (Function Calling)",
+      url: "https://docs.anthropic.com/en/docs/build-with-claude/tool-use",
+      type: "docs",
+      cost: "Kostenlos",
+      duration: "~1 h",
+      when: "Neben OpenAI Function Calling",
+      description: "Zweiter Blick auf Tool-Schemas und Agent-Patterns.",
+      steps: ["Tool-Definition Docs", "Mit deinem Agent-Design vergleichen"],
+    },
+  ],
+  10: [
+    {
+      id: "hf-peft",
+      title: "Hugging Face — PEFT / LoRA Quickstart",
+      url: "https://huggingface.co/docs/peft/quicktour",
+      type: "docs",
+      cost: "Kostenlos",
+      duration: "~2 h",
+      when: "Optional — nur wenn du Fine-Tuning erwähnen willst",
+      description: "Kompakte Einführung in LoRA — für Interviews „RAG vs. Fine-Tuning“.",
+      steps: ["Quicktour lesen", "Kein Pflicht-Projekt — Konzept reicht oft"],
+    },
+  ],
+};
+
 export function getWeekTutorials(weekNum) {
   return WEEK_TUTORIALS[weekNum] || [];
+}
+
+export function getWeekSupplements(weekNum) {
+  return WEEK_SUPPLEMENTS[weekNum] || [];
+}
+
+export function getGlobalSupplements() {
+  return GLOBAL_SUPPLEMENTS;
 }
 
 export function renderTutorialCard(t) {

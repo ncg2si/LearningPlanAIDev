@@ -24,6 +24,7 @@ const STORAGE_KEY_LEGACY = "llm-lernplan-progress-v2";
 const CURRENT_DAY_KEY = "llm-lernplan-current-day";
 const VIEW_KEY = "llm-lernplan-last-view";
 const DATE_KEY = "llm-lernplan-start-date-optional";
+const BACKUP_VERSION = 1;
 
 let progress = loadProgress();
 let currentView = loadLastView() || "dashboard";
@@ -395,6 +396,148 @@ function resetProgress() {
   }
 }
 
+function filterKnownProgress(obj) {
+  const known = new Set(getAllTaskIds());
+  const out = {};
+  for (const [id, val] of Object.entries(obj || {})) {
+    if (known.has(id)) out[id] = val;
+  }
+  return out;
+}
+
+function buildBackupPayload() {
+  return {
+    version: BACKUP_VERSION,
+    app: "llm-lernplan-tracker",
+    exportedAt: new Date().toISOString(),
+    progress,
+    currentDay: loadCurrentDay(),
+    startDate: loadStartDate(),
+    lastView: loadLastView(),
+  };
+}
+
+function exportProgress() {
+  const payload = buildBackupPayload();
+  const json = JSON.stringify(payload, null, 2);
+  const blob = new Blob([json], { type: "application/json" });
+  const stamp = new Date().toISOString().slice(0, 10);
+  const a = document.createElement("a");
+  a.href = URL.createObjectURL(blob);
+  a.download = `llm-lernplan-backup-${stamp}.json`;
+  a.click();
+  URL.revokeObjectURL(a.href);
+}
+
+function parseBackupFile(text) {
+  const data = JSON.parse(text);
+  if (!data || typeof data !== "object") throw new Error("Ungültige Datei");
+  if (data.app && data.app !== "llm-lernplan-tracker") {
+    throw new Error("Kein Lernplan-Backup");
+  }
+  const progressData = data.progress;
+  if (!progressData || typeof progressData !== "object") {
+    throw new Error("Backup enthält keinen Fortschritt");
+  }
+  return {
+    version: data.version || 1,
+    exportedAt: data.exportedAt || null,
+    progress: filterKnownProgress(normalizeProgress(progressData)),
+    currentDay:
+      data.currentDay && typeof data.currentDay.week === "number" && data.currentDay.day
+        ? data.currentDay
+        : null,
+    startDate: typeof data.startDate === "string" ? data.startDate : "",
+    lastView: typeof data.lastView === "string" ? data.lastView : "",
+  };
+}
+
+function mergeProgressEntries(local, incoming) {
+  const out = { ...normalizeProgress(local) };
+  for (const [id, entry] of Object.entries(normalizeProgress(incoming))) {
+    if (!out[id]) {
+      out[id] = entry;
+    } else {
+      const localAt = out[id].completedAt;
+      const incomingAt = entry.completedAt;
+      if (!localAt && incomingAt) out[id] = entry;
+      else if (localAt && incomingAt && new Date(incomingAt) > new Date(localAt)) {
+        out[id] = entry;
+      }
+    }
+  }
+  return out;
+}
+
+function applyBackup(data, mode) {
+  if (mode === "merge") {
+    progress = mergeProgressEntries(progress, data.progress);
+  } else {
+    progress = data.progress;
+  }
+  localStorage.setItem(STORAGE_KEY, JSON.stringify(progress));
+
+  if (mode === "replace") {
+    if (data.currentDay) saveCurrentDay(data.currentDay.week, data.currentDay.day);
+    if (data.startDate) localStorage.setItem(DATE_KEY, data.startDate);
+    else localStorage.removeItem(DATE_KEY);
+    if (data.lastView) {
+      currentView = data.lastView;
+      saveLastView(data.lastView);
+    }
+  }
+  render();
+}
+
+function handleImportFile(file, mode) {
+  const reader = new FileReader();
+  reader.onload = () => {
+    try {
+      const data = parseBackupFile(reader.result);
+      const count = Object.keys(data.progress).length;
+      const dateHint = data.exportedAt ? ` (${formatDateTimeDE(data.exportedAt)})` : "";
+
+      if (mode === "replace") {
+        const existing = Object.keys(progress).length;
+        const msg = existing
+          ? `Backup mit ${count} Tasks${dateHint} importieren und ${existing} lokale Tasks ersetzen?`
+          : `Backup mit ${count} Tasks${dateHint} importieren?`;
+        if (!confirm(msg)) return;
+      } else if (
+        !confirm(
+          `${count} Tasks aus Backup${dateHint} mit lokalem Fortschritt zusammenführen? Bei Konflikten gewinnt der neuere Zeitstempel.`
+        )
+      ) {
+        return;
+      }
+
+      applyBackup(data, mode);
+      alert(`Import erfolgreich: ${Object.keys(progress).length} Tasks gespeichert.`);
+    } catch (err) {
+      alert(`Import fehlgeschlagen: ${err.message}`);
+    }
+  };
+  reader.onerror = () => alert("Datei konnte nicht gelesen werden.");
+  reader.readAsText(file);
+}
+
+function renderBackupActions({ compact = false } = {}) {
+  const count = Object.keys(progress).length;
+  const exportLabel = compact ? "Exportieren" : `JSON exportieren (${count} Tasks)`;
+  return `
+    <div class="backup-actions ${compact ? "backup-actions-compact" : ""}">
+      <button type="button" class="btn ${compact ? "" : "btn-accent"} export-btn">${escapeHtml(exportLabel)}</button>
+      <label class="btn btn-import">
+        Import (ersetzen)
+        <input type="file" class="import-replace-input" accept=".json,application/json" hidden />
+      </label>
+      <label class="btn btn-import">
+        Zusammenführen
+        <input type="file" class="import-merge-input" accept=".json,application/json" hidden />
+      </label>
+    </div>`;
+}
+
 function escapeHtml(str) {
   return String(str)
     .replace(/&/g, "&amp;")
@@ -566,6 +709,7 @@ function renderSidebar() {
         </ul>
       </nav>
       <div class="sidebar-actions">
+        ${renderBackupActions({ compact: true })}
         <button class="btn btn-danger" id="reset-btn">Fortschritt zurücksetzen</button>
       </div>
     </aside>`;
@@ -933,6 +1077,11 @@ function renderProgressOverview() {
             : `<p class="sub">Noch keine Tasks erledigt — starte mit „Weitermachen“ in der Sidebar.</p>`
         }
       </div>
+      <div class="card backup-card">
+        <h3>Sicherung & Übertragung</h3>
+        <p class="sub">Fortschritt als JSON sichern — z.B. beim Wechsel von localhost zu GitHub Pages oder für ein Backup.</p>
+        ${renderBackupActions()}
+      </div>
     </div>`;
 }
 
@@ -1083,6 +1232,26 @@ function bindEvents(root) {
 
   const resetBtn = root.querySelector("#reset-btn");
   if (resetBtn) resetBtn.addEventListener("click", resetProgress);
+
+  root.querySelectorAll(".export-btn").forEach((btn) => {
+    btn.addEventListener("click", exportProgress);
+  });
+
+  root.querySelectorAll(".import-replace-input").forEach((input) => {
+    input.addEventListener("change", (e) => {
+      const file = e.target.files?.[0];
+      if (file) handleImportFile(file, "replace");
+      e.target.value = "";
+    });
+  });
+
+  root.querySelectorAll(".import-merge-input").forEach((input) => {
+    input.addEventListener("change", (e) => {
+      const file = e.target.files?.[0];
+      if (file) handleImportFile(file, "merge");
+      e.target.value = "";
+    });
+  });
 }
 
 function render() {

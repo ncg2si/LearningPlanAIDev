@@ -227,6 +227,33 @@ body {
   gap: 0.5rem;
 }
 
+.backup-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.backup-actions-compact {
+  flex-direction: column;
+}
+
+.backup-actions-compact .btn,
+.backup-actions-compact .btn-import {
+  width: 100%;
+  text-align: center;
+}
+
+.btn-import {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.backup-card .sub {
+  margin-bottom: 1rem;
+}
+
 .btn {
   border: 1px solid var(--border);
   background: var(--surface-2);

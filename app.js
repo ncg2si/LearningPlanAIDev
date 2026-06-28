@@ -663,8 +663,8 @@ function renderSidebar() {
   return `
     <aside class="sidebar">
       <div class="brand">
-        <h1>LLM/RAG Lernplan</h1>
-        <p>Flexibles Tempo · 72 Lerntage</p>
+        <h1>zollsoft Sprint</h1>
+        <p>12 Wochen · ${DAILY_PLANS.length} Lerntage · ML/DL Medizin-KI</p>
       </div>
       <div class="overall-progress">
         <label>Gesamtfortschritt</label>
@@ -757,8 +757,8 @@ function renderDashboard() {
 
   const hint = `
     <div class="current-week-hint flexible-hint">
-      <strong>Flexibles Lernen:</strong> Du bestimmst das Tempo — Pausen sind kein Problem.
-      Der nächste Tag richtet sich nach deinem <strong>aktuellen Tag</strong>, nicht nach dem Kalender.
+      <strong>12-Wochen Sprint → zollsoft:</strong> Fokus CV (Lesion) + Speech (Whisper) + deployte APIs — kein IfaDW-Breitenplan.
+      Pausen sind ok; Meilensteine W5 (CV live), W7 (Speech), W10 (Signature), W12 (Bewerbung) nicht überspringen.
       <div class="hint-actions">
         ${
           open.kind !== "done"
@@ -778,7 +778,7 @@ function renderDashboard() {
         <span class="sub">${open.done}/${open.total} Tasks · ${completedDays}/${DAILY_PLANS.length} Tage erledigt · <button class="link-btn" data-view="progress">Details →</button></span>
       </div>
     </div>`
-        : `<div class="card"><h3>Plan abgeschlossen</h3><p class="sub">Alle 72 Lerntage erledigt. Schau dir die Bewerbungs-Checkliste an.</p></div>`
+        : `<div class="card"><h3>Plan abgeschlossen</h3><p class="sub">Alle ${DAILY_PLANS.length} Lerntage erledigt. Schau dir die Bewerbungs-Checkliste an.</p></div>`
     }`;
 
   const cards = PLAN.weeks
@@ -1147,14 +1147,14 @@ function renderInterview() {
   return `
     <div class="view-header">
       <h2>Interview-Vorbereitung</h2>
-      <p class="meta">Top 10 Fragen — Antworten laut üben (Woche 12)</p>
+      <p class="meta">15 Fragen — zollsoft ML/DL (Woche 12)</p>
     </div>
     <div class="card">
       <ol>${PLAN.interviewQuestions.map((q) => `<li style="margin-bottom:0.6rem">${escapeHtml(q)}</li>`).join("")}</ol>
     </div>
     <div class="card">
       <h3>Empfohlene Lektüre</h3>
-      <div class="tutorial-grid">${renderTutorialCard(tutorialById["interview-rag"])}</div>
+      <div class="tutorial-grid">${renderTutorialCard(tutorialById["interview-ml"] || tutorialById["interview-rag"])}</div>
     </div>`;
 }
 
@@ -1177,7 +1177,8 @@ function renderReference() {
     <div class="cards">
       <div class="card"><h3>Phasen</h3><table class="tech-table"><tbody>${phases}</tbody></table></div>
       <div class="card"><h3>Tech-Stack</h3><table class="tech-table"><tbody>${tech}</tbody></table></div>
-      <div class="card"><h3>Nicht lernen</h3><ul><li>TensorFlow</li><li>Transformer from scratch</li><li>Kubernetes (erstmal)</li><li>5 RAG-Frameworks parallel</li></ul></div>
+      <div class="card"><h3>Ziel: zollsoft ML/DL</h3><ul><li><strong>CV:</strong> Lesionsklassifikation (HAM10000, PyTorch, deployt)</li><li><strong>NLP/Speech:</strong> Whisper, spaCy — Spracherkennung Ärzte</li><li><strong>Pipeline:</strong> Daten → Modell → MLflow → FastAPI → Docker</li><li><strong>Stack:</strong> Python, sklearn, PyTorch, TensorFlow, Linux/Bash</li><li><a href="https://zollsoft.de/jobs/softwareentwicklung/softwareentwickler-machine-deep-learning/" target="_blank" rel="noopener">Stellenanzeige →</a></li></ul></div>
+      <div class="card"><h3>Bewusst weggelassen (Später)</h3><ul><li>RAG / LLM-Tiefe, Agents, GANs, Reinforcement Learning</li><li>IfaDW-Breite (25 Wo.) — dieser Sprint ist zielgerichtet</li></ul></div>
       <div class="card"><h3>Budget / Monat</h3><ul><li>OpenAI: 20–50 €</li><li>Tavily: 0–20 €</li><li>Hosting: 0–10 €</li></ul></div>
     </div>`;
 }

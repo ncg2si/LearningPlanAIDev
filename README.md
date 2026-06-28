@@ -1,56 +1,39 @@
-# LearningPlanAIDev
+# LearningPlanAIDev — zollsoft Sprint
 
-Persönlicher Fortschrittstracker für den 12-Wochen Vollzeit-Plan (LLM/RAG → KI-Entwickler).
+**12-Wochen Vollzeit-Sprint** zur Qualifikation für [zollsoft ML/DL](https://zollsoft.de/jobs/softwareentwicklung/softwareentwickler-machine-deep-learning/) (Spracherkennung, Lesions-CV, volle Pipeline).
+
+> Nicht der 25-Wochen-IfaDW-Plan — bewusst schmal und schnell.
 
 ## Starten
 
-Kein Build nötig — einfach im Browser öffnen:
-
 ```bash
-cd /Users/cami/Projects/llm-lernplan-tracker
+cd ~/Projects/llm-lernplan-tracker
 ./start.sh
 ```
 
-Oder manuell:
+## 12 Wochen — Phasen
 
-```bash
-python3 -m http.server 8765 --bind 127.0.0.1
-```
+| Phase | Wochen | Ziel |
+|-------|--------|------|
+| **A** Engineering + sklearn | 1–2 | Sauberer Code, ML-API **live** |
+| **B** Computer Vision | 3–5 | PyTorch, HAM10000, **CV-API live** |
+| **C** NLP & Speech | 6–7 | spaCy, **Whisper /transcribe** |
+| **D** Pipeline + TF | 8 | Bash, **TensorFlow**, MLflow |
+| **E** Signature | 9–10 | Medizin-KI **deployt + Demo-Video** |
+| **F** Bewerbung | 11–12 | **zollsoft bewerben** + Interview |
 
-Dann im Browser: **http://127.0.0.1:8765/** (nicht `index.html` per Doppelklick öffnen!)
+**72 Tagespläne** · ~**35 h/Woche** · **3 deployte APIs** + 1 Signature-Projekt
 
-## Features
+## Was du am Ende vorweisen kannst
 
-- **72 Tagespläne** (Mo–Sa pro Woche) mit Zeitblöcken und Checklisten
-- **Flexibles Tempo** — pausieren jederzeit, an jedem Tag weitermachen
-- **Fortschritt mit Zeitstempel** — jeder Task speichert Datum & Uhrzeit
-- **Export / Import** — Fortschritt als JSON sichern und auf anderem Gerät oder URL übernehmen
-- **Fortschrittsübersicht** — Statistik, 14-Tage-Aktivität, Wochen- & Tageshistorie
-- **Weitermachen** — springt zum nächsten offenen Tag
-- **Detaillierte Tutorials** — Links, Kosten, Dauer, konkrete Lernschritte
-- **Optional vertiefen** — DLAI, Anthropic, Pinecone, Simon Willison (Ergänzung, nicht Pflicht)
-- Bewerbungs-Checkliste & Interview-Fragen
+- Live **CV-Lesion-Klassifikator** (PyTorch, F1/Recall im README)  
+- Live **Speech/Whisper-API** (medizinisches Diktat-Winkel)  
+- **sklearn ML-API** + **TensorFlow-Modell** + **MLflow**  
+- **Signature-Projekt** mit Pipeline-Diagramm und 5-Min-Demo  
+- Anschreiben + CV auf zollsoft zugeschnitten  
 
-## Dateien
+## Fortschritt
 
-| Datei | Inhalt |
-|-------|--------|
-| `index.html` | Einstieg |
-| `app.js` | UI & Fortschrittslogik |
-| `plan-data.js` | Wochenplan, Phasen, Checklisten |
-| `daily-plans.js` | 72 Tagespläne (generiert) |
-| `tutorials.js` | Lernressourcen pro Woche |
-| `generate-daily-plans.py` | Generator für daily-plans.js |
-| `styles.css` | Layout & Design |
+Export/Import in der Sidebar — nach Plan-Wechsel alten Fortschritt exportieren oder zurücksetzen.
 
 Tagespläne neu generieren: `python3 generate-daily-plans.py`
-
-Fortschritt bleibt im Browser gespeichert — kein Backend nötig.
-
-## Fortschritt sichern & übertragen
-
-In der Sidebar oder unter **Fortschritt → Sicherung & Übertragung**:
-
-- **Exportieren** — lädt eine JSON-Datei mit Tasks, Zeitstempeln, aktuellem Tag und optional Startdatum
-- **Import (ersetzen)** — Backup übernimmt alles (z.B. Wechsel von localhost zu GitHub Pages)
-- **Zusammenführen** — Tasks aus Backup mit lokalem Fortschritt kombinieren (neuere Zeitstempel gewinnen)

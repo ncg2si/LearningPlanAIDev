@@ -7,7 +7,25 @@
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
+    <div id="file-warning" hidden>
+      <div class="file-warning-box">
+        <h1>So startest du die App</h1>
+        <p>Diese App kann <strong>nicht</strong> per Doppelklick auf <code>index.html</code> geladen werden.</p>
+        <p>Im Terminal im Projektordner:</p>
+        <pre>cd ~/Projects/llm-lernplan-tracker
+./start.sh</pre>
+        <p>Oder manuell:</p>
+        <pre>python3 -m http.server 8765 --bind 127.0.0.1</pre>
+        <p>Dann im Browser: <a href="http://127.0.0.1:8765/">http://127.0.0.1:8765/</a></p>
+      </div>
+    </div>
     <div id="app" class="app"></div>
+    <script>
+      if (location.protocol === "file:") {
+        document.getElementById("file-warning").hidden = false;
+        document.getElementById("app").hidden = true;
+      }
+    </script>
     <script type="module" src="app.js"></script>
   </body>
 </html>

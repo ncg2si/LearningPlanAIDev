@@ -3375,6 +3375,29 @@ export function getAllDayTaskIds() {
   return ids;
 }
 
+export function getDayIndex(week, day) {
+  return DAILY_PLANS.findIndex((d) => d.week === week && d.day === day);
+}
+
+export function getNextDay(week, day) {
+  const idx = getDayIndex(week, day);
+  if (idx >= 0 && idx < DAILY_PLANS.length - 1) {
+    const n = DAILY_PLANS[idx + 1];
+    return { week: n.week, day: n.day };
+  }
+  return null;
+}
+
+export function getPrevDay(week, day) {
+  const idx = getDayIndex(week, day);
+  if (idx > 0) {
+    const p = DAILY_PLANS[idx - 1];
+    return { week: p.week, day: p.day };
+  }
+  return null;
+}
+
+/** Optional calendar hint only — not used for progress logic */
 export function suggestedDayKey(startDateIso) {
   if (!startDateIso) return { week: 1, day: "mo" };
   const start = new Date(startDateIso + "T00:00:00");

@@ -34,6 +34,32 @@ body {
   min-height: 100vh;
 }
 
+.file-warning-box {
+  max-width: 520px;
+  margin: 3rem auto;
+  padding: 1.5rem 2rem;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+}
+
+.file-warning-box h1 {
+  margin-top: 0;
+  font-size: 1.25rem;
+}
+
+.file-warning-box pre {
+  background: var(--surface-2);
+  padding: 0.75rem 1rem;
+  border-radius: 8px;
+  overflow-x: auto;
+  font-size: 0.85rem;
+}
+
+.file-warning-box a {
+  color: var(--accent);
+}
+
 .app {
   display: grid;
   grid-template-columns: 280px 1fr;
@@ -199,6 +225,33 @@ body {
   display: flex;
   flex-direction: column;
   gap: 0.5rem;
+}
+
+.backup-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.backup-actions-compact {
+  flex-direction: column;
+}
+
+.backup-actions-compact .btn,
+.backup-actions-compact .btn-import {
+  width: 100%;
+  text-align: center;
+}
+
+.btn-import {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.backup-card .sub {
+  margin-bottom: 1rem;
 }
 
 .btn {
@@ -479,6 +532,14 @@ body {
   border-color: var(--accent);
   color: var(--accent);
   width: 100%;
+  text-align: left;
+  line-height: 1.35;
+  white-space: normal;
+}
+
+.btn-accent:disabled {
+  opacity: 0.6;
+  cursor: default;
 }
 
 .link-btn {
@@ -533,6 +594,218 @@ body {
 
 .day-tab.today:not(.active) {
   border-color: var(--success);
+}
+
+.day-tab.complete:not(.active) {
+  border-color: rgba(61, 214, 140, 0.35);
+  opacity: 0.85;
+}
+
+.day-tab.complete .day-tab-pct {
+  color: var(--success);
+}
+
+.day-tab.bookmark:not(.active) {
+  box-shadow: inset 0 0 0 1px var(--accent);
+}
+
+.optional-date {
+  font-size: 0.82rem;
+  color: var(--text-muted);
+}
+
+.optional-date summary {
+  cursor: pointer;
+  margin-bottom: 0.35rem;
+}
+
+.optional-date input {
+  width: 100%;
+  background: var(--surface-2);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  color: var(--text);
+  padding: 0.45rem 0.6rem;
+  font-size: 0.85rem;
+}
+
+.flexible-hint .hint-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin-top: 0.5rem;
+}
+
+.continue-card {
+  background: linear-gradient(135deg, var(--accent-dim), var(--surface));
+  border: 1px solid rgba(108, 140, 255, 0.35);
+  border-radius: var(--radius);
+  padding: 1.25rem;
+  margin-bottom: 1.25rem;
+  cursor: pointer;
+  transition: border-color 0.15s, transform 0.15s;
+}
+
+.continue-card:hover {
+  border-color: var(--accent);
+  transform: translateY(-1px);
+}
+
+.continue-card-inner h3 {
+  margin: 0.25rem 0;
+}
+
+.continue-label {
+  font-size: 0.72rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--accent);
+  font-weight: 600;
+}
+
+.day-nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+  margin-bottom: 1rem;
+}
+
+.current-day-badge {
+  font-size: 0.85rem;
+  color: var(--accent);
+}
+
+.day-card-complete {
+  border-color: rgba(61, 214, 140, 0.35);
+}
+
+.day-card-complete .hours-badge {
+  background: var(--success-dim);
+  color: var(--success);
+}
+
+.task-item .task-body {
+  display: flex;
+  flex-direction: column;
+  gap: 0.15rem;
+  flex: 1;
+  min-width: 0;
+}
+
+.task-time {
+  font-size: 0.72rem;
+  color: var(--text-muted);
+}
+
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+  gap: 0.75rem;
+  margin-bottom: 1.25rem;
+}
+
+.stat-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+}
+
+.stat-value {
+  font-size: 1.75rem;
+  font-weight: 700;
+  color: var(--success);
+  line-height: 1.1;
+}
+
+.stat-label {
+  font-size: 0.85rem;
+  font-weight: 600;
+}
+
+.activity-chart {
+  display: flex;
+  align-items: flex-end;
+  gap: 0.35rem;
+  height: 140px;
+  margin-top: 1rem;
+  padding-top: 0.5rem;
+}
+
+.activity-bar-wrap {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 100%;
+  justify-content: flex-end;
+  gap: 0.2rem;
+  min-width: 0;
+}
+
+.activity-bar {
+  width: 100%;
+  max-width: 28px;
+  background: linear-gradient(180deg, var(--accent), var(--success));
+  border-radius: 4px 4px 0 0;
+  min-height: 4px;
+  transition: height 0.3s ease;
+}
+
+.activity-count {
+  font-size: 0.65rem;
+  color: var(--success);
+  min-height: 0.9rem;
+}
+
+.activity-date {
+  font-size: 0.6rem;
+  color: var(--text-muted);
+  white-space: nowrap;
+}
+
+.progress-table {
+  font-size: 0.85rem;
+}
+
+.progress-table th {
+  color: var(--text-muted);
+  font-weight: 500;
+  text-align: left;
+  padding: 0.45rem 0.5rem;
+  border-bottom: 1px solid var(--border);
+}
+
+.progress-table td {
+  padding: 0.45rem 0.5rem;
+  border-bottom: 1px solid var(--border);
+  vertical-align: middle;
+}
+
+.inline-bar-wrap {
+  background: var(--bg);
+  height: 8px;
+  border-radius: 999px;
+  overflow: hidden;
+  min-width: 80px;
+}
+
+.clickable-row {
+  cursor: pointer;
+  transition: background 0.15s;
+}
+
+.clickable-row:hover {
+  background: var(--surface-2);
+}
+
+.progress-cards {
+  margin-top: 0;
 }
 
 .day-tab-label {
@@ -668,13 +941,6 @@ body {
   padding: 0.85rem 1rem;
 }
 
-.tutorial-header {
-  display: flex;
-  justify-content: space-between;
-  gap: 0.5rem;
-  margin-bottom: 0.35rem;
-}
-
 .tutorial-type {
   font-size: 0.68rem;
   text-transform: uppercase;
@@ -700,6 +966,54 @@ body {
 
 .tutorial-card h4 a:hover {
   color: var(--accent);
+}
+
+.tutorial-card-optional {
+  border-style: dashed;
+  border-color: rgba(167, 139, 250, 0.35);
+}
+
+.tutorial-optional {
+  font-size: 0.65rem;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: var(--phase-b);
+  font-weight: 600;
+  background: rgba(167, 139, 250, 0.12);
+  padding: 0.1rem 0.4rem;
+  border-radius: 999px;
+}
+
+.supplement-title {
+  color: var(--phase-b);
+}
+
+.supplement-note {
+  margin: -0.35rem 0 0.75rem;
+}
+
+.supplement-inline-title {
+  margin: 1rem 0 0.5rem;
+  font-size: 0.9rem;
+  color: var(--phase-b);
+}
+
+.supplement-section-card {
+  border-style: dashed;
+  border-color: rgba(167, 139, 250, 0.25);
+}
+
+.tutorial-header {
+  display: flex;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.35rem 0.5rem;
+  margin-bottom: 0.35rem;
+}
+
+.tutorial-header .tutorial-meta {
+  margin-left: auto;
 }
 
 .tutorial-when,

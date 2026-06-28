@@ -7,23 +7,28 @@ Persönlicher Fortschrittstracker für den 12-Wochen Vollzeit-Plan (LLM/RAG → 
 Kein Build nötig — einfach im Browser öffnen:
 
 ```bash
-open index.html
+cd /Users/cami/Projects/llm-lernplan-tracker
+./start.sh
 ```
 
-Oder lokal mit einem kleinen Server (empfohlen für ES-Module):
+Oder manuell:
 
 ```bash
-python3 -m http.server 8080
+python3 -m http.server 8765 --bind 127.0.0.1
 ```
 
-Dann im Browser: http://localhost:8080
+Dann im Browser: **http://127.0.0.1:8765/** (nicht `index.html` per Doppelklick öffnen!)
 
 ## Features
 
 - **72 Tagespläne** (Mo–Sa pro Woche) mit Zeitblöcken und Checklisten
+- **Flexibles Tempo** — pausieren jederzeit, an jedem Tag weitermachen
+- **Fortschritt mit Zeitstempel** — jeder Task speichert Datum & Uhrzeit
+- **Export / Import** — Fortschritt als JSON sichern und auf anderem Gerät oder URL übernehmen
+- **Fortschrittsübersicht** — Statistik, 14-Tage-Aktivität, Wochen- & Tageshistorie
+- **Weitermachen** — springt zum nächsten offenen Tag
 - **Detaillierte Tutorials** — Links, Kosten, Dauer, konkrete Lernschritte
-- Fortschritt per Checkbox (gespeichert in `localStorage`)
-- Startdatum → Button „Heute“ springt zum aktuellen Tag
+- **Optional vertiefen** — DLAI, Anthropic, Pinecone, Simon Willison (Ergänzung, nicht Pflicht)
 - Bewerbungs-Checkliste & Interview-Fragen
 
 ## Dateien
@@ -41,3 +46,11 @@ Dann im Browser: http://localhost:8080
 Tagespläne neu generieren: `python3 generate-daily-plans.py`
 
 Fortschritt bleibt im Browser gespeichert — kein Backend nötig.
+
+## Fortschritt sichern & übertragen
+
+In der Sidebar oder unter **Fortschritt → Sicherung & Übertragung**:
+
+- **Exportieren** — lädt eine JSON-Datei mit Tasks, Zeitstempeln, aktuellem Tag und optional Startdatum
+- **Import (ersetzen)** — Backup übernimmt alles (z.B. Wechsel von localhost zu GitHub Pages)
+- **Zusammenführen** — Tasks aus Backup mit lokalem Fortschritt kombinieren (neuere Zeitstempel gewinnen)

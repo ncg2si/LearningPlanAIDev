@@ -1,14 +1,14 @@
-/** Auto-generated — 12-week zollsoft ML/DL sprint */
+/** Auto-generated daily plans — 12 weeks × 6 days */
 
 export const DAY_ORDER = ["mo", "di", "mi", "do", "fr", "sa"];
 
 export const DAY_LABELS = {
-  "mo": "Montag",
-  "di": "Dienstag",
-  "mi": "Mittwoch",
-  "do": "Donnerstag",
-  "fr": "Freitag",
-  "sa": "Samstag"
+  mo: "Montag",
+  di: "Dienstag",
+  mi: "Mittwoch",
+  do: "Donnerstag",
+  fr: "Freitag",
+  sa: "Samstag",
 };
 
 export const DAILY_PLANS = [
@@ -16,16 +16,28 @@ export const DAILY_PLANS = [
     "week": 1,
     "day": "mo",
     "label": "Montag",
-    "goal": "Dev-Setup",
-    "deliverable": "Repo + venv",
+    "goal": "Dev-Setup steht",
+    "deliverable": "Python-Env + GitHub-Repo angelegt",
     "hours": 7.5,
     "blocks": [
       {
         "time": "09:00–10:30",
-        "title": "Theorie / Tutorial",
+        "title": "Theorie: Python & Git",
         "items": [
-          "Python 3.11, uv/venv",
-          "Projektstruktur app/"
+          "Python 3.11+ installieren",
+          "Pro Git Kap. 1–2 lesen (DE)"
+        ],
+        "tutorialIds": [
+          "git-progit",
+          "python-typing"
+        ]
+      },
+      {
+        "time": "10:45–12:30",
+        "title": "Hands-on: Modern Python",
+        "items": [
+          "uv oder venv einrichten",
+          "5 Übungen: Type Hints, dataclasses, pathlib"
         ],
         "tutorialIds": [
           "uv-docs",
@@ -33,51 +45,48 @@ export const DAILY_PLANS = [
         ]
       },
       {
-        "time": "10:45–12:30",
-        "title": "Hands-on",
+        "time": "13:30–15:30",
+        "title": "Projekt: Repo anlegen",
         "items": [
-          "Type Hints Übungen"
+          "GitHub Repo ml-api-starter",
+          "Ordnerstruktur: app/, tests/"
         ],
         "tutorialIds": [
-          "python-typing"
+          "git-progit"
         ]
       },
       {
-        "time": "13:30–15:30",
-        "title": "Projekt",
-        "items": [
-          "Repo medizin-ml-portfolio"
-        ],
-        "tutorialIds": []
-      },
-      {
         "time": "15:45–17:00",
-        "title": "Tests & Doku",
+        "title": "Dokumentation",
         "items": [
-          "README, .gitignore"
+          "README Entwurf",
+          ".gitignore für Python"
         ],
         "tutorialIds": []
       }
     ],
     "tasks": [
-      "Python installiert",
-      "Repo erstellt",
-      "Erster Commit"
+      "Python 3.11+ installiert",
+      "uv/venv funktioniert",
+      "GitHub-Repo erstellt",
+      "Erster Commit gepusht",
+      "README + .gitignore"
     ]
   },
   {
     "week": 1,
     "day": "di",
     "label": "Dienstag",
-    "goal": "FastAPI Basics",
-    "deliverable": "/health live",
+    "goal": "FastAPI Basics sitzen",
+    "deliverable": "GET /health + POST /predict Stub",
     "hours": 7.5,
     "blocks": [
       {
         "time": "09:00–10:30",
-        "title": "Theorie / Tutorial",
+        "title": "FastAPI Tutorial Kap. 1–4",
         "items": [
-          "FastAPI Kap 1–3"
+          "First Steps bis Body",
+          "Pydantic Models verstehen"
         ],
         "tutorialIds": [
           "fastapi-tutorial"
@@ -85,9 +94,10 @@ export const DAILY_PLANS = [
       },
       {
         "time": "10:45–12:30",
-        "title": "Hands-on",
+        "title": "Hands-on: Erste Routes",
         "items": [
-          "Routes bauen"
+          "GET /health",
+          "POST /predict mit festem JSON"
         ],
         "tutorialIds": [
           "fastapi-tutorial"
@@ -95,219 +105,58 @@ export const DAILY_PLANS = [
       },
       {
         "time": "13:30–15:30",
-        "title": "Projekt",
+        "title": "Projektstruktur",
         "items": [
-          "main.py Struktur"
+          "main.py, schemas.py anlegen",
+          "uvicorn starten"
         ],
-        "tutorialIds": []
+        "tutorialIds": [
+          "fastapi-tutorial"
+        ]
       },
       {
         "time": "15:45–17:00",
-        "title": "Tests & Doku",
+        "title": "Testen",
         "items": [
-          "pytest Setup"
+          "/docs im Browser öffnen",
+          "curl gegen /health"
         ],
         "tutorialIds": []
       }
     ],
     "tasks": [
-      "FastAPI Tutorial",
-      "/health",
-      "uvicorn"
+      "FastAPI Kap. 1–4 gelesen",
+      "GET /health live",
+      "POST /predict Stub",
+      "OpenAPI /docs getestet",
+      "Commit gepusht"
     ]
   },
   {
     "week": 1,
     "day": "mi",
     "label": "Mittwoch",
-    "goal": "Tests & Git",
-    "deliverable": "CI-ready",
+    "goal": "Echtes ML-Modell in API",
+    "deliverable": "sklearn-Modell speichert + lädt",
     "hours": 7.5,
     "blocks": [
       {
         "time": "09:00–10:30",
-        "title": "Theorie / Tutorial",
+        "title": "Dataset & sklearn",
         "items": [
-          "pytest, TestClient",
-          "Git Branching"
+          "Iris oder Titanic Dataset wählen",
+          "sklearn Quickstart durcharbeiten"
         ],
         "tutorialIds": [
-          "pytest-docs",
-          "git-progit"
+          "sklearn-quickstart"
         ]
       },
       {
         "time": "10:45–12:30",
-        "title": "Hands-on",
+        "title": "Modell trainieren",
         "items": [
-          "5 Tests"
-        ],
-        "tutorialIds": [
-          "pytest-docs"
-        ]
-      },
-      {
-        "time": "13:30–15:30",
-        "title": "Projekt",
-        "items": [
-          "PR Workflow"
-        ],
-        "tutorialIds": []
-      },
-      {
-        "time": "15:45–17:00",
-        "title": "Tests & Doku",
-        "items": [
-          "Badge optional"
-        ],
-        "tutorialIds": []
-      }
-    ],
-    "tasks": [
-      "5 Tests grün",
-      "Branch geübt"
-    ]
-  },
-  {
-    "week": 1,
-    "day": "do",
-    "label": "Donnerstag",
-    "goal": "Code Quality",
-    "deliverable": "Sauberer Code",
-    "hours": 7.5,
-    "blocks": [
-      {
-        "time": "09:00–10:30",
-        "title": "Theorie / Tutorial",
-        "items": [
-          "Clean Code ML",
-          "Modulstruktur"
-        ],
-        "tutorialIds": [
-          "real-python"
-        ]
-      },
-      {
-        "time": "10:45–12:30",
-        "title": "Hands-on",
-        "items": [
-          "Refactor app/"
-        ],
-        "tutorialIds": []
-      },
-      {
-        "time": "13:30–15:30",
-        "title": "Projekt",
-        "items": [
-          "schemas.py, models/"
-        ],
-        "tutorialIds": []
-      },
-      {
-        "time": "15:45–17:00",
-        "title": "Tests & Doku",
-        "items": [
-          "Type Hints vollständig"
-        ],
-        "tutorialIds": []
-      }
-    ],
-    "tasks": [
-      "Module getrennt",
-      "mypy skim"
-    ]
-  },
-  {
-    "week": 1,
-    "day": "fr",
-    "label": "Freitag",
-    "goal": "Meilenstein W1",
-    "deliverable": "Engineering Basis",
-    "hours": 7.5,
-    "blocks": [
-      {
-        "time": "09:00–10:30",
-        "title": "Theorie / Tutorial",
-        "items": [
-          "Review"
-        ],
-        "tutorialIds": []
-      },
-      {
-        "time": "10:45–12:30",
-        "title": "Hands-on",
-        "items": [
-          "Letzte Tests"
-        ],
-        "tutorialIds": []
-      },
-      {
-        "time": "13:30–15:30",
-        "title": "Projekt",
-        "items": [
-          "README final"
-        ],
-        "tutorialIds": []
-      },
-      {
-        "time": "15:45–17:00",
-        "title": "Tests & Doku",
-        "items": [
-          "Push"
-        ],
-        "tutorialIds": []
-      }
-    ],
-    "tasks": [
-      "Meilenstein W1",
-      "GitHub link"
-    ]
-  },
-  {
-    "week": 1,
-    "day": "sa",
-    "label": "Samstag",
-    "goal": "Puffer W1",
-    "deliverable": "Lücken",
-    "hours": 3,
-    "blocks": [
-      {
-        "time": "09:00–12:00",
-        "title": "Puffer",
-        "items": [
-          "Nacharbeit"
-        ],
-        "tutorialIds": []
-      }
-    ],
-    "tasks": []
-  },
-  {
-    "week": 2,
-    "day": "mo",
-    "label": "Montag",
-    "goal": "sklearn Baseline",
-    "deliverable": "Model trainiert",
-    "hours": 7.5,
-    "blocks": [
-      {
-        "time": "09:00–10:30",
-        "title": "Theorie / Tutorial",
-        "items": [
-          "sklearn Pipeline",
-          "Healthcare Dataset suchen"
-        ],
-        "tutorialIds": [
-          "sklearn-quickstart",
-          "sklearn-pipeline"
-        ]
-      },
-      {
-        "time": "10:45–12:30",
-        "title": "Hands-on",
-        "items": [
-          "Train/Test",
-          "Cross-Val"
+          "Train/Test Split",
+          "Modell als .pkl speichern"
         ],
         "tutorialIds": [
           "sklearn-quickstart"
@@ -315,91 +164,46 @@ export const DAILY_PLANS = [
       },
       {
         "time": "13:30–15:30",
-        "title": "Projekt",
+        "title": "API Integration",
         "items": [
-          "Baseline fit"
+          "Modell beim App-Start laden",
+          "Predict mit echtem Input"
         ],
-        "tutorialIds": []
+        "tutorialIds": [
+          "fastapi-tutorial"
+        ]
       },
       {
         "time": "15:45–17:00",
-        "title": "Tests & Doku",
+        "title": "Fehlerfälle",
         "items": [
-          "Metriken notieren"
+          "Falsche Inputs testen",
+          "Sinnvolle Error Messages"
         ],
         "tutorialIds": []
       }
     ],
     "tasks": [
-      "Dataset gewählt",
-      "Baseline F1"
+      "Dataset gewählt + trainiert",
+      "Modell als .pkl gespeichert",
+      "Load beim Startup",
+      "Echte Predictions funktionieren"
     ]
   },
   {
-    "week": 2,
-    "day": "di",
-    "label": "Dienstag",
-    "goal": "Metriken medizin",
-    "deliverable": "Confusion + ROC",
+    "week": 1,
+    "day": "do",
+    "label": "Donnerstag",
+    "goal": "API production-ready lokal",
+    "deliverable": "Validierung + pytest",
     "hours": 7.5,
     "blocks": [
       {
         "time": "09:00–10:30",
-        "title": "Theorie / Tutorial",
+        "title": "FastAPI Advanced",
         "items": [
-          "F1, P/R medizin",
-          "Confusion Matrix"
-        ],
-        "tutorialIds": [
-          "sklearn-metrics",
-          "statquest-metrics"
-        ]
-      },
-      {
-        "time": "10:45–12:30",
-        "title": "Hands-on",
-        "items": [
-          "Plots"
-        ],
-        "tutorialIds": [
-          "sklearn-metrics"
-        ]
-      },
-      {
-        "time": "13:30–15:30",
-        "title": "Projekt",
-        "items": [
-          "classification_report"
-        ],
-        "tutorialIds": []
-      },
-      {
-        "time": "15:45–17:00",
-        "title": "Tests & Doku",
-        "items": [
-          "Interview-Notiz"
-        ],
-        "tutorialIds": []
-      }
-    ],
-    "tasks": [
-      "ROC + CM im Notebook"
-    ]
-  },
-  {
-    "week": 2,
-    "day": "mi",
-    "label": "Mittwoch",
-    "goal": "FastAPI ML",
-    "deliverable": "/predict live",
-    "hours": 7.5,
-    "blocks": [
-      {
-        "time": "09:00–10:30",
-        "title": "Theorie / Tutorial",
-        "items": [
-          "Model loading",
-          "Pydantic schema"
+          "Dependency Injection",
+          "Error Handling Kap."
         ],
         "tutorialIds": [
           "fastapi-tutorial"
@@ -407,10 +211,10 @@ export const DAILY_PLANS = [
       },
       {
         "time": "10:45–12:30",
-        "title": "Hands-on",
+        "title": "Validierung",
         "items": [
-          "joblib load",
-          "/predict"
+          "Pydantic Input-Schema",
+          "HTTP 422 bei Fehlern"
         ],
         "tutorialIds": [
           "fastapi-tutorial"
@@ -418,794 +222,121 @@ export const DAILY_PLANS = [
       },
       {
         "time": "13:30–15:30",
-        "title": "Projekt",
+        "title": "Refactoring",
         "items": [
-          "Error handling"
+          "model.py, main.py, schemas.py trennen"
         ],
         "tutorialIds": []
       },
       {
         "time": "15:45–17:00",
-        "title": "Tests & Doku",
+        "title": "Tests",
         "items": [
-          "Tests"
+          "pytest installieren",
+          "3–5 Tests mit TestClient"
         ],
-        "tutorialIds": []
+        "tutorialIds": [
+          "pytest-docs"
+        ]
       }
     ],
     "tasks": [
-      "API lokal OK"
+      "Code in Module aufgeteilt",
+      "Input-Validierung aktiv",
+      "3+ pytest Tests grün",
+      "Edge Cases getestet"
     ]
   },
   {
-    "week": 2,
-    "day": "do",
-    "label": "Donnerstag",
-    "goal": "Docker Deploy",
-    "deliverable": "Container",
-    "hours": 7.5,
-    "blocks": [
-      {
-        "time": "09:00–10:30",
-        "title": "Theorie / Tutorial",
-        "items": [
-          "Dockerfile",
-          "compose"
-        ],
-        "tutorialIds": [
-          "docker-getting-started",
-          "docker-compose"
-        ]
-      },
-      {
-        "time": "10:45–12:30",
-        "title": "Hands-on",
-        "items": [
-          "docker build"
-        ],
-        "tutorialIds": [
-          "docker-getting-started"
-        ]
-      },
-      {
-        "time": "13:30–15:30",
-        "title": "Projekt",
-        "items": [
-          ".env.example"
-        ],
-        "tutorialIds": []
-      },
-      {
-        "time": "15:45–17:00",
-        "title": "Tests & Doku",
-        "items": [
-          "curl test"
-        ],
-        "tutorialIds": []
-      }
-    ],
-    "tasks": [
-      "Dockerfile",
-      "compose up"
-    ]
-  },
-  {
-    "week": 2,
+    "week": 1,
     "day": "fr",
     "label": "Freitag",
-    "goal": "Meilenstein W2",
-    "deliverable": "ML-API live",
+    "goal": "Woche 1 abschließen",
+    "deliverable": "Meilenstein: API lokal + GitHub",
     "hours": 7.5,
     "blocks": [
       {
         "time": "09:00–10:30",
-        "title": "Theorie / Tutorial",
+        "title": "Code Review selbst",
         "items": [
-          "Railway/Render"
+          "Dead Code entfernen",
+          "Type Hints ergänzen"
         ],
-        "tutorialIds": [
-          "railway-deploy"
-        ]
+        "tutorialIds": []
       },
       {
         "time": "10:45–12:30",
-        "title": "Hands-on",
+        "title": "README finalisieren",
         "items": [
-          "Deploy"
+          "Setup-Anleitung",
+          "Architektur ASCII/Mermaid",
+          "curl Beispiel"
         ],
-        "tutorialIds": [
-          "railway-deploy"
-        ]
+        "tutorialIds": []
       },
       {
         "time": "13:30–15:30",
-        "title": "Projekt",
+        "title": "Polish",
         "items": [
-          "Live URL README"
+          "Letzte Bugs fixen",
+          "requirements.txt / pyproject.toml"
         ],
         "tutorialIds": []
       },
       {
         "time": "15:45–17:00",
-        "title": "Tests & Doku",
+        "title": "Meilenstein",
         "items": [
-          "Meilenstein W2"
+          "Alles auf GitHub",
+          "Repo-Link notieren"
         ],
         "tutorialIds": []
       }
     ],
     "tasks": [
-      "Live URL",
-      "Eval README"
+      "README vollständig",
+      "Architektur-Diagramm",
+      "Meilenstein Woche 1 erreicht"
     ]
   },
   {
-    "week": 2,
+    "week": 1,
     "day": "sa",
     "label": "Samstag",
-    "goal": "Puffer W2",
-    "deliverable": "Deploy fix",
+    "goal": "Puffer & Vertiefung",
+    "deliverable": "Schwachstellen behoben",
     "hours": 3,
     "blocks": [
       {
         "time": "09:00–12:00",
-        "title": "Puffer",
+        "title": "Nacharbeit",
         "items": [
-          "Debug deploy"
+          "Offene Tasks aus Mo–Fr",
+          "Optional: Real Python Type Hints"
         ],
-        "tutorialIds": []
+        "tutorialIds": [
+          "python-typing"
+        ]
       }
     ],
-    "tasks": []
+    "tasks": [
+      "Offene Woche-1-Punkte erledigt"
+    ]
   },
   {
-    "week": 3,
+    "week": 2,
     "day": "mo",
     "label": "Montag",
-    "goal": "PyTorch Setup",
-    "deliverable": "Tensors",
+    "goal": "Docker Basics",
+    "deliverable": "App läuft im Container",
     "hours": 7.5,
     "blocks": [
       {
         "time": "09:00–10:30",
-        "title": "Theorie / Tutorial",
+        "title": "Docker Getting Started",
         "items": [
-          "PyTorch 60min",
-          "autograd"
-        ],
-        "tutorialIds": [
-          "pytorch-60min"
-        ]
-      },
-      {
-        "time": "10:45–12:30",
-        "title": "Hands-on",
-        "items": [
-          "Tensor Übungen"
-        ],
-        "tutorialIds": [
-          "pytorch-60min"
-        ]
-      },
-      {
-        "time": "13:30–15:30",
-        "title": "Projekt",
-        "items": [
-          "MNIST laden"
-        ],
-        "tutorialIds": []
-      },
-      {
-        "time": "15:45–17:00",
-        "title": "Tests & Doku",
-        "items": [
-          "GPU check"
-        ],
-        "tutorialIds": []
-      }
-    ],
-    "tasks": [
-      "Tensors OK",
-      "MNIST loaded"
-    ]
-  },
-  {
-    "week": 3,
-    "day": "di",
-    "label": "Dienstag",
-    "goal": "Training Loop",
-    "deliverable": "1 Epoch",
-    "hours": 7.5,
-    "blocks": [
-      {
-        "time": "09:00–10:30",
-        "title": "Theorie / Tutorial",
-        "items": [
-          "Loop Anatomie",
-          "Loss, Optimizer"
-        ],
-        "tutorialIds": [
-          "pytorch-training"
-        ]
-      },
-      {
-        "time": "10:45–12:30",
-        "title": "Hands-on",
-        "items": [
-          "Manual loop"
-        ],
-        "tutorialIds": [
-          "pytorch-training"
-        ]
-      },
-      {
-        "time": "13:30–15:30",
-        "title": "Projekt",
-        "items": [
-          "Loss plot"
-        ],
-        "tutorialIds": []
-      },
-      {
-        "time": "15:45–17:00",
-        "title": "Tests & Doku",
-        "items": [
-          "Checkpoint"
-        ],
-        "tutorialIds": []
-      }
-    ],
-    "tasks": [
-      "1 epoch OK"
-    ]
-  },
-  {
-    "week": 3,
-    "day": "mi",
-    "label": "Mittwoch",
-    "goal": "Volltraining",
-    "deliverable": "MNIST >90%",
-    "hours": 7.5,
-    "blocks": [
-      {
-        "time": "09:00–10:30",
-        "title": "Theorie / Tutorial",
-        "items": [
-          "nn.Module",
-          "DataLoader"
-        ],
-        "tutorialIds": [
-          "pytorch-training"
-        ]
-      },
-      {
-        "time": "10:45–12:30",
-        "title": "Hands-on",
-        "items": [
-          "5 epochs"
-        ],
-        "tutorialIds": [
-          "pytorch-training"
-        ]
-      },
-      {
-        "time": "13:30–15:30",
-        "title": "Projekt",
-        "items": [
-          "Val accuracy"
-        ],
-        "tutorialIds": []
-      },
-      {
-        "time": "15:45–17:00",
-        "title": "Tests & Doku",
-        "items": [
-          "model.pt"
-        ],
-        "tutorialIds": []
-      }
-    ],
-    "tasks": [
-      ">90% val"
-    ]
-  },
-  {
-    "week": 3,
-    "day": "do",
-    "label": "Donnerstag",
-    "goal": "Overfitting",
-    "deliverable": "Regularization",
-    "hours": 7.5,
-    "blocks": [
-      {
-        "time": "09:00–10:30",
-        "title": "Theorie / Tutorial",
-        "items": [
-          "Dropout",
-          "Early stop"
-        ],
-        "tutorialIds": [
-          "pytorch-training"
-        ]
-      },
-      {
-        "time": "10:45–12:30",
-        "title": "Hands-on",
-        "items": [
-          "Experiment"
-        ],
-        "tutorialIds": []
-      },
-      {
-        "time": "13:30–15:30",
-        "title": "Projekt",
-        "items": [
-          "Curves compare"
-        ],
-        "tutorialIds": []
-      },
-      {
-        "time": "15:45–17:00",
-        "title": "Tests & Doku",
-        "items": [
-          "Best save"
-        ],
-        "tutorialIds": []
-      }
-    ],
-    "tasks": [
-      "Dropout doc"
-    ]
-  },
-  {
-    "week": 3,
-    "day": "fr",
-    "label": "Freitag",
-    "goal": "Meilenstein W3",
-    "deliverable": "Loop erklärt",
-    "hours": 7.5,
-    "blocks": [
-      {
-        "time": "09:00–10:30",
-        "title": "Theorie / Tutorial",
-        "items": [
-          "5 Schritte üben"
-        ],
-        "tutorialIds": []
-      },
-      {
-        "time": "10:45–12:30",
-        "title": "Hands-on",
-        "items": [
-          "Inference test"
-        ],
-        "tutorialIds": []
-      },
-      {
-        "time": "13:30–15:30",
-        "title": "Projekt",
-        "items": [
-          "README pytorch"
-        ],
-        "tutorialIds": []
-      },
-      {
-        "time": "15:45–17:00",
-        "title": "Tests & Doku",
-        "items": [
-          "Meilenstein W3"
-        ],
-        "tutorialIds": []
-      }
-    ],
-    "tasks": [
-      "Loop laut",
-      "model.pt"
-    ]
-  },
-  {
-    "week": 3,
-    "day": "sa",
-    "label": "Samstag",
-    "goal": "Loop üben",
-    "deliverable": "Auswendig",
-    "hours": 3,
-    "blocks": [
-      {
-        "time": "09:00–12:00",
-        "title": "Puffer",
-        "items": [
-          "5 Schritte"
-        ],
-        "tutorialIds": []
-      }
-    ],
-    "tasks": []
-  },
-  {
-    "week": 4,
-    "day": "mo",
-    "label": "Montag",
-    "goal": "HAM10000",
-    "deliverable": "Dataset ready",
-    "hours": 7.5,
-    "blocks": [
-      {
-        "time": "09:00–10:30",
-        "title": "Theorie / Tutorial",
-        "items": [
-          "HAM10000 Docs",
-          "Class balance"
-        ],
-        "tutorialIds": [
-          "ham10000",
-          "cs231n-cnn"
-        ]
-      },
-      {
-        "time": "10:45–12:30",
-        "title": "Hands-on",
-        "items": [
-          "Download",
-          "EDA Bilder"
-        ],
-        "tutorialIds": [
-          "ham10000"
-        ]
-      },
-      {
-        "time": "13:30–15:30",
-        "title": "Projekt",
-        "items": [
-          "Train/val split"
-        ],
-        "tutorialIds": []
-      },
-      {
-        "time": "15:45–17:00",
-        "title": "Tests & Doku",
-        "items": [
-          "Distribution plot"
-        ],
-        "tutorialIds": []
-      }
-    ],
-    "tasks": [
-      "Dataset geladen",
-      "EDA"
-    ]
-  },
-  {
-    "week": 4,
-    "day": "di",
-    "label": "Dienstag",
-    "goal": "Transfer Learning",
-    "deliverable": "ResNet train",
-    "hours": 7.5,
-    "blocks": [
-      {
-        "time": "09:00–10:30",
-        "title": "Theorie / Tutorial",
-        "items": [
-          "Transfer learning",
-          "Freeze layers"
-        ],
-        "tutorialIds": [
-          "pytorch-transfer"
-        ]
-      },
-      {
-        "time": "10:45–12:30",
-        "title": "Hands-on",
-        "items": [
-          "ResNet18 fine-tune"
-        ],
-        "tutorialIds": [
-          "pytorch-transfer"
-        ]
-      },
-      {
-        "time": "13:30–15:30",
-        "title": "Projekt",
-        "items": [
-          "Augmentation"
-        ],
-        "tutorialIds": []
-      },
-      {
-        "time": "15:45–17:00",
-        "title": "Tests & Doku",
-        "items": [
-          "Train start"
-        ],
-        "tutorialIds": []
-      }
-    ],
-    "tasks": [
-      "ResNet running"
-    ]
-  },
-  {
-    "week": 4,
-    "day": "mi",
-    "label": "Mittwoch",
-    "goal": "Augmentation",
-    "deliverable": "F1 verbessern",
-    "hours": 7.5,
-    "blocks": [
-      {
-        "time": "09:00–10:30",
-        "title": "Theorie / Tutorial",
-        "items": [
-          "Medical aug care",
-          "Weighted loss"
-        ],
-        "tutorialIds": [
-          "pytorch-augment"
-        ]
-      },
-      {
-        "time": "10:45–12:30",
-        "title": "Hands-on",
-        "items": [
-          "Aug pipeline",
-          "Retrain"
-        ],
-        "tutorialIds": [
-          "pytorch-augment"
-        ]
-      },
-      {
-        "time": "13:30–15:30",
-        "title": "Projekt",
-        "items": [
-          "Per-class metrics"
-        ],
-        "tutorialIds": []
-      },
-      {
-        "time": "15:45–17:00",
-        "title": "Tests & Doku",
-        "items": [
-          "Confusion matrix"
-        ],
-        "tutorialIds": []
-      }
-    ],
-    "tasks": [
-      "F1 improved"
-    ]
-  },
-  {
-    "week": 4,
-    "day": "do",
-    "label": "Donnerstag",
-    "goal": "Eval CV",
-    "deliverable": "Medical metrics",
-    "hours": 7.5,
-    "blocks": [
-      {
-        "time": "09:00–10:30",
-        "title": "Theorie / Tutorial",
-        "items": [
-          "Recall in medizin",
-          "Error analysis"
-        ],
-        "tutorialIds": [
-          "sklearn-metrics"
-        ]
-      },
-      {
-        "time": "10:45–12:30",
-        "title": "Hands-on",
-        "items": [
-          "10 failure cases"
-        ],
-        "tutorialIds": []
-      },
-      {
-        "time": "13:30–15:30",
-        "title": "Projekt",
-        "items": [
-          "Report schreiben"
-        ],
-        "tutorialIds": []
-      },
-      {
-        "time": "15:45–17:00",
-        "title": "Tests & Doku",
-        "items": [
-          "Plots ins repo"
-        ],
-        "tutorialIds": []
-      }
-    ],
-    "tasks": [
-      "Eval report"
-    ]
-  },
-  {
-    "week": 4,
-    "day": "fr",
-    "label": "Freitag",
-    "goal": "Meilenstein W4",
-    "deliverable": "Best .pt",
-    "hours": 7.5,
-    "blocks": [
-      {
-        "time": "09:00–10:30",
-        "title": "Theorie / Tutorial",
-        "items": [
-          "Model select"
-        ],
-        "tutorialIds": []
-      },
-      {
-        "time": "10:45–12:30",
-        "title": "Hands-on",
-        "items": [
-          "Save best"
-        ],
-        "tutorialIds": []
-      },
-      {
-        "time": "13:30–15:30",
-        "title": "Projekt",
-        "items": [
-          "README metrics"
-        ],
-        "tutorialIds": []
-      },
-      {
-        "time": "15:45–17:00",
-        "title": "Tests & Doku",
-        "items": [
-          "Meilenstein W4"
-        ],
-        "tutorialIds": []
-      }
-    ],
-    "tasks": [
-      "best.pt",
-      "F1 doc"
-    ]
-  },
-  {
-    "week": 4,
-    "day": "sa",
-    "label": "Samstag",
-    "goal": "Paper skim",
-    "deliverable": "Medizin CV",
-    "hours": 3,
-    "blocks": [
-      {
-        "time": "09:00–12:00",
-        "title": "Puffer",
-        "items": [
-          "HAM10000 paper skim"
-        ],
-        "tutorialIds": []
-      }
-    ],
-    "tasks": [
-      "ham10000"
-    ]
-  },
-  {
-    "week": 5,
-    "day": "mo",
-    "label": "Montag",
-    "goal": "Inference Design",
-    "deliverable": "Preprocess spec",
-    "hours": 7.5,
-    "blocks": [
-      {
-        "time": "09:00–10:30",
-        "title": "Theorie / Tutorial",
-        "items": [
-          "FastAPI UploadFile",
-          "Image tensor"
-        ],
-        "tutorialIds": [
-          "pytorch-inference",
-          "fastapi-tutorial"
-        ]
-      },
-      {
-        "time": "10:45–12:30",
-        "title": "Hands-on",
-        "items": [
-          "preprocess()"
-        ],
-        "tutorialIds": [
-          "pytorch-inference"
-        ]
-      },
-      {
-        "time": "13:30–15:30",
-        "title": "Projekt",
-        "items": [
-          "Mock endpoint"
-        ],
-        "tutorialIds": []
-      },
-      {
-        "time": "15:45–17:00",
-        "title": "Tests & Doku",
-        "items": [
-          "Tests"
-        ],
-        "tutorialIds": []
-      }
-    ],
-    "tasks": [
-      "Preprocess func"
-    ]
-  },
-  {
-    "week": 5,
-    "day": "di",
-    "label": "Dienstag",
-    "goal": "CV API",
-    "deliverable": "/predict/image",
-    "hours": 7.5,
-    "blocks": [
-      {
-        "time": "09:00–10:30",
-        "title": "Theorie / Tutorial",
-        "items": [
-          "torch.no_grad",
-          "softmax top-k"
-        ],
-        "tutorialIds": [
-          "pytorch-inference"
-        ]
-      },
-      {
-        "time": "10:45–12:30",
-        "title": "Hands-on",
-        "items": [
-          "Endpoint live"
-        ],
-        "tutorialIds": [
-          "pytorch-inference"
-        ]
-      },
-      {
-        "time": "13:30–15:30",
-        "title": "Projekt",
-        "items": [
-          "10 test images"
-        ],
-        "tutorialIds": []
-      },
-      {
-        "time": "15:45–17:00",
-        "title": "Tests & Doku",
-        "items": [
-          "Error cases"
-        ],
-        "tutorialIds": []
-      }
-    ],
-    "tasks": [
-      "API OK"
-    ]
-  },
-  {
-    "week": 5,
-    "day": "mi",
-    "label": "Mittwoch",
-    "goal": "Docker CV",
-    "deliverable": "Container",
-    "hours": 7.5,
-    "blocks": [
-      {
-        "time": "09:00–10:30",
-        "title": "Theorie / Tutorial",
-        "items": [
-          "Model volume",
-          "Dockerfile"
+          "Docs Kap. 1–3",
+          "Images vs Container"
         ],
         "tutorialIds": [
           "docker-getting-started"
@@ -1213,9 +344,64 @@ export const DAILY_PLANS = [
       },
       {
         "time": "10:45–12:30",
+        "title": "Dockerfile schreiben",
+        "items": [
+          "Dockerfile für FastAPI",
+          "docker build + run"
+        ],
+        "tutorialIds": [
+          "docker-getting-started"
+        ]
+      },
+      {
+        "time": "13:30–15:30",
+        "title": "Optimieren",
+        "items": [
+          ".dockerignore",
+          "Port mapping testen"
+        ],
+        "tutorialIds": []
+      },
+      {
+        "time": "15:45–17:00",
+        "title": "Dokumentieren",
+        "items": [
+          "Docker-Befehle ins README"
+        ],
+        "tutorialIds": []
+      }
+    ],
+    "tasks": [
+      "Dockerfile funktioniert",
+      "Container startet lokal",
+      ".dockerignore",
+      "README Docker-Sektion"
+    ]
+  },
+  {
+    "week": 2,
+    "day": "di",
+    "label": "Dienstag",
+    "goal": "docker-compose",
+    "deliverable": "compose up startet App",
+    "hours": 7.5,
+    "blocks": [
+      {
+        "time": "09:00–10:30",
+        "title": "Compose Tutorial",
+        "items": [
+          "compose.yaml Grundlagen"
+        ],
+        "tutorialIds": [
+          "docker-compose"
+        ]
+      },
+      {
+        "time": "10:45–12:30",
         "title": "Hands-on",
         "items": [
-          "docker build"
+          "App-Service definieren",
+          "Volumes für Model"
         ],
         "tutorialIds": [
           "docker-compose"
@@ -1223,49 +409,105 @@ export const DAILY_PLANS = [
       },
       {
         "time": "13:30–15:30",
-        "title": "Projekt",
+        "title": "Env-Variablen",
         "items": [
-          "compose"
+          ".env + .env.example",
+          "Secrets nicht committen"
         ],
         "tutorialIds": []
       },
       {
         "time": "15:45–17:00",
-        "title": "Tests & Doku",
+        "title": "Test",
         "items": [
-          "E2E local"
+          "Frischer clone → compose up → predict"
         ],
         "tutorialIds": []
       }
     ],
     "tasks": [
-      "Docker CV"
+      "compose.yaml fertig",
+      ".env.example",
+      "compose up funktioniert"
     ]
   },
   {
-    "week": 5,
+    "week": 2,
+    "day": "mi",
+    "label": "Mittwoch",
+    "goal": "CI Pipeline",
+    "deliverable": "GitHub Actions grün",
+    "hours": 7.5,
+    "blocks": [
+      {
+        "time": "09:00–10:30",
+        "title": "GitHub Actions",
+        "items": [
+          "Python CI Docs lesen"
+        ],
+        "tutorialIds": [
+          "gh-actions"
+        ]
+      },
+      {
+        "time": "10:45–12:30",
+        "title": "Workflow schreiben",
+        "items": [
+          "pytest on push",
+          "Optional: ruff lint"
+        ],
+        "tutorialIds": [
+          "gh-actions"
+        ]
+      },
+      {
+        "time": "13:30–15:30",
+        "title": "Debug CI",
+        "items": [
+          "Fehlgeschlagene Runs fixen"
+        ],
+        "tutorialIds": []
+      },
+      {
+        "time": "15:45–17:00",
+        "title": "Badge",
+        "items": [
+          "CI Badge ins README"
+        ],
+        "tutorialIds": []
+      }
+    ],
+    "tasks": [
+      "GitHub Actions Workflow",
+      "CI grün",
+      "Badge im README"
+    ]
+  },
+  {
+    "week": 2,
     "day": "do",
     "label": "Donnerstag",
-    "goal": "Deploy CV",
-    "deliverable": "Live URL",
+    "goal": "Cloud Deploy",
+    "deliverable": "Live-URL funktioniert",
     "hours": 7.5,
     "blocks": [
       {
         "time": "09:00–10:30",
-        "title": "Theorie / Tutorial",
+        "title": "Deploy-Plattform wählen",
         "items": [
-          "Deploy",
-          "Demo GIF"
+          "Railway oder Render Docs"
         ],
         "tutorialIds": [
-          "railway-deploy"
+          "railway-deploy",
+          "render-deploy"
         ]
       },
       {
         "time": "10:45–12:30",
-        "title": "Hands-on",
+        "title": "Deploy",
         "items": [
-          "curl extern"
+          "GitHub verbinden",
+          "Start Command setzen"
         ],
         "tutorialIds": [
           "railway-deploy"
@@ -1273,255 +515,841 @@ export const DAILY_PLANS = [
       },
       {
         "time": "13:30–15:30",
-        "title": "Projekt",
+        "title": "Debug Deploy",
         "items": [
-          "README zollsoft angle"
+          "Logs lesen",
+          "Port/Health fixen"
         ],
         "tutorialIds": []
       },
       {
         "time": "15:45–17:00",
-        "title": "Tests & Doku",
+        "title": "Extern testen",
         "items": [
-          "Screenshots"
+          "curl von außen",
+          "URL notieren"
         ],
         "tutorialIds": []
       }
     ],
     "tasks": [
-      "Live CV URL"
+      "Deploy-Account erstellt",
+      "Live-URL erreichbar",
+      "curl von außen OK"
     ]
   },
   {
-    "week": 5,
+    "week": 2,
     "day": "fr",
     "label": "Freitag",
-    "goal": "Meilenstein W5",
-    "deliverable": "CV-API live",
+    "goal": "Projekt 1 final",
+    "deliverable": "Meilenstein: Live-URL im README",
     "hours": 7.5,
     "blocks": [
       {
         "time": "09:00–10:30",
-        "title": "Theorie / Tutorial",
+        "title": "README Polish",
         "items": [
-          "5 Min pitch prep"
+          "Mermaid Architektur",
+          "3-Befehl Setup"
         ],
-        "tutorialIds": []
+        "tutorialIds": [
+          "mermaid"
+        ]
       },
       {
         "time": "10:45–12:30",
-        "title": "Hands-on",
+        "title": "Screenshots",
         "items": [
-          "Polish README"
+          "/docs Screenshot oder GIF"
         ],
         "tutorialIds": []
       },
       {
         "time": "13:30–15:30",
-        "title": "Projekt",
+        "title": "End-to-End Test",
         "items": [
-          "Meilenstein W5"
+          "Clone → Docker → Deploy Flow"
         ],
         "tutorialIds": []
       },
       {
         "time": "15:45–17:00",
-        "title": "Tests & Doku",
+        "title": "Meilenstein",
         "items": [
-          "Pin repo"
+          "Live-URL prominent im README"
         ],
         "tutorialIds": []
       }
     ],
     "tasks": [
-      "CV live",
-      "Demo GIF"
+      "Mermaid-Diagramm",
+      "Live-URL im README",
+      "Meilenstein Woche 2 erreicht"
     ]
   },
   {
-    "week": 5,
+    "week": 2,
     "day": "sa",
     "label": "Samstag",
-    "goal": "Pitch CV",
-    "deliverable": "5 Min üben",
+    "goal": "Review",
+    "deliverable": "Ganzer Flow sitzt",
     "hours": 3,
     "blocks": [
       {
         "time": "09:00–12:00",
-        "title": "Puffer",
+        "title": "Full Flow",
         "items": [
-          "CV Projekt laut"
+          "Nochmal clone → run → predict → deploy"
         ],
         "tutorialIds": []
       }
     ],
-    "tasks": []
+    "tasks": [
+      "Deploy-Flow ohne Hilfe durchgeführt"
+    ]
   },
   {
-    "week": 6,
+    "week": 3,
     "day": "mo",
     "label": "Montag",
-    "goal": "spaCy Basics",
-    "deliverable": "NER Demo",
+    "goal": "OpenAI API Setup",
+    "deliverable": "Erster Chat-Request in Python",
     "hours": 7.5,
     "blocks": [
       {
         "time": "09:00–10:30",
-        "title": "Theorie / Tutorial",
+        "title": "OpenAI Docs",
         "items": [
-          "spaCy 101",
-          "de model"
+          "Chat Completions API",
+          "Messages Format"
         ],
         "tutorialIds": [
-          "spacy-101",
-          "spacy-ner"
+          "openai-api"
         ]
       },
       {
         "time": "10:45–12:30",
         "title": "Hands-on",
         "items": [
-          "10 Texte NER"
+          "API Key in .env",
+          "Budget-Limit setzen",
+          "Erster Request"
         ],
         "tutorialIds": [
-          "spacy-101"
+          "openai-api"
         ]
       },
       {
         "time": "13:30–15:30",
-        "title": "Projekt",
+        "title": "Wrapper bauen",
         "items": [
-          "displacy"
+          "chat(messages) Funktion",
+          "Logging"
         ],
         "tutorialIds": []
       },
       {
         "time": "15:45–17:00",
-        "title": "Tests & Doku",
+        "title": "Kosten",
         "items": [
-          "Notebook"
+          "Token-Kosten notieren",
+          "1 Request kalkulieren"
         ],
-        "tutorialIds": []
+        "tutorialIds": [
+          "openai-api"
+        ]
       }
     ],
     "tasks": [
-      "spaCy OK"
+      "OpenAI Account + Budget",
+      "Erster API Call",
+      "Wrapper-Funktion",
+      "Kosten dokumentiert"
     ]
   },
   {
-    "week": 6,
+    "week": 3,
     "day": "di",
     "label": "Dienstag",
-    "goal": "Custom NER",
-    "deliverable": "Medizin Rules",
+    "goal": "Ollama lokal",
+    "deliverable": "Lokal + Cloud vergleichen",
     "hours": 7.5,
     "blocks": [
       {
         "time": "09:00–10:30",
-        "title": "Theorie / Tutorial",
+        "title": "Ollama Setup",
         "items": [
-          "EntityRuler",
-          "Med. Abk."
+          "Installieren",
+          "llama3.2 pullen"
         ],
         "tutorialIds": [
-          "spacy-custom"
+          "ollama"
         ]
       },
       {
         "time": "10:45–12:30",
-        "title": "Hands-on",
+        "title": "Python Integration",
         "items": [
-          "Custom rules"
+          "Gleiche Prompts lokal vs OpenAI"
         ],
         "tutorialIds": [
-          "spacy-custom"
+          "ollama"
         ]
       },
       {
         "time": "13:30–15:30",
-        "title": "Projekt",
+        "title": "Abstraktion",
         "items": [
-          "Eval klein"
+          "Provider-Interface (openai/ollama)"
         ],
         "tutorialIds": []
       },
       {
         "time": "15:45–17:00",
-        "title": "Tests & Doku",
+        "title": "Notizen",
         "items": [
-          "JSON export"
+          "Qualität/Latenz/Kosten vergleichen"
         ],
         "tutorialIds": []
       }
     ],
     "tasks": [
-      "Custom NER"
+      "Ollama installiert",
+      "Lokales Modell läuft",
+      "Provider-Wechsel möglich"
     ]
   },
   {
-    "week": 6,
+    "week": 3,
     "day": "mi",
     "label": "Mittwoch",
-    "goal": "Batch NLP",
-    "deliverable": "CLI Pipeline",
+    "goal": "Prompt Engineering",
+    "deliverable": "Prompt-Vorlagen dokumentiert",
     "hours": 7.5,
     "blocks": [
       {
         "time": "09:00–10:30",
-        "title": "Theorie / Tutorial",
+        "title": "Prompting Guide",
         "items": [
-          "nlp.pipe",
-          "Performance"
+          "OpenAI Prompt Engineering lesen"
         ],
         "tutorialIds": [
-          "spacy-101"
+          "openai-prompting"
         ]
       },
       {
         "time": "10:45–12:30",
-        "title": "Hands-on",
+        "title": "DeepLearning.AI Kurs",
         "items": [
-          "Batch 50 docs"
+          "ChatGPT Prompt Engineering Kurs"
         ],
         "tutorialIds": [
-          "spacy-101"
+          "dlai-prompt"
         ]
       },
       {
         "time": "13:30–15:30",
-        "title": "Projekt",
+        "title": "Experimente",
         "items": [
-          "CLI script"
+          "Few-Shot",
+          "Chain-of-Thought testen"
         ],
-        "tutorialIds": []
+        "tutorialIds": [
+          "openai-prompting"
+        ]
       },
       {
         "time": "15:45–17:00",
-        "title": "Tests & Doku",
+        "title": "Vorlagen",
         "items": [
-          "Tests"
+          "3 System-Prompts in YAML speichern"
         ],
         "tutorialIds": []
       }
     ],
     "tasks": [
-      "CLI OK"
+      "Prompt Engineering Guide gelesen",
+      "DLAI Kurs abgeschlossen",
+      "3 Prompt-Vorlagen getestet"
     ]
   },
   {
-    "week": 6,
+    "week": 3,
     "day": "do",
     "label": "Donnerstag",
-    "goal": "NLP + API skim",
-    "deliverable": "Optional endpoint",
+    "goal": "Prompt-Lab UI",
+    "deliverable": "Editierbarer System-Prompt",
     "hours": 7.5,
     "blocks": [
       {
         "time": "09:00–10:30",
-        "title": "Theorie / Tutorial",
+        "title": "Streamlit Tutorial",
         "items": [
-          "FastAPI text",
-          "Integration plan"
+          "Get Started durcharbeiten"
+        ],
+        "tutorialIds": [
+          "streamlit"
+        ]
+      },
+      {
+        "time": "10:45–12:30",
+        "title": "UI bauen",
+        "items": [
+          "System-Prompt Textarea",
+          "User Input + Output"
+        ],
+        "tutorialIds": [
+          "streamlit"
+        ]
+      },
+      {
+        "time": "13:30–15:30",
+        "title": "Integration",
+        "items": [
+          "OpenAI + Ollama wählbar"
+        ],
+        "tutorialIds": []
+      },
+      {
+        "time": "15:45–17:00",
+        "title": "Polish",
+        "items": [
+          "Layout verbessern"
+        ],
+        "tutorialIds": []
+      }
+    ],
+    "tasks": [
+      "Streamlit App läuft",
+      "System-Prompt editierbar",
+      "Provider wählbar"
+    ]
+  },
+  {
+    "week": 3,
+    "day": "fr",
+    "label": "Freitag",
+    "goal": "Streaming + Meilenstein",
+    "deliverable": "Prompt-Lab fertig + README",
+    "hours": 7.5,
+    "blocks": [
+      {
+        "time": "09:00–10:30",
+        "title": "Streaming API",
+        "items": [
+          "OpenAI Streaming implementieren"
+        ],
+        "tutorialIds": [
+          "openai-api"
+        ]
+      },
+      {
+        "time": "10:45–12:30",
+        "title": "Token-Zähler",
+        "items": [
+          "Kosten pro Request anzeigen"
+        ],
+        "tutorialIds": []
+      },
+      {
+        "time": "13:30–15:30",
+        "title": "Dokumentation",
+        "items": [
+          "5 Prompt-Varianten vergleichen",
+          "README schreiben"
+        ],
+        "tutorialIds": []
+      },
+      {
+        "time": "15:45–17:00",
+        "title": "Meilenstein",
+        "items": [
+          "Token/Kosten laut erklären üben"
+        ],
+        "tutorialIds": []
+      }
+    ],
+    "tasks": [
+      "Streaming funktioniert",
+      "Kostenanzeige",
+      "Meilenstein Woche 3 erreicht"
+    ]
+  },
+  {
+    "week": 3,
+    "day": "sa",
+    "label": "Samstag",
+    "goal": "JSON Mode",
+    "deliverable": "Structured Output getestet",
+    "hours": 3,
+    "blocks": [
+      {
+        "time": "09:00–12:00",
+        "title": "Structured Output",
+        "items": [
+          "JSON Mode ausprobieren",
+          "Function Calling skimmen"
+        ],
+        "tutorialIds": [
+          "openai-api"
+        ]
+      }
+    ],
+    "tasks": [
+      "JSON Output Beispiel funktioniert"
+    ]
+  },
+  {
+    "week": 4,
+    "day": "mo",
+    "label": "Montag",
+    "goal": "Embeddings verstehen",
+    "deliverable": "Similarity Matrix für 10 Sätze",
+    "hours": 7.5,
+    "blocks": [
+      {
+        "time": "09:00–10:30",
+        "title": "Konzepte",
+        "items": [
+          "Pinecone Embeddings Artikel",
+          "Cosine Similarity"
+        ],
+        "tutorialIds": [
+          "pinecone-embeddings"
+        ]
+      },
+      {
+        "time": "10:45–12:30",
+        "title": "OpenAI Embeddings",
+        "items": [
+          "API Tutorial",
+          "10 Sätze embedden"
+        ],
+        "tutorialIds": [
+          "openai-embeddings"
+        ]
+      },
+      {
+        "time": "13:30–15:30",
+        "title": "Vergleich",
+        "items": [
+          "Optional: sentence-transformers lokal"
+        ],
+        "tutorialIds": [
+          "hf-sentence-transformers"
+        ]
+      },
+      {
+        "time": "15:45–17:00",
+        "title": "Analyse",
+        "items": [
+          "Similarity Matrix interpretieren"
+        ],
+        "tutorialIds": []
+      }
+    ],
+    "tasks": [
+      "Embeddings Konzept verstanden",
+      "10 Sätze embedded",
+      "Similarity berechnet"
+    ]
+  },
+  {
+    "week": 4,
+    "day": "di",
+    "label": "Dienstag",
+    "goal": "Dokumente + Chunking",
+    "deliverable": "20+ Docs gechunked",
+    "hours": 7.5,
+    "blocks": [
+      {
+        "time": "09:00–10:30",
+        "title": "Doc-Set sammeln",
+        "items": [
+          "20–50 MD/PDF zum Thema wählen"
+        ],
+        "tutorialIds": []
+      },
+      {
+        "time": "10:45–12:30",
+        "title": "PDF Parsing",
+        "items": [
+          "pypdf Text extrahieren"
+        ],
+        "tutorialIds": [
+          "pypdf"
+        ]
+      },
+      {
+        "time": "13:30–15:30",
+        "title": "Chunking",
+        "items": [
+          "256/512/1024 Tokens testen",
+          "Overlap 10–20%"
+        ],
+        "tutorialIds": [
+          "langchain-splitters"
+        ]
+      },
+      {
+        "time": "15:45–17:00",
+        "title": "Vergleich",
+        "items": [
+          "Beste Chunk-Size notieren"
+        ],
+        "tutorialIds": []
+      }
+    ],
+    "tasks": [
+      "20+ Dokumente",
+      "PDF Text extrahiert",
+      "3 Chunk-Größen getestet"
+    ]
+  },
+  {
+    "week": 4,
+    "day": "mi",
+    "label": "Mittwoch",
+    "goal": "Vektordatenbank",
+    "deliverable": "Index persistent",
+    "hours": 7.5,
+    "blocks": [
+      {
+        "time": "09:00–10:30",
+        "title": "Chroma oder Qdrant",
+        "items": [
+          "Quickstart wählen + lesen"
+        ],
+        "tutorialIds": [
+          "chroma-docs",
+          "qdrant-docs"
+        ]
+      },
+      {
+        "time": "10:45–12:30",
+        "title": "Index bauen",
+        "items": [
+          "Chunks + Embeddings speichern"
+        ],
+        "tutorialIds": [
+          "chroma-docs"
+        ]
+      },
+      {
+        "time": "13:30–15:30",
+        "title": "Metadaten",
+        "items": [
+          "Quelle, Seite, Dateiname"
+        ],
+        "tutorialIds": []
+      },
+      {
+        "time": "15:45–17:00",
+        "title": "Persistenz",
+        "items": [
+          "Neustart → Index noch da"
+        ],
+        "tutorialIds": []
+      }
+    ],
+    "tasks": [
+      "Vector DB gewählt",
+      "Alle Chunks indexiert",
+      "Metadaten gespeichert",
+      "Persistenz OK"
+    ]
+  },
+  {
+    "week": 4,
+    "day": "do",
+    "label": "Donnerstag",
+    "goal": "Semantische Suche",
+    "deliverable": "CLI Top-5 mit Scores",
+    "hours": 7.5,
+    "blocks": [
+      {
+        "time": "09:00–10:30",
+        "title": "Retrieval",
+        "items": [
+          "Query embedden → Top-K"
+        ],
+        "tutorialIds": []
+      },
+      {
+        "time": "10:45–12:30",
+        "title": "CLI bauen",
+        "items": [
+          "Query Input → 5 Chunks + Score"
+        ],
+        "tutorialIds": []
+      },
+      {
+        "time": "13:30–15:30",
+        "title": "Analyse",
+        "items": [
+          "10 Queries testen",
+          "Fehltreffer dokumentieren"
+        ],
+        "tutorialIds": []
+      },
+      {
+        "time": "15:45–17:00",
+        "title": "Tune",
+        "items": [
+          "Top-K / Chunk-Size anpassen"
+        ],
+        "tutorialIds": []
+      }
+    ],
+    "tasks": [
+      "CLI Suche funktioniert",
+      "10 Test-Queries",
+      "Chunking dokumentiert"
+    ]
+  },
+  {
+    "week": 4,
+    "day": "fr",
+    "label": "Freitag",
+    "goal": "Mini-UI + Meilenstein",
+    "deliverable": "Streamlit Suche demo-fähig",
+    "hours": 7.5,
+    "blocks": [
+      {
+        "time": "09:00–10:30",
+        "title": "Streamlit UI",
+        "items": [
+          "Suchfeld + Ergebnisliste"
+        ],
+        "tutorialIds": [
+          "streamlit"
+        ]
+      },
+      {
+        "time": "10:45–12:30",
+        "title": "A/B",
+        "items": [
+          "Kleine vs große Chunks zeigen"
+        ],
+        "tutorialIds": []
+      },
+      {
+        "time": "13:30–15:30",
+        "title": "README",
+        "items": [
+          "Pipeline-Diagramm"
+        ],
+        "tutorialIds": [
+          "mermaid"
+        ]
+      },
+      {
+        "time": "15:45–17:00",
+        "title": "Meilenstein",
+        "items": [
+          "Chunk-Einfluss erklären üben"
+        ],
+        "tutorialIds": []
+      }
+    ],
+    "tasks": [
+      "Streamlit Suche live",
+      "README mit Diagramm",
+      "Meilenstein Woche 4 erreicht"
+    ]
+  },
+  {
+    "week": 4,
+    "day": "sa",
+    "label": "Samstag",
+    "goal": "Hybrid Vorbereitung",
+    "deliverable": "BM25 Konzept gelesen",
+    "hours": 3,
+    "blocks": [
+      {
+        "time": "09:00–12:00",
+        "title": "Lesen",
+        "items": [
+          "Hybrid Search Artikel",
+          "rank_bm25 README"
+        ],
+        "tutorialIds": [
+          "pinecone-hybrid",
+          "rank-bm25"
+        ]
+      }
+    ],
+    "tasks": [
+      "Hybrid Search Konzept verstanden"
+    ]
+  },
+  {
+    "week": 5,
+    "day": "mo",
+    "label": "Montag",
+    "goal": "Framework Setup",
+    "deliverable": "Hello-World RAG",
+    "hours": 7.5,
+    "blocks": [
+      {
+        "time": "09:00–10:30",
+        "title": "Framework wählen",
+        "items": [
+          "LlamaIndex Starter ODER LangChain RAG"
+        ],
+        "tutorialIds": [
+          "llamaindex-starter",
+          "langchain-rag"
+        ]
+      },
+      {
+        "time": "10:45–12:30",
+        "title": "HF Hintergrund",
+        "items": [
+          "NLP Course Ch.1 skim"
+        ],
+        "tutorialIds": [
+          "hf-nlp-course"
+        ]
+      },
+      {
+        "time": "13:30–15:30",
+        "title": "End-to-End",
+        "items": [
+          "Doc-Set aus W4 nutzen",
+          "Erste Antwort"
+        ],
+        "tutorialIds": [
+          "llamaindex-starter"
+        ]
+      },
+      {
+        "time": "15:45–17:00",
+        "title": "Repo",
+        "items": [
+          "rag-doc-bot anlegen"
+        ],
+        "tutorialIds": []
+      }
+    ],
+    "tasks": [
+      "Framework gewählt",
+      "Hello-World RAG",
+      "GitHub Repo erstellt"
+    ]
+  },
+  {
+    "week": 5,
+    "day": "di",
+    "label": "Dienstag",
+    "goal": "Pipeline",
+    "deliverable": "Load→Split→Embed→Query",
+    "hours": 7.5,
+    "blocks": [
+      {
+        "time": "09:00–10:30",
+        "title": "Indexing",
+        "items": [
+          "Load, Split, Embed, Store"
+        ],
+        "tutorialIds": [
+          "llamaindex-starter"
+        ]
+      },
+      {
+        "time": "10:45–12:30",
+        "title": "Retrieval",
+        "items": [
+          "Top-K + Prompt Template"
+        ],
+        "tutorialIds": []
+      },
+      {
+        "time": "13:30–15:30",
+        "title": "Generation",
+        "items": [
+          "LLM Antwort mit Context"
+        ],
+        "tutorialIds": []
+      },
+      {
+        "time": "15:45–17:00",
+        "title": "Test",
+        "items": [
+          "5 Fragen stellen"
+        ],
+        "tutorialIds": []
+      }
+    ],
+    "tasks": [
+      "Pipeline komplett",
+      "5 Testfragen beantwortet"
+    ]
+  },
+  {
+    "week": 5,
+    "day": "mi",
+    "label": "Mittwoch",
+    "goal": "Quellenangaben",
+    "deliverable": "Citations in Antwort",
+    "hours": 7.5,
+    "blocks": [
+      {
+        "time": "09:00–10:30",
+        "title": "Citations Docs",
+        "items": [
+          "Source Nodes / Citations lesen"
+        ],
+        "tutorialIds": [
+          "llamaindex-citations"
+        ]
+      },
+      {
+        "time": "10:45–12:30",
+        "title": "Implementieren",
+        "items": [
+          "Chunk-ID, Datei, Seite anzeigen"
+        ],
+        "tutorialIds": []
+      },
+      {
+        "time": "13:30–15:30",
+        "title": "Guardrails",
+        "items": [
+          "Nur aus Context",
+          "„Weiß ich nicht“"
+        ],
+        "tutorialIds": []
+      },
+      {
+        "time": "15:45–17:00",
+        "title": "Test",
+        "items": [
+          "10 Fragen + Quellen prüfen"
+        ],
+        "tutorialIds": []
+      }
+    ],
+    "tasks": [
+      "Quellen in jeder Antwort",
+      "„Weiß ich nicht“ funktioniert",
+      "10 Tests"
+    ]
+  },
+  {
+    "week": 5,
+    "day": "do",
+    "label": "Donnerstag",
+    "goal": "API + Frontend",
+    "deliverable": "Upload + Ask Endpoints",
+    "hours": 7.5,
+    "blocks": [
+      {
+        "time": "09:00–10:30",
+        "title": "FastAPI",
+        "items": [
+          "/upload, /ask, /health"
         ],
         "tutorialIds": [
           "fastapi-tutorial"
@@ -1529,287 +1357,891 @@ export const DAILY_PLANS = [
       },
       {
         "time": "10:45–12:30",
-        "title": "Hands-on",
+        "title": "Streamlit",
         "items": [
-          "POST /ner optional"
+          "Chat UI + Upload"
         ],
-        "tutorialIds": []
+        "tutorialIds": [
+          "streamlit"
+        ]
       },
       {
         "time": "13:30–15:30",
-        "title": "Projekt",
+        "title": "PDF Upload",
         "items": [
-          "README NLP"
+          "Datei → Index"
         ],
-        "tutorialIds": []
+        "tutorialIds": [
+          "pypdf"
+        ]
       },
       {
         "time": "15:45–17:00",
-        "title": "Tests & Doku",
+        "title": "Errors",
         "items": [
-          "Push repo"
+          "Error Handling"
         ],
         "tutorialIds": []
       }
     ],
     "tasks": [
-      "NLP repo"
+      "FastAPI Endpoints",
+      "Streamlit UI",
+      "PDF Upload OK"
+    ]
+  },
+  {
+    "week": 5,
+    "day": "fr",
+    "label": "Freitag",
+    "goal": "Meilenstein Woche 5",
+    "deliverable": "Doc-Bot mit Quellen auf GitHub",
+    "hours": 7.5,
+    "blocks": [
+      {
+        "time": "09:00–10:30",
+        "title": "20 Fragen Test",
+        "items": [
+          "Fehler notieren"
+        ],
+        "tutorialIds": []
+      },
+      {
+        "time": "10:45–12:30",
+        "title": "Prompt Tuning",
+        "items": [
+          "Schwache Antworten fixen"
+        ],
+        "tutorialIds": []
+      },
+      {
+        "time": "13:30–15:30",
+        "title": "README",
+        "items": [
+          "Architektur + Setup"
+        ],
+        "tutorialIds": []
+      },
+      {
+        "time": "15:45–17:00",
+        "title": "Meilenstein",
+        "items": [
+          "GitHub push"
+        ],
+        "tutorialIds": []
+      }
+    ],
+    "tasks": [
+      "20 Fragen getestet",
+      "README fertig",
+      "Meilenstein Woche 5 erreicht"
+    ]
+  },
+  {
+    "week": 5,
+    "day": "sa",
+    "label": "Samstag",
+    "goal": "Analyse",
+    "deliverable": "Top 5 Fehler dokumentiert",
+    "hours": 3,
+    "blocks": [
+      {
+        "time": "09:00–12:00",
+        "title": "Review",
+        "items": [
+          "5 schlechteste Antworten analysieren"
+        ],
+        "tutorialIds": []
+      }
+    ],
+    "tasks": [
+      "Fehleranalyse notiert"
+    ]
+  },
+  {
+    "week": 6,
+    "day": "mo",
+    "label": "Montag",
+    "goal": "Hybrid Search",
+    "deliverable": "BM25 + Vector fusioniert",
+    "hours": 7.5,
+    "blocks": [
+      {
+        "time": "09:00–10:30",
+        "title": "Konzept",
+        "items": [
+          "Hybrid Search Artikel"
+        ],
+        "tutorialIds": [
+          "pinecone-hybrid"
+        ]
+      },
+      {
+        "time": "10:45–12:30",
+        "title": "BM25",
+        "items": [
+          "rank_bm25 implementieren"
+        ],
+        "tutorialIds": [
+          "rank-bm25"
+        ]
+      },
+      {
+        "time": "13:30–15:30",
+        "title": "Fusion",
+        "items": [
+          "RRF oder weighted merge"
+        ],
+        "tutorialIds": [
+          "llamaindex-retrieval"
+        ]
+      },
+      {
+        "time": "15:45–17:00",
+        "title": "Vergleich",
+        "items": [
+          "10 Queries vorher/nachher"
+        ],
+        "tutorialIds": []
+      }
+    ],
+    "tasks": [
+      "BM25 Index",
+      "Hybrid Search live",
+      "10 Queries verglichen"
+    ]
+  },
+  {
+    "week": 6,
+    "day": "di",
+    "label": "Dienstag",
+    "goal": "Metadata Filter",
+    "deliverable": "Filter nach Tags/Datum",
+    "hours": 7.5,
+    "blocks": [
+      {
+        "time": "09:00–10:30",
+        "title": "Metadata Docs",
+        "items": [
+          "Advanced Retrieval lesen"
+        ],
+        "tutorialIds": [
+          "llamaindex-retrieval"
+        ]
+      },
+      {
+        "time": "10:45–12:30",
+        "title": "Upload Metadata",
+        "items": [
+          "Datum, Typ beim Index setzen"
+        ],
+        "tutorialIds": []
+      },
+      {
+        "time": "13:30–15:30",
+        "title": "Filter Query",
+        "items": [
+          "Nur subset durchsuchen"
+        ],
+        "tutorialIds": []
+      },
+      {
+        "time": "15:45–17:00",
+        "title": "Docs",
+        "items": [
+          "Filter-Beispiele dokumentieren"
+        ],
+        "tutorialIds": []
+      }
+    ],
+    "tasks": [
+      "Metadaten beim Upload",
+      "Filter in Query",
+      "Getestet"
+    ]
+  },
+  {
+    "week": 6,
+    "day": "mi",
+    "label": "Mittwoch",
+    "goal": "Query Transform",
+    "deliverable": "HyDE oder Multi-Query",
+    "hours": 7.5,
+    "blocks": [
+      {
+        "time": "09:00–10:30",
+        "title": "HyDE Paper skim",
+        "items": [
+          "Abstract + Konzept"
+        ],
+        "tutorialIds": [
+          "hyde-paper"
+        ]
+      },
+      {
+        "time": "10:45–12:30",
+        "title": "Implementieren",
+        "items": [
+          "Eine Variante wählen"
+        ],
+        "tutorialIds": [
+          "llamaindex-retrieval"
+        ]
+      },
+      {
+        "time": "13:30–15:30",
+        "title": "Messen",
+        "items": [
+          "Latenz + Kosten + Qualität"
+        ],
+        "tutorialIds": []
+      },
+      {
+        "time": "15:45–17:00",
+        "title": "Entscheidung",
+        "items": [
+          "Lohnt es? README Notiz"
+        ],
+        "tutorialIds": []
+      }
+    ],
+    "tasks": [
+      "Query Transform implementiert",
+      "Latenz/Kosten gemessen",
+      "Entscheidung dokumentiert"
+    ]
+  },
+  {
+    "week": 6,
+    "day": "do",
+    "label": "Donnerstag",
+    "goal": "Parent-Child Chunking",
+    "deliverable": "Kleine suchen, große ans LLM",
+    "hours": 7.5,
+    "blocks": [
+      {
+        "time": "09:00–10:30",
+        "title": "Konzept",
+        "items": [
+          "Parent Document Retriever Docs"
+        ],
+        "tutorialIds": [
+          "llamaindex-retrieval"
+        ]
+      },
+      {
+        "time": "10:45–12:30",
+        "title": "Implementieren",
+        "items": [
+          "Parent-Child Setup"
+        ],
+        "tutorialIds": []
+      },
+      {
+        "time": "13:30–15:30",
+        "title": "Vergleich",
+        "items": [
+          "Vs Woche 5 Baseline"
+        ],
+        "tutorialIds": []
+      },
+      {
+        "time": "15:45–17:00",
+        "title": "Tune",
+        "items": [
+          "Beste Config wählen"
+        ],
+        "tutorialIds": []
+      }
+    ],
+    "tasks": [
+      "Parent-Child live",
+      "Vergleich dokumentiert"
     ]
   },
   {
     "week": 6,
     "day": "fr",
     "label": "Freitag",
-    "goal": "Meilenstein W6",
-    "deliverable": "NLP GitHub",
+    "goal": "Design Decisions + Meilenstein",
+    "deliverable": "README Advanced RAG",
     "hours": 7.5,
     "blocks": [
       {
         "time": "09:00–10:30",
-        "title": "Theorie / Tutorial",
+        "title": ".env Config",
         "items": [
-          "Review"
+          "MODEL, CHUNK_SIZE, TOP_K"
         ],
         "tutorialIds": []
       },
       {
         "time": "10:45–12:30",
-        "title": "Hands-on",
+        "title": "Design Decisions",
+        "items": [
+          "Warum Hybrid? Warum Chunk X?"
+        ],
+        "tutorialIds": []
+      },
+      {
+        "time": "13:30–15:30",
+        "title": "A/B Tabelle",
+        "items": [
+          "Chunk-Größen im README"
+        ],
+        "tutorialIds": []
+      },
+      {
+        "time": "15:45–17:00",
+        "title": "Meilenstein",
+        "items": [
+          "Push + Review"
+        ],
+        "tutorialIds": []
+      }
+    ],
+    "tasks": [
+      ".env konfigurierbar",
+      "Design Decisions README",
+      "Meilenstein Woche 6 erreicht"
+    ]
+  },
+  {
+    "week": 6,
+    "day": "sa",
+    "label": "Samstag",
+    "goal": "RAGAS Vorbereitung",
+    "deliverable": "Eval-Ideen notiert",
+    "hours": 3,
+    "blocks": [
+      {
+        "time": "09:00–12:00",
+        "title": "Lesen",
+        "items": [
+          "RAGAS Quickstart skim",
+          "Evidently RAG Guide"
+        ],
+        "tutorialIds": [
+          "ragas",
+          "evidently-rag"
+        ]
+      }
+    ],
+    "tasks": [
+      "Eval-Plan für Woche 7"
+    ]
+  },
+  {
+    "week": 7,
+    "day": "mo",
+    "label": "Montag",
+    "goal": "Eval-Set",
+    "deliverable": "15 Q&A mit Ground Truth",
+    "hours": 7.5,
+    "blocks": [
+      {
+        "time": "09:00–10:30",
+        "title": "Metriken",
+        "items": [
+          "Evidently RAG Guide"
+        ],
+        "tutorialIds": [
+          "evidently-rag"
+        ]
+      },
+      {
+        "time": "10:45–12:30",
+        "title": "Fragen schreiben",
+        "items": [
+          "15 Fragen + erwartete Quelle"
+        ],
+        "tutorialIds": []
+      },
+      {
+        "time": "13:30–15:30",
+        "title": "JSON Format",
+        "items": [
+          "eval_set.json anlegen"
+        ],
+        "tutorialIds": []
+      },
+      {
+        "time": "15:45–17:00",
+        "title": "Loader",
+        "items": [
+          "Script lädt Eval-Set"
+        ],
+        "tutorialIds": []
+      }
+    ],
+    "tasks": [
+      "15 Eval-Fragen",
+      "Ground Truth Quellen",
+      "eval_set.json"
+    ]
+  },
+  {
+    "week": 7,
+    "day": "di",
+    "label": "Dienstag",
+    "goal": "RAGAS",
+    "deliverable": "Erste Metriken",
+    "hours": 7.5,
+    "blocks": [
+      {
+        "time": "09:00–10:30",
+        "title": "RAGAS Quickstart",
+        "items": [
+          "Installation + Tutorial"
+        ],
+        "tutorialIds": [
+          "ragas"
+        ]
+      },
+      {
+        "time": "10:45–12:30",
+        "title": "evaluate()",
+        "items": [
+          "Faithfulness, Context Precision"
+        ],
+        "tutorialIds": [
+          "ragas"
+        ]
+      },
+      {
+        "time": "13:30–15:30",
+        "title": "Ergebnisse",
+        "items": [
+          "Pro Frage speichern"
+        ],
+        "tutorialIds": []
+      },
+      {
+        "time": "15:45–17:00",
+        "title": "Interpretieren",
+        "items": [
+          "Schwächste 5 finden"
+        ],
+        "tutorialIds": []
+      }
+    ],
+    "tasks": [
+      "RAGAS installiert",
+      "Eval durchgeführt",
+      "Schwächste 5 identifiziert"
+    ]
+  },
+  {
+    "week": 7,
+    "day": "mi",
+    "label": "Mittwoch",
+    "goal": "Iteration",
+    "deliverable": "Verbesserte Scores",
+    "hours": 7.5,
+    "blocks": [
+      {
+        "time": "09:00–10:30",
+        "title": "Hypothese",
+        "items": [
+          "Chunk-Size oder Top-K ändern"
+        ],
+        "tutorialIds": []
+      },
+      {
+        "time": "10:45–12:30",
+        "title": "Re-Eval",
+        "items": [
+          "RAGAS nochmal"
+        ],
+        "tutorialIds": [
+          "ragas"
+        ]
+      },
+      {
+        "time": "13:30–15:30",
+        "title": "Delta",
+        "items": [
+          "Vorher/Nachher Tabelle"
+        ],
+        "tutorialIds": []
+      },
+      {
+        "time": "15:45–17:00",
+        "title": "Fix",
+        "items": [
+          "Weitere Iteration wenn nötig"
+        ],
+        "tutorialIds": []
+      }
+    ],
+    "tasks": [
+      "Parameter angepasst",
+      "Re-Eval durchgeführt",
+      "Delta dokumentiert"
+    ]
+  },
+  {
+    "week": 7,
+    "day": "do",
+    "label": "Donnerstag",
+    "goal": "Logging / Tracing",
+    "deliverable": "Request-Logs oder Langfuse",
+    "hours": 7.5,
+    "blocks": [
+      {
+        "time": "09:00–10:30",
+        "title": "Langfuse Setup",
+        "items": [
+          "Account + SDK"
+        ],
+        "tutorialIds": [
+          "langfuse"
+        ]
+      },
+      {
+        "time": "10:45–12:30",
+        "title": "Instrumentieren",
+        "items": [
+          "Retrieval + Prompt loggen"
+        ],
+        "tutorialIds": [
+          "langfuse"
+        ]
+      },
+      {
+        "time": "13:30–15:30",
+        "title": "Trace Review",
+        "items": [
+          "3 Requests in UI ansehen"
+        ],
+        "tutorialIds": []
+      },
+      {
+        "time": "15:45–17:00",
+        "title": "Fallback",
+        "items": [
+          "JSON-Log wenn kein Langfuse"
+        ],
+        "tutorialIds": []
+      }
+    ],
+    "tasks": [
+      "Tracing aktiv",
+      "Retrieval sichtbar",
+      "3 Traces reviewed"
+    ]
+  },
+  {
+    "week": 7,
+    "day": "fr",
+    "label": "Freitag",
+    "goal": "Eval-Report + Meilenstein",
+    "deliverable": "README mit Tabelle",
+    "hours": 7.5,
+    "blocks": [
+      {
+        "time": "09:00–10:30",
+        "title": "Report schreiben",
+        "items": [
+          "Ergebnis-Tabelle ins README"
+        ],
+        "tutorialIds": []
+      },
+      {
+        "time": "10:45–12:30",
+        "title": "Interview-Antwort",
+        "items": [
+          "„Wie evaluierst du RAG?“ schreiben"
+        ],
+        "tutorialIds": []
+      },
+      {
+        "time": "13:30–15:30",
+        "title": "Code Cleanup",
+        "items": [
+          "Eval-Script dokumentieren"
+        ],
+        "tutorialIds": []
+      },
+      {
+        "time": "15:45–17:00",
+        "title": "Meilenstein",
         "items": [
           "Push"
         ],
         "tutorialIds": []
-      },
-      {
-        "time": "13:30–15:30",
-        "title": "Projekt",
-        "items": [
-          "Meilenstein W6"
-        ],
-        "tutorialIds": []
-      },
-      {
-        "time": "15:45–17:00",
-        "title": "Tests & Doku",
-        "items": [
-          "Link notieren"
-        ],
-        "tutorialIds": []
       }
     ],
     "tasks": [
-      "NLP repo live"
+      "Eval-Report im README",
+      "Interview-Antwort fertig",
+      "Meilenstein Woche 7 erreicht"
     ]
   },
   {
-    "week": 6,
+    "week": 7,
     "day": "sa",
     "label": "Samstag",
-    "goal": "Medizin Text",
-    "deliverable": "Beispiele sammeln",
+    "goal": "Pitch üben",
+    "deliverable": "RAG+Eval 5 Min laut",
     "hours": 3,
     "blocks": [
       {
         "time": "09:00–12:00",
-        "title": "Puffer",
+        "title": "Üben",
         "items": [
-          "DE Diktat snippets public"
-        ],
-        "tutorialIds": []
-      }
-    ],
-    "tasks": []
-  },
-  {
-    "week": 7,
-    "day": "mo",
-    "label": "Montag",
-    "goal": "Whisper Setup",
-    "deliverable": "3 Transkripte",
-    "hours": 7.5,
-    "blocks": [
-      {
-        "time": "09:00–10:30",
-        "title": "Theorie / Tutorial",
-        "items": [
-          "Whisper docs",
-          "Model sizes"
-        ],
-        "tutorialIds": [
-          "whisper-docs",
-          "faster-whisper"
-        ]
-      },
-      {
-        "time": "10:45–12:30",
-        "title": "Hands-on",
-        "items": [
-          "faster-whisper install"
-        ],
-        "tutorialIds": [
-          "whisper-docs"
-        ]
-      },
-      {
-        "time": "13:30–15:30",
-        "title": "Projekt",
-        "items": [
-          "3 DE Audio"
-        ],
-        "tutorialIds": []
-      },
-      {
-        "time": "15:45–17:00",
-        "title": "Tests & Doku",
-        "items": [
-          "Quality notes"
+          "RAG + Eval laut erklären"
         ],
         "tutorialIds": []
       }
     ],
     "tasks": [
-      "Whisper OK"
+      "5-Min Erklärung geübt"
     ]
   },
   {
-    "week": 7,
-    "day": "di",
-    "label": "Dienstag",
-    "goal": "Transcribe API",
-    "deliverable": "/transcribe",
+    "week": 8,
+    "day": "mo",
+    "label": "Montag",
+    "goal": "Agent Theory",
+    "deliverable": "Architektur-Skizze",
     "hours": 7.5,
     "blocks": [
       {
         "time": "09:00–10:30",
-        "title": "Theorie / Tutorial",
+        "title": "Function Calling",
         "items": [
-          "Audio upload",
-          "Temp files"
+          "OpenAI Guide lesen"
         ],
         "tutorialIds": [
-          "fastapi-tutorial",
-          "whisper-docs"
+          "openai-function-calling"
         ]
       },
       {
         "time": "10:45–12:30",
-        "title": "Hands-on",
+        "title": "DLAI Agents Kurs",
         "items": [
-          "Endpoint"
+          "Functions, Tools, Agents"
         ],
         "tutorialIds": [
-          "faster-whisper"
+          "dlai-functions"
         ]
       },
       {
         "time": "13:30–15:30",
-        "title": "Projekt",
+        "title": "Planung",
         "items": [
-          "3 API tests"
+          "Research Agent Design",
+          "Repo anlegen"
         ],
         "tutorialIds": []
       },
       {
         "time": "15:45–17:00",
-        "title": "Tests & Doku",
+        "title": "Skizze",
         "items": [
+          "Tools + Flow Diagramm"
+        ],
+        "tutorialIds": [
+          "mermaid"
+        ]
+      }
+    ],
+    "tasks": [
+      "Function Calling verstanden",
+      "DLAI Kurs",
+      "Agent-Design skizziert"
+    ]
+  },
+  {
+    "week": 8,
+    "day": "di",
+    "label": "Dienstag",
+    "goal": "RAG Tool",
+    "deliverable": "Tool 1 funktioniert",
+    "hours": 7.5,
+    "blocks": [
+      {
+        "time": "09:00–10:30",
+        "title": "LlamaIndex Agents",
+        "items": [
+          "Agent Docs lesen"
+        ],
+        "tutorialIds": [
+          "llamaindex-agents"
+        ]
+      },
+      {
+        "time": "10:45–12:30",
+        "title": "RAG wrappen",
+        "items": [
+          "Doc-Fragen Tool"
+        ],
+        "tutorialIds": []
+      },
+      {
+        "time": "13:30–15:30",
+        "title": "Schema",
+        "items": [
+          "Name, Params, Description"
+        ],
+        "tutorialIds": [
+          "openai-function-calling"
+        ]
+      },
+      {
+        "time": "15:45–17:00",
+        "title": "Test",
+        "items": [
+          "3 Doc-Fragen"
+        ],
+        "tutorialIds": []
+      }
+    ],
+    "tasks": [
+      "RAG als Tool",
+      "Tool Schema",
+      "3 Tests OK"
+    ]
+  },
+  {
+    "week": 8,
+    "day": "mi",
+    "label": "Mittwoch",
+    "goal": "Web Tool",
+    "deliverable": "Tool 2 funktioniert",
+    "hours": 7.5,
+    "blocks": [
+      {
+        "time": "09:00–10:30",
+        "title": "Tavily Setup",
+        "items": [
+          "API Key + Docs"
+        ],
+        "tutorialIds": [
+          "tavily"
+        ]
+      },
+      {
+        "time": "10:45–12:30",
+        "title": "Search Tool",
+        "items": [
+          "search() Wrapper"
+        ],
+        "tutorialIds": [
+          "tavily"
+        ]
+      },
+      {
+        "time": "13:30–15:30",
+        "title": "Integration",
+        "items": [
+          "Agent wählt Web vs RAG"
+        ],
+        "tutorialIds": [
+          "llamaindex-agents"
+        ]
+      },
+      {
+        "time": "15:45–17:00",
+        "title": "Test",
+        "items": [
+          "3 Web-Fragen"
+        ],
+        "tutorialIds": []
+      }
+    ],
+    "tasks": [
+      "Tavily Tool live",
+      "Agent wählt Tool",
+      "3 Web-Tests OK"
+    ]
+  },
+  {
+    "week": 8,
+    "day": "do",
+    "label": "Donnerstag",
+    "goal": "Guardrails",
+    "deliverable": "Keine Endlosschleifen",
+    "hours": 7.5,
+    "blocks": [
+      {
+        "time": "09:00–10:30",
+        "title": "Limits",
+        "items": [
+          "Max 5 Iterationen",
           "Timeout"
         ],
         "tutorialIds": []
-      }
-    ],
-    "tasks": [
-      "/transcribe live"
-    ]
-  },
-  {
-    "week": 7,
-    "day": "mi",
-    "label": "Mittwoch",
-    "goal": "Post-Process",
-    "deliverable": "Domain vocab",
-    "hours": 7.5,
-    "blocks": [
-      {
-        "time": "09:00–10:30",
-        "title": "Theorie / Tutorial",
-        "items": [
-          "Med. Post-correction",
-          "Regex/list"
-        ],
-        "tutorialIds": [
-          "whisper-docs"
-        ]
       },
       {
         "time": "10:45–12:30",
-        "title": "Hands-on",
+        "title": "Kostenlimit",
         "items": [
-          "Post-process func"
+          "Max Tokens pro Run"
         ],
         "tutorialIds": []
       },
       {
         "time": "13:30–15:30",
-        "title": "Projekt",
+        "title": "Stress Test",
         "items": [
-          "5 samples improved"
+          "Absichtlich schwierige Tasks"
         ],
         "tutorialIds": []
       },
       {
         "time": "15:45–17:00",
-        "title": "Tests & Doku",
+        "title": "Fix",
         "items": [
-          "Latenz messen"
+          "Loop-Bugs beheben"
         ],
         "tutorialIds": []
       }
     ],
     "tasks": [
-      "Post-process"
+      "Max Iterationen",
+      "Timeout + Kostenlimit",
+      "Loop-Tests bestanden"
     ]
   },
   {
-    "week": 7,
-    "day": "do",
-    "label": "Donnerstag",
-    "goal": "Speech Docker",
-    "deliverable": "compose",
+    "week": 8,
+    "day": "fr",
+    "label": "Freitag",
+    "goal": "Demo + Meilenstein",
+    "deliverable": "Research Agent auf GitHub",
     "hours": 7.5,
     "blocks": [
       {
         "time": "09:00–10:30",
-        "title": "Theorie / Tutorial",
+        "title": "CLI/Streamlit",
         "items": [
-          "Docker speech",
-          "compose"
+          "Komplexe Aufgabe eingeben"
         ],
         "tutorialIds": [
-          "docker-compose"
+          "streamlit"
         ]
       },
       {
         "time": "10:45–12:30",
-        "title": "Hands-on",
+        "title": "Beispiel-Runs",
         "items": [
-          "Local stack"
+          "3 Demo-Szenarien"
         ],
-        "tutorialIds": [
-          "docker-compose"
-        ]
+        "tutorialIds": []
       },
       {
         "time": "13:30–15:30",
-        "title": "Projekt",
+        "title": "README",
         "items": [
-          "README Speech"
+          "Tools, Limits, Beispiele"
         ],
         "tutorialIds": []
       },
       {
         "time": "15:45–17:00",
-        "title": "Tests & Doku",
+        "title": "Meilenstein",
         "items": [
           "Push"
         ],
@@ -1817,629 +2249,156 @@ export const DAILY_PLANS = [
       }
     ],
     "tasks": [
-      "Speech repo"
-    ]
-  },
-  {
-    "week": 7,
-    "day": "fr",
-    "label": "Freitag",
-    "goal": "Meilenstein W7",
-    "deliverable": "Speech API",
-    "hours": 7.5,
-    "blocks": [
-      {
-        "time": "09:00–10:30",
-        "title": "Theorie / Tutorial",
-        "items": [
-          "zollsoft Notiz",
-          "Meilenstein W7"
-        ],
-        "tutorialIds": []
-      },
-      {
-        "time": "10:45–12:30",
-        "title": "Hands-on",
-        "items": [
-          "Pitch prep"
-        ],
-        "tutorialIds": []
-      },
-      {
-        "time": "13:30–15:30",
-        "title": "Projekt",
-        "items": [
-          "Commit"
-        ],
-        "tutorialIds": []
-      },
-      {
-        "time": "15:45–17:00",
-        "title": "Tests & Doku",
-        "items": [
-          "Speech demo"
-        ],
-        "tutorialIds": []
-      }
-    ],
-    "tasks": []
-  },
-  {
-    "week": 7,
-    "day": "sa",
-    "label": "Samstag",
-    "goal": "ASR üben",
-    "deliverable": "2 Min erklären",
-    "hours": 3,
-    "blocks": [
-      {
-        "time": "09:00–12:00",
-        "title": "Puffer",
-        "items": [
-          "Whisper Pipeline laut"
-        ],
-        "tutorialIds": []
-      }
-    ],
-    "tasks": []
-  },
-  {
-    "week": 8,
-    "day": "mo",
-    "label": "Montag",
-    "goal": "Linux Bash",
-    "deliverable": "Pipeline script",
-    "hours": 7.5,
-    "blocks": [
-      {
-        "time": "09:00–10:30",
-        "title": "Theorie / Tutorial",
-        "items": [
-          "Linux survival",
-          "grep find"
-        ],
-        "tutorialIds": [
-          "linux-survival",
-          "bash-guide"
-        ]
-      },
-      {
-        "time": "10:45–12:30",
-        "title": "Hands-on",
-        "items": [
-          "download.sh"
-        ],
-        "tutorialIds": [
-          "bash-guide"
-        ]
-      },
-      {
-        "time": "13:30–15:30",
-        "title": "Projekt",
-        "items": [
-          "Args, test"
-        ],
-        "tutorialIds": []
-      },
-      {
-        "time": "15:45–17:00",
-        "title": "Tests & Doku",
-        "items": [
-          "chmod +x"
-        ],
-        "tutorialIds": []
-      }
-    ],
-    "tasks": [
-      "Bash script"
-    ]
-  },
-  {
-    "week": 8,
-    "day": "di",
-    "label": "Dienstag",
-    "goal": "TensorFlow",
-    "deliverable": "Keras Modell",
-    "hours": 7.5,
-    "blocks": [
-      {
-        "time": "09:00–10:30",
-        "title": "Theorie / Tutorial",
-        "items": [
-          "TF quickstart",
-          "Keras Sequential"
-        ],
-        "tutorialIds": [
-          "tensorflow-quickstart",
-          "keras-guide"
-        ]
-      },
-      {
-        "time": "10:45–12:30",
-        "title": "Hands-on",
-        "items": [
-          "Gleiches Problem wie W3"
-        ],
-        "tutorialIds": [
-          "tensorflow-quickstart"
-        ]
-      },
-      {
-        "time": "13:30–15:30",
-        "title": "Projekt",
-        "items": [
-          "Vergleich PT vs TF"
-        ],
-        "tutorialIds": []
-      },
-      {
-        "time": "15:45–17:00",
-        "title": "Tests & Doku",
-        "items": [
-          "model.h5"
-        ],
-        "tutorialIds": []
-      }
-    ],
-    "tasks": [
-      "TF model trained"
-    ]
-  },
-  {
-    "week": 8,
-    "day": "mi",
-    "label": "Mittwoch",
-    "goal": "MLflow",
-    "deliverable": "3 Runs",
-    "hours": 7.5,
-    "blocks": [
-      {
-        "time": "09:00–10:30",
-        "title": "Theorie / Tutorial",
-        "items": [
-          "MLflow quickstart",
-          "CV + ML log"
-        ],
-        "tutorialIds": [
-          "mlflow-quickstart",
-          "mlflow-models"
-        ]
-      },
-      {
-        "time": "10:45–12:30",
-        "title": "Hands-on",
-        "items": [
-          "Log experiments"
-        ],
-        "tutorialIds": [
-          "mlflow-quickstart"
-        ]
-      },
-      {
-        "time": "13:30–15:30",
-        "title": "Projekt",
-        "items": [
-          "UI screenshot"
-        ],
-        "tutorialIds": []
-      },
-      {
-        "time": "15:45–17:00",
-        "title": "Tests & Doku",
-        "items": [
-          "Registry best"
-        ],
-        "tutorialIds": []
-      }
-    ],
-    "tasks": [
-      "MLflow 3 runs"
-    ]
-  },
-  {
-    "week": 8,
-    "day": "do",
-    "label": "Donnerstag",
-    "goal": "Pipeline Doc",
-    "deliverable": "Mermaid",
-    "hours": 7.5,
-    "blocks": [
-      {
-        "time": "09:00–10:30",
-        "title": "Theorie / Tutorial",
-        "items": [
-          "Full pipeline",
-          "zollsoft wording"
-        ],
-        "tutorialIds": [
-          "mermaid"
-        ]
-      },
-      {
-        "time": "10:45–12:30",
-        "title": "Hands-on",
-        "items": [
-          "Mermaid diagram"
-        ],
-        "tutorialIds": []
-      },
-      {
-        "time": "13:30–15:30",
-        "title": "Projekt",
-        "items": [
-          "1 Seite Pipeline DE"
-        ],
-        "tutorialIds": []
-      },
-      {
-        "time": "15:45–17:00",
-        "title": "Tests & Doku",
-        "items": [
-          "All repos linked"
-        ],
-        "tutorialIds": []
-      }
-    ],
-    "tasks": [
-      "Pipeline doc"
-    ]
-  },
-  {
-    "week": 8,
-    "day": "fr",
-    "label": "Freitag",
-    "goal": "Meilenstein W8",
-    "deliverable": "TF+MLflow+Pipeline",
-    "hours": 7.5,
-    "blocks": [
-      {
-        "time": "09:00–10:30",
-        "title": "Theorie / Tutorial",
-        "items": [
-          "Review keywords",
-          "Meilenstein W8"
-        ],
-        "tutorialIds": []
-      },
-      {
-        "time": "10:45–12:30",
-        "title": "Hands-on",
-        "items": [
-          "TF vs PT Notiz"
-        ],
-        "tutorialIds": []
-      },
-      {
-        "time": "13:30–15:30",
-        "title": "Projekt",
-        "items": [
-          "Push"
-        ],
-        "tutorialIds": []
-      },
-      {
-        "time": "15:45–17:00",
-        "title": "Tests & Doku",
-        "items": [
-          "All 3 done"
-        ],
-        "tutorialIds": []
-      }
-    ],
-    "tasks": [
-      "tensorflow-quickstart"
+      "Demo UI",
+      "3 Szenarien",
+      "Meilenstein Woche 8 erreicht"
     ]
   },
   {
     "week": 8,
     "day": "sa",
     "label": "Samstag",
-    "goal": "TF üben",
-    "deliverable": "Keras erklären",
+    "goal": "Optional LangGraph",
+    "deliverable": "Konzept gelesen",
     "hours": 3,
     "blocks": [
       {
         "time": "09:00–12:00",
-        "title": "Puffer",
+        "title": "Skim",
         "items": [
-          "TF in 2 Min"
+          "LangGraph Intro Docs (optional)"
         ],
         "tutorialIds": []
       }
     ],
     "tasks": [
-      "keras-guide"
+      "Optional: LangGraph Überblick"
     ]
   },
   {
     "week": 9,
     "day": "mo",
     "label": "Montag",
-    "goal": "Signature Plan",
-    "deliverable": "Spec + Arch",
+    "goal": "Streaming RAG",
+    "deliverable": "Token-für-Token UI",
     "hours": 7.5,
     "blocks": [
       {
         "time": "09:00–10:30",
-        "title": "Theorie / Tutorial",
+        "title": "Streaming",
         "items": [
-          "CV oder Speech wählen",
-          "zollsoft Fit"
+          "OpenAI Stream in RAG"
         ],
         "tutorialIds": [
-          "mermaid"
+          "openai-api"
         ]
       },
       {
         "time": "10:45–12:30",
-        "title": "Hands-on",
+        "title": "UI Update",
         "items": [
-          "Spec schreiben",
-          "Mermaid"
+          "Streamlit Stream"
         ],
-        "tutorialIds": []
+        "tutorialIds": [
+          "streamlit"
+        ]
       },
       {
         "time": "13:30–15:30",
-        "title": "Projekt",
+        "title": "Fallback",
         "items": [
-          "Repo setup"
+          "Stream bricht ab → Retry"
         ],
         "tutorialIds": []
       },
       {
         "time": "15:45–17:00",
-        "title": "Tests & Doku",
+        "title": "UX Test",
         "items": [
-          "Issues list"
+          "Lange Antwort testen"
         ],
         "tutorialIds": []
       }
     ],
     "tasks": [
-      "Spec done"
+      "Streaming in RAG",
+      "UI zeigt Stream",
+      "Abbruch-Handling"
     ]
   },
   {
     "week": 9,
     "day": "di",
     "label": "Dienstag",
-    "goal": "Daten + Prep",
-    "deliverable": "Clean data",
+    "goal": "Caching",
+    "deliverable": "Cache-Layer aktiv",
     "hours": 7.5,
     "blocks": [
       {
         "time": "09:00–10:30",
-        "title": "Theorie / Tutorial",
+        "title": "Redis Setup",
         "items": [
-          "Datenakquise",
-          "Preprocessing"
+          "Docker Redis + redis-py"
         ],
         "tutorialIds": [
-          "ham10000",
-          "whisper-docs"
+          "redis-py"
         ]
       },
       {
         "time": "10:45–12:30",
-        "title": "Hands-on",
+        "title": "Embedding Cache",
         "items": [
-          "Pipeline code",
-          "Tests"
+          "Hash → Vector"
         ],
         "tutorialIds": []
       },
       {
         "time": "13:30–15:30",
-        "title": "Projekt",
+        "title": "Response Cache",
         "items": [
-          "EDA/update"
+          "Identische Query → Cache Hit"
         ],
         "tutorialIds": []
       },
       {
         "time": "15:45–17:00",
-        "title": "Tests & Doku",
+        "title": "Messen",
         "items": [
-          "Commit"
+          "Hit-Rate + Latenz"
         ],
         "tutorialIds": []
       }
     ],
     "tasks": [
-      "Data ready"
+      "Redis läuft",
+      "Embedding Cache",
+      "Response Cache",
+      "Latenz gemessen"
     ]
   },
   {
     "week": 9,
     "day": "mi",
     "label": "Mittwoch",
-    "goal": "Training",
-    "deliverable": "Model train",
+    "goal": "Rate Limiting",
+    "deliverable": "429 bei Spam",
     "hours": 7.5,
     "blocks": [
       {
         "time": "09:00–10:30",
-        "title": "Theorie / Tutorial",
+        "title": "SlowAPI",
         "items": [
-          "Hyperparams",
-          "Train loop"
+          "Docs lesen"
         ],
         "tutorialIds": [
-          "pytorch-transfer",
-          "mlflow-quickstart"
+          "slowapi"
         ]
       },
       {
         "time": "10:45–12:30",
-        "title": "Hands-on",
+        "title": "Implementieren",
         "items": [
-          "Full train",
-          "MLflow log"
-        ],
-        "tutorialIds": []
-      },
-      {
-        "time": "13:30–15:30",
-        "title": "Projekt",
-        "items": [
-          "Val metrics"
-        ],
-        "tutorialIds": []
-      },
-      {
-        "time": "15:45–17:00",
-        "title": "Tests & Doku",
-        "items": [
-          "Checkpoint"
-        ],
-        "tutorialIds": []
-      }
-    ],
-    "tasks": [
-      "Model trained"
-    ]
-  },
-  {
-    "week": 9,
-    "day": "do",
-    "label": "Donnerstag",
-    "goal": "Eval deep",
-    "deliverable": "Error analysis",
-    "hours": 7.5,
-    "blocks": [
-      {
-        "time": "09:00–10:30",
-        "title": "Theorie / Tutorial",
-        "items": [
-          "20 failures",
-          "Medical metrics"
-        ],
-        "tutorialIds": [
-          "shap-docs"
-        ]
-      },
-      {
-        "time": "10:45–12:30",
-        "title": "Hands-on",
-        "items": [
-          "Report",
-          "SHAP optional"
-        ],
-        "tutorialIds": [
-          "shap-docs"
-        ]
-      },
-      {
-        "time": "13:30–15:30",
-        "title": "Projekt",
-        "items": [
-          "Plots"
-        ],
-        "tutorialIds": []
-      },
-      {
-        "time": "15:45–17:00",
-        "title": "Tests & Doku",
-        "items": [
-          "Design decisions"
-        ],
-        "tutorialIds": []
-      }
-    ],
-    "tasks": [
-      "Eval report"
-    ]
-  },
-  {
-    "week": 9,
-    "day": "fr",
-    "label": "Freitag",
-    "goal": "Meilenstein W9",
-    "deliverable": "Model ready",
-    "hours": 7.5,
-    "blocks": [
-      {
-        "time": "09:00–10:30",
-        "title": "Theorie / Tutorial",
-        "items": [
-          "Review",
-          "Meilenstein W9"
-        ],
-        "tutorialIds": []
-      },
-      {
-        "time": "10:45–12:30",
-        "title": "Hands-on",
-        "items": [
-          "Prepare deploy"
-        ],
-        "tutorialIds": []
-      },
-      {
-        "time": "13:30–15:30",
-        "title": "Projekt",
-        "items": [
-          "Push"
-        ],
-        "tutorialIds": []
-      },
-      {
-        "time": "15:45–17:00",
-        "title": "Tests & Doku",
-        "items": [
-          "Eval complete"
-        ],
-        "tutorialIds": []
-      }
-    ],
-    "tasks": []
-  },
-  {
-    "week": 9,
-    "day": "sa",
-    "label": "Samstag",
-    "goal": "Ethik",
-    "deliverable": "Bias Note",
-    "hours": 3,
-    "blocks": [
-      {
-        "time": "09:00–12:00",
-        "title": "Puffer",
-        "items": [
-          "Medizin Ethik",
-          "DSGVO skim"
-        ],
-        "tutorialIds": []
-      }
-    ],
-    "tasks": []
-  },
-  {
-    "week": 10,
-    "day": "mo",
-    "label": "Montag",
-    "goal": "Production API",
-    "deliverable": "Hardened",
-    "hours": 7.5,
-    "blocks": [
-      {
-        "time": "09:00–10:30",
-        "title": "Theorie / Tutorial",
-        "items": [
-          "Rate limit",
-          "Health"
-        ],
-        "tutorialIds": [
-          "slowapi",
-          "fastapi-async"
-        ]
-      },
-      {
-        "time": "10:45–12:30",
-        "title": "Hands-on",
-        "items": [
-          "/health /ready"
+          "/ask limitieren"
         ],
         "tutorialIds": [
           "slowapi"
@@ -2447,39 +2406,376 @@ export const DAILY_PLANS = [
       },
       {
         "time": "13:30–15:30",
-        "title": "Projekt",
+        "title": "API Keys",
         "items": [
-          "Structured logs"
+          ".env only, nie im Code"
         ],
         "tutorialIds": []
       },
       {
         "time": "15:45–17:00",
-        "title": "Tests & Doku",
+        "title": "Test",
         "items": [
-          "Tests"
+          "429 provozieren"
         ],
         "tutorialIds": []
       }
     ],
     "tasks": [
-      "Prod API"
+      "Rate Limit aktiv",
+      "Secrets sicher",
+      "429 getestet"
+    ]
+  },
+  {
+    "week": 9,
+    "day": "do",
+    "label": "Donnerstag",
+    "goal": "docker-compose Stack",
+    "deliverable": "App+Qdrant+Redis",
+    "hours": 7.5,
+    "blocks": [
+      {
+        "time": "09:00–10:30",
+        "title": "Fallback Model",
+        "items": [
+          "Ollama wenn OpenAI fail"
+        ],
+        "tutorialIds": [
+          "ollama"
+        ]
+      },
+      {
+        "time": "10:45–12:30",
+        "title": "compose",
+        "items": [
+          "3 Services verknüpfen"
+        ],
+        "tutorialIds": [
+          "docker-compose"
+        ]
+      },
+      {
+        "time": "13:30–15:30",
+        "title": "Integration Test",
+        "items": [
+          "compose up → full flow"
+        ],
+        "tutorialIds": []
+      },
+      {
+        "time": "15:45–17:00",
+        "title": "Docs",
+        "items": [
+          "Production Checklist README"
+        ],
+        "tutorialIds": []
+      }
+    ],
+    "tasks": [
+      "Fallback Model",
+      "compose 3 Services",
+      "Full stack OK"
+    ]
+  },
+  {
+    "week": 9,
+    "day": "fr",
+    "label": "Freitag",
+    "goal": "Hardening + Meilenstein",
+    "deliverable": "10 parallele Requests OK",
+    "hours": 7.5,
+    "blocks": [
+      {
+        "time": "09:00–10:30",
+        "title": "Async",
+        "items": [
+          "FastAPI async Endpoints"
+        ],
+        "tutorialIds": [
+          "fastapi-async"
+        ]
+      },
+      {
+        "time": "10:45–12:30",
+        "title": "Load Test",
+        "items": [
+          "10 parallele Requests"
+        ],
+        "tutorialIds": []
+      },
+      {
+        "time": "13:30–15:30",
+        "title": "Fix Bottlenecks",
+        "items": [
+          "Langsamste Stelle optimieren"
+        ],
+        "tutorialIds": []
+      },
+      {
+        "time": "15:45–17:00",
+        "title": "Meilenstein",
+        "items": [
+          "Production Checklist abhaken"
+        ],
+        "tutorialIds": []
+      }
+    ],
+    "tasks": [
+      "Async Endpoints",
+      "Load Test",
+      "Meilenstein Woche 9 erreicht"
+    ]
+  },
+  {
+    "week": 9,
+    "day": "sa",
+    "label": "Samstag",
+    "goal": "Deploy Update",
+    "deliverable": "RAG live deployt",
+    "hours": 3,
+    "blocks": [
+      {
+        "time": "09:00–12:00",
+        "title": "Deploy",
+        "items": [
+          "RAG auf Railway/Fly updaten"
+        ],
+        "tutorialIds": [
+          "railway-deploy"
+        ]
+      }
+    ],
+    "tasks": [
+      "RAG Live-URL aktualisiert"
+    ]
+  },
+  {
+    "week": 10,
+    "day": "mo",
+    "label": "Montag",
+    "goal": "Architektur",
+    "deliverable": "Feature-Liste + Repo",
+    "hours": 7.5,
+    "blocks": [
+      {
+        "time": "09:00–10:30",
+        "title": "Planung",
+        "items": [
+          "Enterprise Knowledge Assistant Spec"
+        ],
+        "tutorialIds": []
+      },
+      {
+        "time": "10:45–12:30",
+        "title": "Architektur",
+        "items": [
+          "Mermaid Diagramm"
+        ],
+        "tutorialIds": [
+          "mermaid"
+        ]
+      },
+      {
+        "time": "13:30–15:30",
+        "title": "Repo Setup",
+        "items": [
+          "Module-Struktur"
+        ],
+        "tutorialIds": []
+      },
+      {
+        "time": "15:45–17:00",
+        "title": "DOCX",
+        "items": [
+          "python-docx Setup"
+        ],
+        "tutorialIds": [
+          "python-docx"
+        ]
+      }
+    ],
+    "tasks": [
+      "Spec geschrieben",
+      "Architektur-Diagramm",
+      "Repo angelegt"
     ]
   },
   {
     "week": 10,
     "day": "di",
     "label": "Dienstag",
-    "goal": "Docker Deploy",
-    "deliverable": "Live",
+    "goal": "Multi-Format Upload",
+    "deliverable": "PDF+MD+DOCX",
     "hours": 7.5,
     "blocks": [
       {
         "time": "09:00–10:30",
-        "title": "Theorie / Tutorial",
+        "title": "Parser",
         "items": [
-          "Production Dockerfile",
-          "Deploy"
+          "PDF, MD, DOCX Parser"
+        ],
+        "tutorialIds": [
+          "pypdf",
+          "python-docx"
+        ]
+      },
+      {
+        "time": "10:45–12:30",
+        "title": "Upload API",
+        "items": [
+          "/upload multi-format"
+        ],
+        "tutorialIds": [
+          "fastapi-tutorial"
+        ]
+      },
+      {
+        "time": "13:30–15:30",
+        "title": "Index Pipeline",
+        "items": [
+          "Upload → Chunk → Index"
+        ],
+        "tutorialIds": []
+      },
+      {
+        "time": "15:45–17:00",
+        "title": "Test",
+        "items": [
+          "Je 2 Dateien pro Format"
+        ],
+        "tutorialIds": []
+      }
+    ],
+    "tasks": [
+      "3 Formate supported",
+      "Upload API",
+      "6 Test-Dateien indexiert"
+    ]
+  },
+  {
+    "week": 10,
+    "day": "mi",
+    "label": "Mittwoch",
+    "goal": "Hybrid RAG Core",
+    "deliverable": "W6 Code integriert",
+    "hours": 7.5,
+    "blocks": [
+      {
+        "time": "09:00–10:30",
+        "title": "Port Code",
+        "items": [
+          "Hybrid RAG aus W6 übernehmen"
+        ],
+        "tutorialIds": [
+          "llamaindex-retrieval"
+        ]
+      },
+      {
+        "time": "10:45–12:30",
+        "title": "Citations",
+        "items": [
+          "Quellenangabe"
+        ],
+        "tutorialIds": [
+          "llamaindex-citations"
+        ]
+      },
+      {
+        "time": "13:30–15:30",
+        "title": "Eval Hook",
+        "items": [
+          "Eval aus W7 einbinden"
+        ],
+        "tutorialIds": [
+          "ragas"
+        ]
+      },
+      {
+        "time": "15:45–17:00",
+        "title": "Smoke Tests",
+        "items": [
+          "10 Fragen"
+        ],
+        "tutorialIds": []
+      }
+    ],
+    "tasks": [
+      "Hybrid RAG integriert",
+      "Eval Hook",
+      "10 Smoke Tests"
+    ]
+  },
+  {
+    "week": 10,
+    "day": "do",
+    "label": "Donnerstag",
+    "goal": "Admin + USP",
+    "deliverable": "Re-Index + Unique Feature",
+    "hours": 7.5,
+    "blocks": [
+      {
+        "time": "09:00–10:30",
+        "title": "Admin API",
+        "items": [
+          "/reindex, /documents"
+        ],
+        "tutorialIds": []
+      },
+      {
+        "time": "10:45–12:30",
+        "title": "USP wählen",
+        "items": [
+          "DE/EN, Domäne, oder Doc-Vergleich"
+        ],
+        "tutorialIds": []
+      },
+      {
+        "time": "13:30–15:30",
+        "title": "USP bauen",
+        "items": [
+          "Feature implementieren"
+        ],
+        "tutorialIds": []
+      },
+      {
+        "time": "15:45–17:00",
+        "title": "Test",
+        "items": [
+          "USP demo-fähig"
+        ],
+        "tutorialIds": []
+      }
+    ],
+    "tasks": [
+      "Admin Endpoints",
+      "USP implementiert",
+      "USP getestet"
+    ]
+  },
+  {
+    "week": 10,
+    "day": "fr",
+    "label": "Freitag",
+    "goal": "Ship + Meilenstein",
+    "deliverable": "Deploy + Loom Video",
+    "hours": 7.5,
+    "blocks": [
+      {
+        "time": "09:00–10:30",
+        "title": "UI Polish",
+        "items": [
+          "Streamlit final"
+        ],
+        "tutorialIds": [
+          "streamlit"
+        ]
+      },
+      {
+        "time": "10:45–12:30",
+        "title": "Docker + Deploy",
+        "items": [
+          "Live URL"
         ],
         "tutorialIds": [
           "railway-deploy",
@@ -2487,211 +2783,64 @@ export const DAILY_PLANS = [
         ]
       },
       {
-        "time": "10:45–12:30",
-        "title": "Hands-on",
-        "items": [
-          "E2E extern"
-        ],
-        "tutorialIds": [
-          "railway-deploy"
-        ]
-      },
-      {
         "time": "13:30–15:30",
-        "title": "Projekt",
+        "title": "Loom Video",
         "items": [
-          "Fix issues"
-        ],
-        "tutorialIds": []
-      },
-      {
-        "time": "15:45–17:00",
-        "title": "Tests & Doku",
-        "items": [
-          "URL"
-        ],
-        "tutorialIds": []
-      }
-    ],
-    "tasks": [
-      "Live signature"
-    ]
-  },
-  {
-    "week": 10,
-    "day": "mi",
-    "label": "Mittwoch",
-    "goal": "CI",
-    "deliverable": "Actions green",
-    "hours": 7.5,
-    "blocks": [
-      {
-        "time": "09:00–10:30",
-        "title": "Theorie / Tutorial",
-        "items": [
-          "GitHub Actions",
-          "pytest CI"
-        ],
-        "tutorialIds": [
-          "gh-actions"
-        ]
-      },
-      {
-        "time": "10:45–12:30",
-        "title": "Hands-on",
-        "items": [
-          "All repos CI"
-        ],
-        "tutorialIds": [
-          "gh-actions"
-        ]
-      },
-      {
-        "time": "13:30–15:30",
-        "title": "Projekt",
-        "items": [
-          "Badges"
-        ],
-        "tutorialIds": []
-      },
-      {
-        "time": "15:45–17:00",
-        "title": "Tests & Doku",
-        "items": [
-          "Fix failures"
-        ],
-        "tutorialIds": []
-      }
-    ],
-    "tasks": [
-      "CI green"
-    ]
-  },
-  {
-    "week": 10,
-    "day": "do",
-    "label": "Donnerstag",
-    "goal": "Demo Video",
-    "deliverable": "Loom 5min",
-    "hours": 7.5,
-    "blocks": [
-      {
-        "time": "09:00–10:30",
-        "title": "Theorie / Tutorial",
-        "items": [
-          "Script",
-          "Record"
+          "5 Min Walkthrough"
         ],
         "tutorialIds": [
           "loom"
         ]
       },
       {
-        "time": "10:45–12:30",
-        "title": "Hands-on",
-        "items": [
-          "Upload link"
-        ],
-        "tutorialIds": []
-      },
-      {
-        "time": "13:30–15:30",
-        "title": "Projekt",
-        "items": [
-          "README final"
-        ],
-        "tutorialIds": []
-      },
-      {
         "time": "15:45–17:00",
-        "title": "Tests & Doku",
+        "title": "Meilenstein",
         "items": [
-          "Metrics table"
+          "README mit URL + Video"
         ],
         "tutorialIds": []
       }
     ],
     "tasks": [
-      "Video link"
+      "Deploy live",
+      "Demo-Video",
+      "Meilenstein Woche 10 erreicht"
     ]
-  },
-  {
-    "week": 10,
-    "day": "fr",
-    "label": "Freitag",
-    "goal": "Meilenstein W10",
-    "deliverable": "Signature live",
-    "hours": 7.5,
-    "blocks": [
-      {
-        "time": "09:00–10:30",
-        "title": "Theorie / Tutorial",
-        "items": [
-          "5 Min pitch",
-          "Meilenstein W10"
-        ],
-        "tutorialIds": []
-      },
-      {
-        "time": "10:45–12:30",
-        "title": "Hands-on",
-        "items": [
-          "Pin GitHub"
-        ],
-        "tutorialIds": []
-      },
-      {
-        "time": "13:30–15:30",
-        "title": "Projekt",
-        "items": [
-          "Celebrate"
-        ],
-        "tutorialIds": []
-      },
-      {
-        "time": "15:45–17:00",
-        "title": "Tests & Doku",
-        "items": [
-          "Live + video"
-        ],
-        "tutorialIds": []
-      }
-    ],
-    "tasks": []
   },
   {
     "week": 10,
     "day": "sa",
     "label": "Samstag",
-    "goal": "Pitch Signature",
-    "deliverable": "3× üben",
+    "goal": "Pitch üben",
+    "deliverable": "5 Min Walkthrough 3x",
     "hours": 3,
     "blocks": [
       {
         "time": "09:00–12:00",
-        "title": "Puffer",
+        "title": "Üben",
         "items": [
-          "5 Min Walkthrough"
+          "Signature-Projekt Pitch"
         ],
         "tutorialIds": []
       }
     ],
-    "tasks": []
+    "tasks": [
+      "Pitch 3x geübt"
+    ]
   },
   {
     "week": 11,
     "day": "mo",
     "label": "Montag",
-    "goal": "Portfolio README",
-    "deliverable": "3 Repos polish",
+    "goal": "Repo 1 polieren",
+    "deliverable": "ML-API Portfolio-ready",
     "hours": 7.5,
     "blocks": [
       {
         "time": "09:00–10:30",
-        "title": "Theorie / Tutorial",
+        "title": "README",
         "items": [
-          "Template",
-          "GIFs/URLs"
+          "Screenshots, .env.example"
         ],
         "tutorialIds": [
           "github-readme-guide"
@@ -2699,490 +2848,510 @@ export const DAILY_PLANS = [
       },
       {
         "time": "10:45–12:30",
-        "title": "Hands-on",
+        "title": "CI + Secrets",
         "items": [
-          "ML API README"
+          "Grün, keine Keys im Git"
         ],
         "tutorialIds": []
       },
       {
         "time": "13:30–15:30",
-        "title": "Projekt",
+        "title": "Pin",
         "items": [
-          "CV README"
+          "GitHub Pin setzen"
         ],
         "tutorialIds": []
       },
       {
         "time": "15:45–17:00",
-        "title": "Tests & Doku",
+        "title": "Review",
         "items": [
-          "Speech README"
+          "Frischer Clone Test"
         ],
         "tutorialIds": []
       }
     ],
     "tasks": [
-      "3 READMEs"
+      "ML-API README poliert",
+      "GitHub Pin",
+      "Clone Test OK"
     ]
   },
   {
     "week": 11,
     "day": "di",
     "label": "Dienstag",
-    "goal": "Anschreiben zollsoft",
-    "deliverable": "DE Anschreiben",
+    "goal": "Repo 2 polieren",
+    "deliverable": "RAG Portfolio-ready",
     "hours": 7.5,
     "blocks": [
       {
         "time": "09:00–10:30",
-        "title": "Theorie / Tutorial",
+        "title": "Diagramm",
         "items": [
-          "Stellenanzeige analysieren",
-          "Keywords"
+          "Mermaid RAG Pipeline"
         ],
-        "tutorialIds": []
+        "tutorialIds": [
+          "mermaid"
+        ]
       },
       {
         "time": "10:45–12:30",
-        "title": "Hands-on",
+        "title": "Eval",
         "items": [
-          "Anschreiben draft",
-          "CV update"
+          "Eval-Tabelle sichtbar"
         ],
         "tutorialIds": []
       },
       {
         "time": "13:30–15:30",
-        "title": "Projekt",
+        "title": "Setup",
         "items": [
-          "LinkedIn"
+          "< 5 Min Clone→Run"
         ],
         "tutorialIds": []
       },
       {
         "time": "15:45–17:00",
-        "title": "Tests & Doku",
+        "title": "Pin",
         "items": [
-          "Feedback"
+          "GitHub Pin"
         ],
         "tutorialIds": []
       }
     ],
     "tasks": [
-      "Anschreiben v1"
+      "RAG Diagramm",
+      "Eval im README",
+      "Setup < 5 Min"
     ]
   },
   {
     "week": 11,
     "day": "mi",
     "label": "Mittwoch",
-    "goal": "Lebenslauf",
-    "deliverable": "1-Seiter DE",
+    "goal": "Repo 3 + GitHub Profil",
+    "deliverable": "Agent Repo + Bio",
     "hours": 7.5,
     "blocks": [
       {
         "time": "09:00–10:30",
-        "title": "Theorie / Tutorial",
+        "title": "Agent README",
         "items": [
-          "Projekte first",
-          "DS Weiterbildung"
+          "Beispiel-Runs, Tools"
         ],
-        "tutorialIds": []
+        "tutorialIds": [
+          "github-readme-guide"
+        ]
       },
       {
         "time": "10:45–12:30",
-        "title": "Hands-on",
+        "title": "Konsistenz",
         "items": [
-          "PDF export",
-          "Links live"
+          "Gleiche README-Struktur alle 3"
         ],
         "tutorialIds": []
       },
       {
         "time": "13:30–15:30",
-        "title": "Projekt",
+        "title": "GitHub Profil",
         "items": [
-          "Korrektur"
+          "Bio, Links, Pins"
         ],
         "tutorialIds": []
       },
       {
         "time": "15:45–17:00",
-        "title": "Tests & Doku",
+        "title": "Review",
         "items": [
-          "CV fertig"
-        ],
-        "tutorialIds": []
-      }
-    ],
-    "tasks": []
-  },
-  {
-    "week": 11,
-    "day": "do",
-    "label": "Donnerstag",
-    "goal": "Kompetenzprofil",
-    "deliverable": "Skills Matrix",
-    "hours": 7.5,
-    "blocks": [
-      {
-        "time": "09:00–10:30",
-        "title": "Theorie / Tutorial",
-        "items": [
-          "PyTorch TF sklearn",
-          "CV Speech Deploy"
-        ],
-        "tutorialIds": []
-      },
-      {
-        "time": "10:45–12:30",
-        "title": "Hands-on",
-        "items": [
-          "1 Seite Profil"
-        ],
-        "tutorialIds": []
-      },
-      {
-        "time": "13:30–15:30",
-        "title": "Projekt",
-        "items": [
-          "Match zollsoft"
-        ],
-        "tutorialIds": []
-      },
-      {
-        "time": "15:45–17:00",
-        "title": "Tests & Doku",
-        "items": [
-          "Commit docs/"
+          "Als Recruiter lesen"
         ],
         "tutorialIds": []
       }
     ],
     "tasks": [
-      "Profil done"
+      "Agent README",
+      "3 Repos konsistent",
+      "GitHub Profil"
+    ]
+  },
+  {
+    "week": 11,
+    "day": "do",
+    "label": "Donnerstag",
+    "goal": "LinkedIn",
+    "deliverable": "Headline + 2 Posts",
+    "hours": 7.5,
+    "blocks": [
+      {
+        "time": "09:00–10:30",
+        "title": "Profil",
+        "items": [
+          "Headline + About"
+        ],
+        "tutorialIds": []
+      },
+      {
+        "time": "10:45–12:30",
+        "title": "Post 1",
+        "items": [
+          "Chunking Learnings"
+        ],
+        "tutorialIds": []
+      },
+      {
+        "time": "13:30–15:30",
+        "title": "Post 2",
+        "items": [
+          "RAG Eval Lessons"
+        ],
+        "tutorialIds": []
+      },
+      {
+        "time": "15:45–17:00",
+        "title": "Link",
+        "items": [
+          "Signature-Projekt verlinken"
+        ],
+        "tutorialIds": []
+      }
+    ],
+    "tasks": [
+      "LinkedIn Headline",
+      "2 Posts veröffentlicht",
+      "Projekt-Link"
     ]
   },
   {
     "week": 11,
     "day": "fr",
     "label": "Freitag",
-    "goal": "Meilenstein W11",
-    "deliverable": "Bewerbungsmappe",
+    "goal": "Lebenslauf + Meilenstein",
+    "deliverable": "CV fertig",
     "hours": 7.5,
     "blocks": [
       {
         "time": "09:00–10:30",
-        "title": "Theorie / Tutorial",
+        "title": "CV Struktur",
         "items": [
-          "Review als Recruiter",
-          "Meilenstein W11"
+          "Projekte vor Weiterbildung"
         ],
         "tutorialIds": []
       },
       {
         "time": "10:45–12:30",
-        "title": "Hands-on",
+        "title": "Versionen",
         "items": [
-          "Final polish"
+          "1-Seite + ausführlich"
         ],
         "tutorialIds": []
       },
       {
         "time": "13:30–15:30",
-        "title": "Projekt",
+        "title": "Feedback",
         "items": [
-          "Push"
+          "2 Personen fragen"
         ],
         "tutorialIds": []
       },
       {
         "time": "15:45–17:00",
-        "title": "Tests & Doku",
+        "title": "Meilenstein",
         "items": [
-          "Mappe fertig"
+          "Bewerbungs-Checkliste starten"
         ],
         "tutorialIds": []
       }
     ],
-    "tasks": []
+    "tasks": [
+      "CV 1-Seite",
+      "CV ausführlich",
+      "Meilenstein Woche 11 erreicht"
+    ]
   },
   {
     "week": 11,
     "day": "sa",
     "label": "Samstag",
-    "goal": "zollsoft research",
-    "deliverable": "Firma verstehen",
+    "goal": "Checkliste",
+    "deliverable": "7 Punkte geprüft",
     "hours": 3,
     "blocks": [
       {
         "time": "09:00–12:00",
-        "title": "Puffer",
+        "title": "Review",
         "items": [
-          "tomedo",
-          "KI Team"
+          "Bewerbungs-Checkliste durchgehen"
         ],
         "tutorialIds": []
       }
     ],
-    "tasks": []
+    "tasks": [
+      "Checkliste Lücken geschlossen"
+    ]
   },
   {
     "week": 12,
     "day": "mo",
     "label": "Montag",
     "goal": "Interview Antworten",
-    "deliverable": "15 schriftlich",
+    "deliverable": "10 Fragen schriftlich",
     "hours": 7.5,
     "blocks": [
       {
         "time": "09:00–10:30",
-        "title": "Theorie / Tutorial",
+        "title": "RAG Serie",
         "items": [
-          "15 Fragen PLAN",
-          "Medizin Beispiele"
+          "Pinecone RAG Artikel"
         ],
         "tutorialIds": [
-          "interview-ml",
-          "zollsoft-jobs"
+          "interview-rag"
         ]
       },
       {
         "time": "10:45–12:30",
-        "title": "Hands-on",
+        "title": "Antworten",
         "items": [
-          "Antworten schreiben"
+          "Top 5 Fragen schreiben"
         ],
-        "tutorialIds": [
-          "interview-ml"
-        ]
+        "tutorialIds": []
       },
       {
         "time": "13:30–15:30",
-        "title": "Projekt",
+        "title": "Antworten 2",
         "items": [
-          "docs/interview.md"
+          "Top 6–10 schreiben"
         ],
         "tutorialIds": []
       },
       {
         "time": "15:45–17:00",
-        "title": "Tests & Doku",
+        "title": "Laut üben",
         "items": [
-          "Laut üben 5"
+          "RAG in 2 Min"
         ],
         "tutorialIds": []
       }
     ],
     "tasks": [
-      "15 Antworten"
+      "10 Antwortentwürfe",
+      "RAG 2 Min geübt"
     ]
   },
   {
     "week": 12,
     "day": "di",
     "label": "Dienstag",
-    "goal": "Pitch CV",
-    "deliverable": "5 Min ×3",
+    "goal": "Coding Prep",
+    "deliverable": "FastAPI Route live coded",
     "hours": 7.5,
     "blocks": [
       {
         "time": "09:00–10:30",
-        "title": "Theorie / Tutorial",
+        "title": "Python Warmup",
         "items": [
-          "CV Projekt",
-          "Metriken"
+          "JSON, Dicts, Comprehensions"
         ],
-        "tutorialIds": []
+        "tutorialIds": [
+          "real-python"
+        ]
       },
       {
         "time": "10:45–12:30",
-        "title": "Hands-on",
+        "title": "FastAPI",
         "items": [
-          "3× pitch"
+          "Route + Test ohne IDE-Hilfe"
         ],
-        "tutorialIds": []
+        "tutorialIds": [
+          "fastapi-testclient"
+        ]
       },
       {
         "time": "13:30–15:30",
-        "title": "Projekt",
+        "title": "Übungen",
         "items": [
-          "Feedback notizen"
+          "2 kleine Aufgaben"
         ],
         "tutorialIds": []
       },
       {
         "time": "15:45–17:00",
-        "title": "Tests & Doku",
+        "title": "Pitch",
         "items": [
-          "Timing"
+          "Signature 5 Min"
         ],
         "tutorialIds": []
       }
     ],
     "tasks": [
-      "CV pitch OK"
+      "FastAPI live coded",
+      "2 Übungen",
+      "Pitch geübt"
     ]
   },
   {
     "week": 12,
     "day": "mi",
     "label": "Mittwoch",
-    "goal": "Pitch Speech",
-    "deliverable": "5 Min ×3",
+    "goal": "5 Bewerbungen",
+    "deliverable": "5 Applications sent",
     "hours": 7.5,
     "blocks": [
       {
         "time": "09:00–10:30",
-        "title": "Theorie / Tutorial",
+        "title": "Stellen",
         "items": [
-          "Speech Projekt",
-          "Whisper"
+          "LinkedIn, StepStone: 10 Stellen"
         ],
         "tutorialIds": []
       },
       {
         "time": "10:45–12:30",
-        "title": "Hands-on",
+        "title": "Vorlage",
         "items": [
-          "3× pitch"
+          "Anschreiben Template"
         ],
         "tutorialIds": []
       },
       {
         "time": "13:30–15:30",
-        "title": "Projekt",
+        "title": "Senden",
         "items": [
-          "Notizen"
+          "5 Bewerbungen"
         ],
         "tutorialIds": []
       },
       {
         "time": "15:45–17:00",
-        "title": "Tests & Doku",
+        "title": "Tracking",
         "items": [
-          "Timing"
+          "Tabelle: Firma, Datum, Status"
         ],
         "tutorialIds": []
       }
     ],
     "tasks": [
-      "Speech pitch OK"
+      "10 Stellen identifiziert",
+      "5 Bewerbungen raus",
+      "Tracking-Tabelle"
     ]
   },
   {
     "week": 12,
     "day": "do",
     "label": "Donnerstag",
-    "goal": "Bewerbung",
-    "deliverable": "zollsoft senden",
+    "goal": "5 Bewerbungen",
+    "deliverable": "10 total",
     "hours": 7.5,
     "blocks": [
       {
         "time": "09:00–10:30",
-        "title": "Theorie / Tutorial",
+        "title": "Stellen",
         "items": [
-          "PDFs",
-          "Online Form"
+          "5 weitere Stellen"
         ],
-        "tutorialIds": [
-          "zollsoft-jobs"
-        ]
+        "tutorialIds": []
       },
       {
         "time": "10:45–12:30",
-        "title": "Hands-on",
+        "title": "Anpassen",
         "items": [
-          "zollsoft bewerben",
-          "5 ähnliche"
+          "CV pro Rolle leicht anpassen"
         ],
         "tutorialIds": []
       },
       {
         "time": "13:30–15:30",
-        "title": "Projekt",
+        "title": "Senden",
         "items": [
-          "Tracking Tabelle"
+          "5 Bewerbungen"
         ],
         "tutorialIds": []
       },
       {
         "time": "15:45–17:00",
-        "title": "Tests & Doku",
+        "title": "Follow-up",
         "items": [
-          "Confirm email"
+          "Plan für Nachfassen"
         ],
         "tutorialIds": []
       }
     ],
     "tasks": [
-      "zollsoft raus"
+      "5 weitere Bewerbungen",
+      "10 total",
+      "Follow-up Plan"
     ]
   },
   {
     "week": 12,
     "day": "fr",
     "label": "Freitag",
-    "goal": "Meilenstein W12",
-    "deliverable": "Sprint done",
+    "goal": "Netzwerk + Meilenstein",
+    "deliverable": "3 Kontakte + Reflexion",
     "hours": 7.5,
     "blocks": [
       {
         "time": "09:00–10:30",
-        "title": "Theorie / Tutorial",
+        "title": "LinkedIn",
         "items": [
-          "Mock interview",
-          "Reflexion 12 Wo",
-          "Meilenstein W12"
+          "3 Kontaktanfragen"
         ],
         "tutorialIds": []
       },
       {
         "time": "10:45–12:30",
-        "title": "Hands-on",
+        "title": "Mock Interview",
         "items": [
-          "Next steps"
+          "Selbst oder mit Freund"
         ],
         "tutorialIds": []
       },
       {
         "time": "13:30–15:30",
-        "title": "Projekt",
+        "title": "Reflexion",
         "items": [
-          "Plan complete"
+          "Was lief gut? Was fehlt?"
         ],
         "tutorialIds": []
       },
       {
         "time": "15:45–17:00",
-        "title": "Tests & Doku",
+        "title": "Meilenstein",
         "items": [
-          "zollsoft + tracking"
+          "Plan für Monat 4 optional"
         ],
         "tutorialIds": []
       }
     ],
-    "tasks": []
+    "tasks": [
+      "3 LinkedIn Kontakte",
+      "Mock Interview",
+      "Meilenstein Woche 12 erreicht"
+    ]
   },
   {
     "week": 12,
     "day": "sa",
     "label": "Samstag",
-    "goal": "Feiern",
-    "deliverable": "Pause",
+    "goal": "Feinschliff",
+    "deliverable": "Schwache Antworten verbessert",
     "hours": 3,
     "blocks": [
       {
         "time": "09:00–12:00",
-        "title": "Puffer",
+        "title": "Nacharbeit",
         "items": [
-          "Erholen"
+          "Interview-Antworten verbessern"
         ],
-        "tutorialIds": []
+        "tutorialIds": [
+          "interview-rag"
+        ]
       }
     ],
-    "tasks": []
+    "tasks": [
+      "Interview-Antworten poliert"
+    ]
   }
 ];
 
@@ -3206,30 +3375,35 @@ export function getAllDayTaskIds() {
   return ids;
 }
 
-export function getNextDay(week, day) {
-  const idx = DAILY_PLANS.findIndex((d) => d.week === week && d.day === day);
-  if (idx < 0 || idx >= DAILY_PLANS.length - 1) return null;
-  const next = DAILY_PLANS[idx + 1];
-  return { week: next.week, day: next.day };
-}
-
-export function getPrevDay(week, day) {
-  const idx = DAILY_PLANS.findIndex((d) => d.week === week && d.day === day);
-  if (idx <= 0) return null;
-  const prev = DAILY_PLANS[idx - 1];
-  return { week: prev.week, day: prev.day };
-}
-
 export function getDayIndex(week, day) {
   return DAILY_PLANS.findIndex((d) => d.week === week && d.day === day);
 }
 
+export function getNextDay(week, day) {
+  const idx = getDayIndex(week, day);
+  if (idx >= 0 && idx < DAILY_PLANS.length - 1) {
+    const n = DAILY_PLANS[idx + 1];
+    return { week: n.week, day: n.day };
+  }
+  return null;
+}
+
+export function getPrevDay(week, day) {
+  const idx = getDayIndex(week, day);
+  if (idx > 0) {
+    const p = DAILY_PLANS[idx - 1];
+    return { week: p.week, day: p.day };
+  }
+  return null;
+}
+
+/** Optional calendar hint only — not used for progress logic */
 export function suggestedDayKey(startDateIso) {
   if (!startDateIso) return { week: 1, day: "mo" };
   const start = new Date(startDateIso + "T00:00:00");
   const today = new Date();
   today.setHours(0, 0, 0, 0);
-  const diff = Math.floor((today - start) / 86400000);
+  const diff = Math.floor((today - start) / (86400000));
   if (diff < 0) return { week: 1, day: "mo" };
   const week = Math.min(12, Math.floor(diff / 7) + 1);
   const dow = diff % 7;

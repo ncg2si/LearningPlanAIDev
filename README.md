@@ -1,4 +1,4 @@
-# LLM/RAG Lernplan Tracker
+# LearningPlanAIDev
 
 Persönlicher Fortschrittstracker für den 12-Wochen Vollzeit-Plan (LLM/RAG → KI-Entwickler).
 

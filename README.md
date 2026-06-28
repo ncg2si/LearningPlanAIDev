@@ -1,6 +1,6 @@
-# LearningPlanAIDev — zollsoft Sprint
+# LearningPlanAIDev — 😊 Sprint
 
-**12-Wochen Vollzeit-Sprint** zur Qualifikation für [zollsoft ML/DL](https://zollsoft.de/jobs/softwareentwicklung/softwareentwickler-machine-deep-learning/) (Spracherkennung, Lesions-CV, volle Pipeline).
+**12-Wochen Vollzeit-Sprint** zur Qualifikation für [😊 ML/DL](https://example.com/medtech-ml-jobs) (Spracherkennung, Lesions-CV, volle Pipeline).
 
 > Nicht der 25-Wochen-IfaDW-Plan — bewusst schmal und schnell.
 
@@ -20,7 +20,7 @@ cd ~/Projects/llm-lernplan-tracker
 | **C** NLP & Speech | 6–7 | spaCy, **Whisper /transcribe** |
 | **D** Pipeline + TF | 8 | Bash, **TensorFlow**, MLflow |
 | **E** Signature | 9–10 | Medizin-KI **deployt + Demo-Video** |
-| **F** Bewerbung | 11–12 | **zollsoft bewerben** + Interview |
+| **F** Bewerbung | 11–12 | **😊 bewerben** + Interview |
 
 **72 Tagespläne** · ~**35 h/Woche** · **3 deployte APIs** + 1 Signature-Projekt
 
@@ -30,7 +30,7 @@ cd ~/Projects/llm-lernplan-tracker
 - Live **Speech/Whisper-API** (medizinisches Diktat-Winkel)  
 - **sklearn ML-API** + **TensorFlow-Modell** + **MLflow**  
 - **Signature-Projekt** mit Pipeline-Diagramm und 5-Min-Demo  
-- Anschreiben + CV auf zollsoft zugeschnitten  
+- Anschreiben + CV auf 😊 zugeschnitten  
 
 ## Fortschritt
 

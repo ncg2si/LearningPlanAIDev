@@ -1,4 +1,4 @@
-/** Auto-generated — 12-week zollsoft ML/DL sprint */
+/** Auto-generated — 12-week 😊 ML/DL sprint */
 
 export const DAY_ORDER = ["mo", "di", "mi", "do", "fr", "sa"];
 
@@ -1275,7 +1275,7 @@ export const DAILY_PLANS = [
         "time": "13:30–15:30",
         "title": "Projekt",
         "items": [
-          "README zollsoft angle"
+          "README 😊 angle"
         ],
         "tutorialIds": []
       },
@@ -1832,7 +1832,7 @@ export const DAILY_PLANS = [
         "time": "09:00–10:30",
         "title": "Theorie / Tutorial",
         "items": [
-          "zollsoft Notiz",
+          "😊 Notiz",
           "Meilenstein W7"
         ],
         "tutorialIds": []
@@ -2049,7 +2049,7 @@ export const DAILY_PLANS = [
         "title": "Theorie / Tutorial",
         "items": [
           "Full pipeline",
-          "zollsoft wording"
+          "😊 wording"
         ],
         "tutorialIds": [
           "mermaid"
@@ -2164,7 +2164,7 @@ export const DAILY_PLANS = [
         "title": "Theorie / Tutorial",
         "items": [
           "CV oder Speech wählen",
-          "zollsoft Fit"
+          "😊 Fit"
         ],
         "tutorialIds": [
           "mermaid"
@@ -2730,7 +2730,7 @@ export const DAILY_PLANS = [
     "week": 11,
     "day": "di",
     "label": "Dienstag",
-    "goal": "Anschreiben zollsoft",
+    "goal": "Anschreiben 😊",
     "deliverable": "DE Anschreiben",
     "hours": 7.5,
     "blocks": [
@@ -2847,7 +2847,7 @@ export const DAILY_PLANS = [
         "time": "13:30–15:30",
         "title": "Projekt",
         "items": [
-          "Match zollsoft"
+          "Match 😊"
         ],
         "tutorialIds": []
       },
@@ -2912,7 +2912,7 @@ export const DAILY_PLANS = [
     "week": 11,
     "day": "sa",
     "label": "Samstag",
-    "goal": "zollsoft research",
+    "goal": "😊 research",
     "deliverable": "Firma verstehen",
     "hours": 3,
     "blocks": [
@@ -2945,7 +2945,7 @@ export const DAILY_PLANS = [
         ],
         "tutorialIds": [
           "interview-ml",
-          "zollsoft-jobs"
+          "target-jobs"
         ]
       },
       {
@@ -3076,7 +3076,7 @@ export const DAILY_PLANS = [
     "day": "do",
     "label": "Donnerstag",
     "goal": "Bewerbung",
-    "deliverable": "zollsoft senden",
+    "deliverable": "😊 senden",
     "hours": 7.5,
     "blocks": [
       {
@@ -3087,14 +3087,14 @@ export const DAILY_PLANS = [
           "Online Form"
         ],
         "tutorialIds": [
-          "zollsoft-jobs"
+          "target-jobs"
         ]
       },
       {
         "time": "10:45–12:30",
         "title": "Hands-on",
         "items": [
-          "zollsoft bewerben",
+          "😊 bewerben",
           "5 ähnliche"
         ],
         "tutorialIds": []
@@ -3117,7 +3117,7 @@ export const DAILY_PLANS = [
       }
     ],
     "tasks": [
-      "zollsoft raus"
+      "😊 raus"
     ]
   },
   {
@@ -3158,7 +3158,7 @@ export const DAILY_PLANS = [
         "time": "15:45–17:00",
         "title": "Tests & Doku",
         "items": [
-          "zollsoft + tracking"
+          "😊 + tracking"
         ],
         "tutorialIds": []
       }

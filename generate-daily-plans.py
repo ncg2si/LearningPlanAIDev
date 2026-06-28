@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Generates daily-plans.js — 12-week zollsoft ML/DL sprint."""
+"""Generates daily-plans.js — 12-week 😊 ML/DL sprint."""
 
 import json
 
@@ -67,7 +67,7 @@ WEEKS = {
  day("Inference Design", "Preprocess spec", 7.5, ["FastAPI UploadFile", "Image tensor"], ["preprocess()"], ["Mock endpoint"], ["Tests"], ["Preprocess func"], ["pytorch-inference", "fastapi-tutorial"], ["pytorch-inference"], []),
  day("CV API", "/predict/image", 7.5, ["torch.no_grad", "softmax top-k"], ["Endpoint live"], ["10 test images"], ["Error cases"], ["API OK"], ["pytorch-inference"], ["pytorch-inference"], []),
  day("Docker CV", "Container", 7.5, ["Model volume", "Dockerfile"], ["docker build"], ["compose"], ["E2E local"], ["Docker CV"], ["docker-getting-started"], ["docker-compose"], []),
- day("Deploy CV", "Live URL", 7.5, ["Deploy", "Demo GIF"], ["curl extern"], ["README zollsoft angle"], ["Screenshots"], ["Live CV URL"], ["railway-deploy"], ["railway-deploy"], []),
+ day("Deploy CV", "Live URL", 7.5, ["Deploy", "Demo GIF"], ["curl extern"], ["README 😊 angle"], ["Screenshots"], ["Live CV URL"], ["railway-deploy"], ["railway-deploy"], []),
  day("Meilenstein W5", "CV-API live", 7.5, ["5 Min pitch prep"], ["Polish README"], ["Meilenstein W5"], ["Pin repo"], ["CV live", "Demo GIF"], [], [], []),
  day("Pitch CV", "5 Min üben", 3, ["CV Projekt laut"], [], [], ["1× durch"], [], [], []),
 ]),
@@ -84,19 +84,19 @@ WEEKS = {
  day("Transcribe API", "/transcribe", 7.5, ["Audio upload", "Temp files"], ["Endpoint"], ["3 API tests"], ["Timeout"], ["/transcribe live"], ["fastapi-tutorial", "whisper-docs"], ["faster-whisper"], []),
  day("Post-Process", "Domain vocab", 7.5, ["Med. Post-correction", "Regex/list"], ["Post-process func"], ["5 samples improved"], ["Latenz messen"], ["Post-process"], ["whisper-docs"], [], []),
  day("Speech Docker", "compose", 7.5, ["Docker speech", "compose"], ["Local stack"], ["README Speech"], ["Push"], ["Speech repo"], ["docker-compose"], ["docker-compose"], []),
- day("Meilenstein W7", "Speech API", 7.5, ["zollsoft Notiz", "Meilenstein W7"], ["Pitch prep"], ["Commit"], ["Speech demo"], [], [], []),
+ day("Meilenstein W7", "Speech API", 7.5, ["😊 Notiz", "Meilenstein W7"], ["Pitch prep"], ["Commit"], ["Speech demo"], [], [], []),
  day("ASR üben", "2 Min erklären", 3, ["Whisper Pipeline laut"], [], [], ["Interview note"], [], [], []),
 ]),
 8: w([
  day("Linux Bash", "Pipeline script", 7.5, ["Linux survival", "grep find"], ["download.sh"], ["Args, test"], ["chmod +x"], ["Bash script"], ["linux-survival", "bash-guide"], ["bash-guide"], []),
  day("TensorFlow", "Keras Modell", 7.5, ["TF quickstart", "Keras Sequential"], ["Gleiches Problem wie W3"], ["Vergleich PT vs TF"], ["model.h5"], ["TF model trained"], ["tensorflow-quickstart", "keras-guide"], ["tensorflow-quickstart"], []),
  day("MLflow", "3 Runs", 7.5, ["MLflow quickstart", "CV + ML log"], ["Log experiments"], ["UI screenshot"], ["Registry best"], ["MLflow 3 runs"], ["mlflow-quickstart", "mlflow-models"], ["mlflow-quickstart"], []),
- day("Pipeline Doc", "Mermaid", 7.5, ["Full pipeline", "zollsoft wording"], ["Mermaid diagram"], ["1 Seite Pipeline DE"], ["All repos linked"], ["Pipeline doc"], ["mermaid"], [], []),
+ day("Pipeline Doc", "Mermaid", 7.5, ["Full pipeline", "😊 wording"], ["Mermaid diagram"], ["1 Seite Pipeline DE"], ["All repos linked"], ["Pipeline doc"], ["mermaid"], [], []),
  day("Meilenstein W8", "TF+MLflow+Pipeline", 7.5, ["Review keywords", "Meilenstein W8"], ["TF vs PT Notiz"], ["Push"], ["All 3 done"], ["tensorflow-quickstart"], [], []),
  day("TF üben", "Keras erklären", 3, ["TF in 2 Min"], [], [], ["Notiz"], ["keras-guide"], [], []),
 ]),
 9: w([
- day("Signature Plan", "Spec + Arch", 7.5, ["CV oder Speech wählen", "zollsoft Fit"], ["Spec schreiben", "Mermaid"], ["Repo setup"], ["Issues list"], ["Spec done"], ["mermaid"], [], []),
+ day("Signature Plan", "Spec + Arch", 7.5, ["CV oder Speech wählen", "😊 Fit"], ["Spec schreiben", "Mermaid"], ["Repo setup"], ["Issues list"], ["Spec done"], ["mermaid"], [], []),
  day("Daten + Prep", "Clean data", 7.5, ["Datenakquise", "Preprocessing"], ["Pipeline code", "Tests"], ["EDA/update"], ["Commit"], ["Data ready"], ["ham10000", "whisper-docs"], [], []),
  day("Training", "Model train", 7.5, ["Hyperparams", "Train loop"], ["Full train", "MLflow log"], ["Val metrics"], ["Checkpoint"], ["Model trained"], ["pytorch-transfer", "mlflow-quickstart"], [], []),
  day("Eval deep", "Error analysis", 7.5, ["20 failures", "Medical metrics"], ["Report", "SHAP optional"], ["Plots"], ["Design decisions"], ["Eval report"], ["shap-docs"], ["shap-docs"], []),
@@ -113,18 +113,18 @@ WEEKS = {
 ]),
 11: w([
  day("Portfolio README", "3 Repos polish", 7.5, ["Template", "GIFs/URLs"], ["ML API README"], ["CV README"], ["Speech README"], ["3 READMEs"], ["github-readme-guide"], [], []),
- day("Anschreiben zollsoft", "DE Anschreiben", 7.5, ["Stellenanzeige analysieren", "Keywords"], ["Anschreiben draft", "CV update"], ["LinkedIn"], ["Feedback"], ["Anschreiben v1"], [], [], []),
+ day("Anschreiben 😊", "DE Anschreiben", 7.5, ["Stellenanzeige analysieren", "Keywords"], ["Anschreiben draft", "CV update"], ["LinkedIn"], ["Feedback"], ["Anschreiben v1"], [], [], []),
  day("Lebenslauf", "1-Seiter DE", 7.5, ["Projekte first", "DS Weiterbildung"], ["PDF export", "Links live"], ["Korrektur"], ["CV fertig"], [], [], []),
- day("Kompetenzprofil", "Skills Matrix", 7.5, ["PyTorch TF sklearn", "CV Speech Deploy"], ["1 Seite Profil"], ["Match zollsoft"], ["Commit docs/"], ["Profil done"], [], [], []),
+ day("Kompetenzprofil", "Skills Matrix", 7.5, ["PyTorch TF sklearn", "CV Speech Deploy"], ["1 Seite Profil"], ["Match 😊"], ["Commit docs/"], ["Profil done"], [], [], []),
  day("Meilenstein W11", "Bewerbungsmappe", 7.5, ["Review als Recruiter", "Meilenstein W11"], ["Final polish"], ["Push"], ["Mappe fertig"], [], [], []),
- day("zollsoft research", "Firma verstehen", 3, ["tomedo", "KI Team"], [], [], ["5 Notizen"], [], [], []),
+ day("😊 research", "Firma verstehen", 3, ["tomedo", "KI Team"], [], [], ["5 Notizen"], [], [], []),
 ]),
 12: w([
- day("Interview Antworten", "15 schriftlich", 7.5, ["15 Fragen PLAN", "Medizin Beispiele"], ["Antworten schreiben"], ["docs/interview.md"], ["Laut üben 5"], ["15 Antworten"], ["interview-ml", "zollsoft-jobs"], ["interview-ml"], []),
+ day("Interview Antworten", "15 schriftlich", 7.5, ["15 Fragen PLAN", "Medizin Beispiele"], ["Antworten schreiben"], ["docs/interview.md"], ["Laut üben 5"], ["15 Antworten"], ["interview-ml", "target-jobs"], ["interview-ml"], []),
  day("Pitch CV", "5 Min ×3", 7.5, ["CV Projekt", "Metriken"], ["3× pitch"], ["Feedback notizen"], ["Timing"], ["CV pitch OK"], [], [], []),
  day("Pitch Speech", "5 Min ×3", 7.5, ["Speech Projekt", "Whisper"], ["3× pitch"], ["Notizen"], ["Timing"], ["Speech pitch OK"], [], [], []),
- day("Bewerbung", "zollsoft senden", 7.5, ["PDFs", "Online Form"], ["zollsoft bewerben", "5 ähnliche"], ["Tracking Tabelle"], ["Confirm email"], ["zollsoft raus"], ["zollsoft-jobs"], [], []),
- day("Meilenstein W12", "Sprint done", 7.5, ["Mock interview", "Reflexion 12 Wo", "Meilenstein W12"], ["Next steps"], ["Plan complete"], ["zollsoft + tracking"], [], [], []),
+ day("Bewerbung", "😊 senden", 7.5, ["PDFs", "Online Form"], ["😊 bewerben", "5 ähnliche"], ["Tracking Tabelle"], ["Confirm email"], ["😊 raus"], ["target-jobs"], [], []),
+ day("Meilenstein W12", "Sprint done", 7.5, ["Mock interview", "Reflexion 12 Wo", "Meilenstein W12"], ["Next steps"], ["Plan complete"], ["😊 + tracking"], [], [], []),
  day("Feiern", "Pause", 3, ["Erholen"], [], [], ["Optional follow-up"], [], [], []),
 ]),
 }
@@ -135,7 +135,7 @@ for week_num in range(1, NUM_WEEKS + 1):
         d = WEEKS[week_num][i]
         plans.append({"week": week_num, "day": dk, "label": DAY_LABELS[dk], **d})
 
-js = f'''/** Auto-generated — {NUM_WEEKS}-week zollsoft ML/DL sprint */
+js = f'''/** Auto-generated — {NUM_WEEKS}-week 😊 ML/DL sprint */
 
 export const DAY_ORDER = {json.dumps(DAY_ORDER)};
 

@@ -663,7 +663,7 @@ function renderSidebar() {
   return `
     <aside class="sidebar">
       <div class="brand">
-        <h1>zollsoft Sprint</h1>
+        <h1>😊 Sprint</h1>
         <p>12 Wochen · ${DAILY_PLANS.length} Lerntage · ML/DL Medizin-KI</p>
       </div>
       <div class="overall-progress">
@@ -757,7 +757,7 @@ function renderDashboard() {
 
   const hint = `
     <div class="current-week-hint flexible-hint">
-      <strong>12-Wochen Sprint → zollsoft:</strong> Fokus CV (Lesion) + Speech (Whisper) + deployte APIs — kein IfaDW-Breitenplan.
+      <strong>12-Wochen Sprint → 😊:</strong> Fokus CV (Lesion) + Speech (Whisper) + deployte APIs — kein IfaDW-Breitenplan.
       Pausen sind ok; Meilensteine W5 (CV live), W7 (Speech), W10 (Signature), W12 (Bewerbung) nicht überspringen.
       <div class="hint-actions">
         ${
@@ -875,24 +875,38 @@ function renderDay(weekNum, dayKey) {
   const { done, total } = dayProgress(dayPlan);
   const pct = total ? Math.round((done / total) * 100) : 0;
 
+  const taskBuckets = dayPlan.blocks.map(() => []);
+  dayPlan.tasks.forEach((_, i) => {
+    taskBuckets[i % dayPlan.blocks.length].push(i);
+  });
+
   const blocks = dayPlan.blocks
-    .map((block) => {
+    .map((block, blockIdx) => {
       const items = block.items.map((i) => `<li>${escapeHtml(i)}</li>`).join("");
-      const tut = renderTutorialByIds(block.tutorialIds);
+      const tut = block.tutorialIds?.length
+        ? `<div class="block-tutorials"><p class="sub"><strong>Lernmaterial:</strong></p>${renderTutorialByIds(block.tutorialIds)}</div>`
+        : "";
+      const blockTasks = taskBuckets[blockIdx]
+        .map((taskIdx) => renderTaskItem(`w${weekNum}-${dayKey}-t${taskIdx}`, dayPlan.tasks[taskIdx]))
+        .join("");
+      const tasksHtml = blockTasks
+        ? `<div class="block-tasks"><p class="sub"><strong>Abhaken:</strong></p><ul class="task-list">${blockTasks}</ul></div>`
+        : "";
+      const aside = tut || tasksHtml
+        ? `<div class="block-aside">${tut}${tasksHtml}</div>`
+        : "";
       return `
         <article class="block-card">
           <div class="block-header">
             <span class="block-time">${escapeHtml(block.time)}</span>
             <h4>${escapeHtml(block.title)}</h4>
           </div>
-          <ul class="block-items">${items}</ul>
-          ${tut ? `<div class="block-tutorials"><p class="sub"><strong>Lernmaterial:</strong></p>${tut}</div>` : ""}
+          <div class="block-body${aside ? "" : " block-body-single"}">
+            <ul class="block-items">${items}</ul>
+            ${aside}
+          </div>
         </article>`;
     })
-    .join("");
-
-  const tasks = dayPlan.tasks
-    .map((t, i) => renderTaskItem(`w${weekNum}-${dayKey}-t${i}`, t))
     .join("");
 
   const weekTutorials = WEEK_TUTORIALS[weekNum] || [];
@@ -936,13 +950,8 @@ function renderDay(weekNum, dayKey) {
       <button class="link-btn" data-view="week-${weekNum}">← Woche ${weekNum}: ${escapeHtml(week.title)}</button>
     </div>
     ${dayNav}
-    <h3 class="section-title">Tagesplan — Zeitblöcke</h3>
+    <h3 class="section-title">Tagesplan</h3>
     <div class="blocks-grid">${blocks}</div>
-    <div class="card">
-      <h3>Tasks abhaken</h3>
-      <p class="sub">In beliebiger Reihenfolge — du kannst jederzeit pausieren und später weitermachen.</p>
-      <ul class="task-list">${tasks}</ul>
-    </div>
     ${
       weekTutorials.length || getWeekSupplements(weekNum).length
         ? `<details class="card tutorials-collapse" open>
@@ -1147,7 +1156,7 @@ function renderInterview() {
   return `
     <div class="view-header">
       <h2>Interview-Vorbereitung</h2>
-      <p class="meta">15 Fragen — zollsoft ML/DL (Woche 12)</p>
+      <p class="meta">15 Fragen — 😊 ML/DL (Woche 12)</p>
     </div>
     <div class="card">
       <ol>${PLAN.interviewQuestions.map((q) => `<li style="margin-bottom:0.6rem">${escapeHtml(q)}</li>`).join("")}</ol>
@@ -1177,7 +1186,7 @@ function renderReference() {
     <div class="cards">
       <div class="card"><h3>Phasen</h3><table class="tech-table"><tbody>${phases}</tbody></table></div>
       <div class="card"><h3>Tech-Stack</h3><table class="tech-table"><tbody>${tech}</tbody></table></div>
-      <div class="card"><h3>Ziel: zollsoft ML/DL</h3><ul><li><strong>CV:</strong> Lesionsklassifikation (HAM10000, PyTorch, deployt)</li><li><strong>NLP/Speech:</strong> Whisper, spaCy — Spracherkennung Ärzte</li><li><strong>Pipeline:</strong> Daten → Modell → MLflow → FastAPI → Docker</li><li><strong>Stack:</strong> Python, sklearn, PyTorch, TensorFlow, Linux/Bash</li><li><a href="https://zollsoft.de/jobs/softwareentwicklung/softwareentwickler-machine-deep-learning/" target="_blank" rel="noopener">Stellenanzeige →</a></li></ul></div>
+      <div class="card"><h3>Ziel: 😊 ML/DL</h3><ul><li><strong>CV:</strong> Lesionsklassifikation (HAM10000, PyTorch, deployt)</li><li><strong>NLP/Speech:</strong> Whisper, spaCy — Spracherkennung Ärzte</li><li><strong>Pipeline:</strong> Daten → Modell → MLflow → FastAPI → Docker</li><li><strong>Stack:</strong> Python, sklearn, PyTorch, TensorFlow, Linux/Bash</li><li><a href="https://example.com/medtech-ml-jobs" target="_blank" rel="noopener">Stellenanzeige →</a></li></ul></div>
       <div class="card"><h3>Bewusst weggelassen (Später)</h3><ul><li>RAG / LLM-Tiefe, Agents, GANs, Reinforcement Learning</li><li>IfaDW-Breite (25 Wo.) — dieser Sprint ist zielgerichtet</li></ul></div>
       <div class="card"><h3>Budget / Monat</h3><ul><li>OpenAI: 20–50 €</li><li>Tavily: 0–20 €</li><li>Hosting: 0–10 €</li></ul></div>
     </div>`;

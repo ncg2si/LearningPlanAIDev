@@ -523,6 +523,10 @@ body {
   .day-tabs {
     overflow-x: auto;
   }
+
+  .block-body {
+    grid-template-columns: 1fr;
+  }
 }
 
 /* --- New: day tabs, tutorials, blocks --- */
@@ -881,6 +885,38 @@ body {
   margin-bottom: 1rem;
 }
 
+.block-body {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(240px, 44%);
+  gap: 1rem;
+  align-items: start;
+}
+
+.block-body-single {
+  grid-template-columns: 1fr;
+}
+
+.block-aside {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.block-tasks {
+  padding: 0.75rem;
+  background: var(--surface-2);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+}
+
+.block-tasks .task-item {
+  padding: 0.45rem 0.55rem;
+}
+
+.block-tasks .sub {
+  margin: 0 0 0.35rem;
+}
+
 .block-card {
   background: var(--surface);
   border: 1px solid var(--border);
@@ -919,9 +955,14 @@ body {
 }
 
 .block-tutorials {
-  margin-top: 0.75rem;
-  padding-top: 0.75rem;
-  border-top: 1px solid var(--border);
+  padding: 0.75rem;
+  background: var(--surface-2);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+}
+
+.block-tutorials .sub {
+  margin: 0 0 0.35rem;
 }
 
 .block-tutorials .tutorial-grid {

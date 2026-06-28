@@ -1,4 +1,4 @@
-/** Detaillierte Lernressourcen — 12-Wochen ML/DL-Sprint (zollsoft / Medizin-KI) */
+/** Detaillierte Lernressourcen — 12-Wochen ML/DL-Sprint (😊 / Medizin-KI) */
 
 export const TUTORIAL_TYPES = {
   docs: "Dokumentation",
@@ -48,17 +48,17 @@ export const GLOBAL_RESOURCES = [
     cost: "Kostenlos",
     duration: "Referenz",
     description:
-      "TensorFlow/Keras — Pflicht-Kennnis für zollsoft; MNIST-Vergleich in Woche 8.",
+      "TensorFlow/Keras — Pflicht-Kennnis für 😊; MNIST-Vergleich in Woche 8.",
   },
   {
-    id: "zollsoft-jobs",
-    title: "zollsoft — ML/DL Stellen",
-    url: "https://zollsoft.de/jobs/softwareentwicklung/softwareentwickler-machine-deep-learning/",
+    id: "target-jobs",
+    title: "😊 — ML/DL Stellen",
+    url: "https://example.com/medtech-ml-jobs",
     type: "article",
     cost: "Kostenlos",
     duration: "~30 min",
     description:
-      "Stellenprofil ML/DL bei zollsoft — Spracherkennung, Lesionsklassifikation, volle Pipeline.",
+      "Stellenprofil ML/DL bei 😊 — Spracherkennung, Lesionsklassifikation, volle Pipeline.",
   },
 ];
 
@@ -106,7 +106,7 @@ export const WEEK_TUTORIALS = {
       duration: "4–6 h",
       when: "Di — Theorie",
       description:
-        "REST-API-Grundlagen — später für ML-, CV- und Speech-Endpunkte (zollsoft-Kern).",
+        "REST-API-Grundlagen — später für ML-, CV- und Speech-Endpunkte (😊-Kern).",
       steps: [
         "First Steps + Path/Query",
         "Request Body + Pydantic",
@@ -217,7 +217,7 @@ export const WEEK_TUTORIALS = {
       duration: "~25 min",
       when: "Di — Hands-on",
       description:
-        "Metriken visuell verstehen — essentiell für zollsoft-Gespräche und HAM10000-Eval.",
+        "Metriken visuell verstehen — essentiell für 😊-Gespräche und HAM10000-Eval.",
       steps: [
         "Video ansehen",
         "Sensitivity vs. Specificity notieren",
@@ -265,7 +265,7 @@ export const WEEK_TUTORIALS = {
       duration: "~2 h",
       when: "Mo — Theorie",
       description:
-        "Tensors und autograd — Einstieg Deep Learning (zollsoft-Pflicht: PyTorch).",
+        "Tensors und autograd — Einstieg Deep Learning (😊-Pflicht: PyTorch).",
       steps: [
         "Tensors + Operationen",
         "Autograd verstehen",
@@ -331,7 +331,7 @@ export const WEEK_TUTORIALS = {
       duration: "~1,5 h",
       when: "Mo — Theorie",
       description:
-        "Medizinisches CV-Dataset — direkt relevant für zollsoft Lesionsklassifikation.",
+        "Medizinisches CV-Dataset — direkt relevant für 😊 Lesionsklassifikation.",
       steps: [
         "Download + Metadaten lesen",
         "Klassenverteilung (EDA)",
@@ -427,7 +427,7 @@ export const WEEK_TUTORIALS = {
       cost: "Kostenlos",
       duration: "~2 h",
       when: "Di — Hands-on",
-      description: "UploadFile für Bilder — POST /predict/image für zollsoft-CV-Demo.",
+      description: "UploadFile für Bilder — POST /predict/image für 😊-CV-Demo.",
       steps: [
         "Request Files Kapitel",
         "UploadFile + PIL/torchvision",
@@ -472,7 +472,7 @@ export const WEEK_TUTORIALS = {
       cost: "Free Tier",
       duration: "~1 h",
       when: "Do — Deploy",
-      description: "Live CV-URL + Demo-GIF im README — Hauptprojekt für zollsoft-Gespräch.",
+      description: "Live CV-URL + Demo-GIF im README — Hauptprojekt für 😊-Gespräch.",
       steps: [
         "Deploy mit größerem Image",
         "Extern curl testen",
@@ -555,7 +555,7 @@ export const WEEK_TUTORIALS = {
       duration: "~1,5 h",
       when: "Mo — Theorie",
       description:
-        "Whisper-Architektur und Model Sizes — zollsoft-Kern: Spracherkennung für Ärzte.",
+        "Whisper-Architektur und Model Sizes — 😊-Kern: Spracherkennung für Ärzte.",
       steps: [
         "README + Model-Tabelle lesen",
         "base vs. small für DE wählen",
@@ -617,7 +617,7 @@ export const WEEK_TUTORIALS = {
       cost: "Kostenlos",
       duration: "~2 h",
       when: "Mo — Theorie",
-      description: "grep, find, Pipes — download.sh für Daten-Pipeline (zollsoft: volle Pipeline).",
+      description: "grep, find, Pipes — download.sh für Daten-Pipeline (😊: volle Pipeline).",
       steps: [
         "Lessons 1–4",
         "grep + find üben",
@@ -648,7 +648,7 @@ export const WEEK_TUTORIALS = {
       duration: "~1,5 h",
       when: "Di — Theorie",
       description:
-        "TF/Keras Einstieg — gleiches Problem wie PyTorch W3; zollsoft nennt TensorFlow explizit.",
+        "TF/Keras Einstieg — gleiches Problem wie PyTorch W3; 😊 nennt TensorFlow explizit.",
       steps: [
         "Quickstart durcharbeiten",
         "MNIST oder Tabular",
@@ -711,7 +711,7 @@ export const WEEK_TUTORIALS = {
       duration: "~30 min",
       when: "Mo — Spec",
       description:
-        "Pipeline-Diagramm für Signature-Projekt — Daten → Train → API → Deploy (zollsoft-Wording).",
+        "Pipeline-Diagramm für Signature-Projekt — Daten → Train → API → Deploy (😊-Wording).",
       steps: [
         "flowchart TD zeichnen",
         "In README einbinden",
@@ -885,13 +885,13 @@ export const WEEK_TUTORIALS = {
       steps: [
         "Skills-Flowchart",
         "In docs/kompetenz.md",
-        "Match mit zollsoft-Stellenprofil",
+        "Match mit 😊-Stellenprofil",
       ],
     },
     {
-      id: "zollsoft-jobs",
-      title: "zollsoft — Stellenanalyse",
-      url: "https://zollsoft.de/jobs/softwareentwicklung/softwareentwickler-machine-deep-learning/",
+      id: "target-jobs",
+      title: "😊 — Stellenanalyse",
+      url: "https://example.com/medtech-ml-jobs",
       type: "article",
       cost: "Kostenlos",
       duration: "~45 min",
@@ -938,17 +938,17 @@ export const WEEK_TUTORIALS = {
       ],
     },
     {
-      id: "zollsoft-jobs",
-      title: "zollsoft — Bewerbung absenden",
-      url: "https://zollsoft.de/jobs/softwareentwicklung/softwareentwickler-machine-deep-learning/",
+      id: "target-jobs",
+      title: "😊 — Bewerbung absenden",
+      url: "https://example.com/medtech-ml-jobs",
       type: "article",
       cost: "Kostenlos",
       duration: "~2 h",
       when: "Do — Bewerbung",
-      description: "PDFs + Online-Formular — Tracking für zollsoft und 5 ähnliche Stellen.",
+      description: "PDFs + Online-Formular — Tracking für 😊 und 5 ähnliche Stellen.",
       steps: [
         "Anschreiben + CV PDF",
-        "zollsoft online bewerben",
+        "😊 online bewerben",
         "Tracking-Tabelle führen",
       ],
     },
@@ -988,9 +988,9 @@ export const WEEK_TUTORIALS = {
 /** Optionale Ergänzungen — nur bei Bedarf, nicht Pflicht zum Plan */
 export const GLOBAL_SUPPLEMENTS = [
   {
-    id: "zollsoft-jobs",
-    title: "zollsoft — ML/DL Softwareentwickler",
-    url: "https://zollsoft.de/jobs/softwareentwicklung/softwareentwickler-machine-deep-learning/",
+    id: "target-jobs",
+    title: "😊 — ML/DL Softwareentwickler",
+    url: "https://example.com/medtech-ml-jobs",
     type: "article",
     cost: "Kostenlos",
     duration: "~30 min",
@@ -1119,14 +1119,14 @@ export const WEEK_SUPPLEMENTS = {
       ],
     },
     {
-      id: "zollsoft-jobs",
-      title: "zollsoft — Spracherkennung im Profil",
-      url: "https://zollsoft.de/jobs/softwareentwicklung/softwareentwickler-machine-deep-learning/",
+      id: "target-jobs",
+      title: "😊 — Spracherkennung im Profil",
+      url: "https://example.com/medtech-ml-jobs",
       type: "article",
       cost: "Kostenlos",
       duration: "~15 min",
       when: "Meilenstein W7",
-      description: "Speech-Meilenstein mit zollsoft-Anforderung verknüpfen — Notiz fürs Gespräch.",
+      description: "Speech-Meilenstein mit 😊-Anforderung verknüpfen — Notiz fürs Gespräch.",
       steps: [
         "Stellenprofil Speech-Abschnitt",
         "Eigene Demo verlinken",

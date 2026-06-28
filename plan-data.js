@@ -1,9 +1,9 @@
 import { getAllDayTaskIds } from "./daily-plans.js";
 
-/** 12-Wochen Sprint — Qualifikation für ML/DL-Stellen (zollsoft-Fokus) */
+/** 12-Wochen Sprint — Qualifikation für ML/DL-Stellen (😊-Fokus) */
 
 export const PLAN = {
-  title: "12-Wochen Sprint: ML/DL → zollsoft & Medizin-KI",
+  title: "12-Wochen Sprint: ML/DL → 😊 & Medizin-KI",
   subtitle: "Vollzeit · PyTorch · CV · Speech/NLP · Pipeline · Deploy — ohne IfaDW-Breite",
   phases: [
     { id: "a", name: "Phase A", label: "Engineering + sklearn", weeks: [1, 2] },
@@ -11,7 +11,7 @@ export const PLAN = {
     { id: "c", name: "Phase C", label: "NLP & Spracherkennung", weeks: [6, 7] },
     { id: "d", name: "Phase D", label: "Pipeline + TensorFlow", weeks: [8] },
     { id: "e", name: "Phase E", label: "Signature Medizin-KI", weeks: [9, 10] },
-    { id: "f", name: "Phase F", label: "Bewerbung zollsoft", weeks: [11, 12] },
+    { id: "f", name: "Phase F", label: "Bewerbung 😊", weeks: [11, 12] },
   ],
   dailyRhythm: [
     { time: "09:00–10:30", activity: "Theorie / Tutorial / Paper skim" },
@@ -33,15 +33,15 @@ export const PLAN = {
     { category: "Eval", choice: "F1, Precision, Recall, ROC — medizinische Metriken" },
   ],
   targetRole: {
-    company: "zollsoft",
-    url: "https://zollsoft.de/jobs/softwareentwicklung/softwareentwickler-machine-deep-learning/",
+    company: "😊",
+    url: "https://example.com/medtech-ml-jobs",
     focus: ["Spracherkennung (Ärzte)", "Lesionsklassifikation (Melanom/CV)", "Volle Pipeline bis Deploy", "PyTorch, TensorFlow, sklearn"],
   },
   weeks: [
     {
       number: 1,
       title: "Python Engineering + Git",
-      focus: "Sauberer Code — Voraussetzung bei zollsoft",
+      focus: "Sauberer Code — Voraussetzung bei 😊",
       outcome: "Repo mit Tests und CI-Grundlage",
       learn: ["Modern Python, pytest, Git workflow", "FastAPI Grundlagen", "Projektstruktur für ML-Services"],
       tasks: [
@@ -73,7 +73,7 @@ export const PLAN = {
     {
       number: 3,
       title: "PyTorch Grundlagen",
-      focus: "Training Loop — Pflicht für zollsoft",
+      focus: "Training Loop — Pflicht für 😊",
       outcome: "Trainiertes Modell + Checkpoint",
       learn: ["Tensors, autograd, DataLoader", "Training Loop: forward, loss, backward", "GPU/MPS, Overfitting erkennen"],
       tasks: [
@@ -89,7 +89,7 @@ export const PLAN = {
     {
       number: 4,
       title: "CNNs + Transfer Learning (Lesion/CV)",
-      focus: "Direkt zollsoft: Bildklassifikation Melanom/Läsion",
+      focus: "Direkt 😊: Bildklassifikation Melanom/Läsion",
       outcome: "Fine-tuned CNN mit medizinischen Metriken",
       learn: ["CNN Architektur, Augmentation", "Transfer Learning ResNet/EfficientNet", "Unbalanced classes: F1, Weighted Loss"],
       tasks: [
@@ -106,7 +106,7 @@ export const PLAN = {
       number: 5,
       title: "CV Inference API deployt",
       focus: "Bild → Prediction in Production",
-      outcome: "Live CV-API (zollsoft-Kernkompetenz)",
+      outcome: "Live CV-API (😊-Kernkompetenz)",
       learn: ["FastAPI File Upload, Bild-Preprocessing", "torch.no_grad Inference", "Docker mit Modell-Volume"],
       tasks: [
         "POST /predict/image mit Confidence + Top-K",
@@ -115,7 +115,7 @@ export const PLAN = {
         "10 Testbilder + Fehleranalyse",
         "Live Deploy + Demo-GIF im README",
       ],
-      milestone: "CV-API live — Hauptprojekt für zollsoft-Gespräch",
+      milestone: "CV-API live — Hauptprojekt für 😊-Gespräch",
       resources: [],
     },
     {
@@ -137,7 +137,7 @@ export const PLAN = {
     {
       number: 7,
       title: "Whisper ASR — medizinisches Diktat",
-      focus: "Direkt zollsoft: Spracherkennung für Ärzte",
+      focus: "Direkt 😊: Spracherkennung für Ärzte",
       outcome: "Audio → Text API",
       learn: ["Whisper / faster-whisper", "Audio Upload, Chunking lange Dateien", "Post-Processing, Latenz"],
       tasks: [
@@ -147,7 +147,7 @@ export const PLAN = {
         "Latenz + Qualität dokumentieren",
         "Docker + lokaler compose Stack",
       ],
-      milestone: "Speech-API funktioniert — zweites zollsoft-Häkchen",
+      milestone: "Speech-API funktioniert — zweites 😊-Häkchen",
       resources: [],
     },
     {
@@ -200,24 +200,24 @@ export const PLAN = {
     },
     {
       number: 11,
-      title: "Portfolio + zollsoft-Vorbereitung",
+      title: "Portfolio + 😊-Vorbereitung",
       focus: "3 Repos + Anschreiben",
       outcome: "Bewerbungsmappe fertig",
-      learn: ["GitHub Pins, einheitliche READMEs", "zollsoft Stellenprofil spiegeln", "Medizin-KI Motivation"],
+      learn: ["GitHub Pins, einheitliche READMEs", "😊 Stellenprofil spiegeln", "Medizin-KI Motivation"],
       tasks: [
         "Repos polieren: ML-API, CV-API, Speech/NLP",
         "Signature-Repo pinnen",
-        "Anschreiben zollsoft (DE, C1)",
+        "Anschreiben 😊 (DE, C1)",
         "Lebenslauf: Projekte vor Weiterbildung",
         "LinkedIn Headline: ML/DL / Medizin-KI",
       ],
-      milestone: "Anschreiben + CV fertig für zollsoft",
+      milestone: "Anschreiben + CV fertig für 😊",
       resources: [],
     },
     {
       number: 12,
       title: "Interview + Bewerbung",
-      focus: "zollsoft bewerben + Gespräch üben",
+      focus: "😊 bewerben + Gespräch üben",
       outcome: "Bewerbung raus, interview-ready",
       learn: [
         "Interview: CNN, ASR, Pipeline, PyTorch, TF",
@@ -228,10 +228,10 @@ export const PLAN = {
         "15 Interview-Fragen schriftlich (DE)",
         "5-Min CV-API Pitch üben (3×)",
         "5-Min Speech-Pipeline Pitch üben (3×)",
-        "Bewerbung zollsoft + 5 ähnliche Stellen",
+        "Bewerbung 😊 + 5 ähnliche Stellen",
         "Mock Interview (selbst oder Partner)",
       ],
-      milestone: "zollsoft-Bewerbung verschickt",
+      milestone: "😊-Bewerbung verschickt",
       resources: [],
     },
   ],
@@ -243,12 +243,12 @@ export const PLAN = {
     "MLflow: Experiment + bestes Modell geloggt",
     "Signature-Projekt: Live-URL + 5-Min Demo-Video",
     "Bash-Datenpipeline-Script",
-    "Anschreiben zollsoft + Lebenslauf DE",
+    "Anschreiben 😊 + Lebenslauf DE",
     "15 Interview-Fragen beantwortet",
     "Deutsch C1 im Gespräch üben (Fachbegriffe erklären)",
   ],
   interviewQuestions: [
-    "Beschreibe die volle KI-Pipeline von Rohdaten bis Deployment — wie bei zollsoft.",
+    "Beschreibe die volle KI-Pipeline von Rohdaten bis Deployment — wie bei 😊.",
     "Wie würdest du ein Modell zur Lesionsklassifikation (Melanom) evaluieren?",
     "Precision vs. Recall — warum in der Medizin oft Recall wichtiger?",
     "Erkläre dein CNN-Projekt: Architektur, Augmentation, Metriken.",
@@ -260,7 +260,7 @@ export const PLAN = {
     "Wie sicherst du sauberen, wartbaren ML-Code?",
     "SHAP oder Error Analysis — wie erklärst du Modellfehler?",
     "Wie deployest du ein PyTorch-Modell in FastAPI?",
-    "Was weißt du über Spracherkennung bei zollsoft (Ärzte)?",
+    "Was weißt du über Spracherkennung bei 😊 (Ärzte)?",
     "Wie gehst du mit unbalancierten Klassen in CV um?",
     "5-Min Walkthrough deines Signature-Projekts.",
   ],
